@@ -1,4 +1,9 @@
+import React from 'react'
+import Layout from '../components/Layout'
+import Textbox from '../components/Textbox'
 
 export default () => (
-  <div>Welcome to next.js!</div>
+  <Layout>
+    <Textbox />
+  </Layout>
 )
