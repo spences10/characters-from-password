@@ -1,0 +1,19 @@
+{
+  "name": "characters-from-password",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "Scott Spence <spences10apps@gmail.com> (https://blog.scottspence.me/)",
+  "license": "MIT",
+  "dependencies": {
+    "next": "3.0.3",
+    "react": "15.6.1",
+    "react-dom": "15.6.1"
+  }
+}
