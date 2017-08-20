@@ -6,23 +6,24 @@ const Input = styled.input.attrs({
   type: 'password',
 
   // or we can define dynamic ones
-  margin: props => props.size || '1em',
-  padding: props => props.size || '1em'
+  margin: (props) => props.size || '10px',
+  padding: (props) => props.size || '10px'
 })`
   color: palevioletred;
-  font-size: 1em;
+  font-size: 3em;
   border: 2px solid palevioletred;
   border-radius: 3px;
+  position: absolute;
+  top: 25%;
+  left: 25%;
 
   /* here we use the dynamically computed props */
-  margin: ${props => props.margin};
-  padding: ${props => props.padding};
-`;
+  margin: ${(props) => props.margin};
+  padding: ${(props) => props.padding};
+`
 
 export default () => (
-	<div>
-		<Input placeholder="A small text input" size="1em" />
-		<br />
-		<Input placeholder="A bigger text input" size="2em" />
-	</div>
+  <div>
+    <Input placeholder='Pasta password here' size='10px' />
+  </div>
 )
