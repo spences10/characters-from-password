@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Select = styled.select`
+const Div = styled.div`
   color: palevioletred;
   font-size: 1.5em;
   border: 2px solid palevioletred;
@@ -10,8 +10,6 @@ const Select = styled.select`
   top: 35%;
   left: 26%;
 `
-
-// this.state.input.split('').map((a, i) => <option value={a}>i</option>)
 
 export default () => (
   <div>
