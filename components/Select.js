@@ -20,6 +20,7 @@ export default () => (
       <option value='1'>Saab</option>
       <option value='2'>Mercedes</option>
       <option value='3'>Audi</option>
+      <option value='4'>Ford</option>
     </Select>
   </div>
 )

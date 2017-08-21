@@ -13,13 +13,6 @@ const Div = styled.div`
 
 export default () => (
   <div>
-    <Select>
-      <option value='0'>Select Character</option>
-      <option value='1'>Saab</option>
-      <option value='2'>Mercedes</option>
-      <option value='3'>Audi</option>
-    </Select>
+    <Div />
   </div>
 )
-
-// const result = Select // for use with Quokka
