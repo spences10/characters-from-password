@@ -24,6 +24,6 @@ const Input = styled.input.attrs({
 
 export default () => (
   <div>
-    <Input placeholder='Pasta password here' size='10px' />
+    <Input placeholder='Pasta password here' size='10px' onChange={(event) => this.handleChange(event.target.value)} />
   </div>
 )
