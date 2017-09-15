@@ -29,13 +29,23 @@ const Input = styled.input.attrs({
 // )
 
 class Textbox extends React.Component {
+  constructor(){
+    super()
+    this.state={
+      txt:''
+    }
+  }
+  update(e) {
+    console.log(e.target.value)
+    // this.setState({txt: e.target.value})
+  }
   render() {
     return (
       <div>
         <Input
           placeholder='Pasta password here'
           size='10px'
-          onChange={(event) => this.handleChange(event.target.value)}
+          onChange={this.update.bind(this)}
         />
       </div>
     )
