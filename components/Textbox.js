@@ -22,8 +22,24 @@ const Input = styled.input.attrs({
   padding: ${(props) => props.padding};
 `
 
-export default () => (
-  <div>
-    <Input placeholder='Pasta password here' size='10px' onChange={(event) => this.handleChange(event.target.value)} />
-  </div>
-)
+// export default () => (
+//   <div>
+//     <Input placeholder='Pasta password here' size='10px' onChange={(event) => this.handleChange(event.target.value)} />
+//   </div>
+// )
+
+class Textbox extends React.Component {
+  render() {
+    return (
+      <div>
+        <Input
+          placeholder='Pasta password here'
+          size='10px'
+          onChange={(event) => this.handleChange(event.target.value)}
+        />
+      </div>
+    )
+  }
+}
+
+export default Textbox
