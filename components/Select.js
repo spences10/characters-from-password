@@ -6,14 +6,14 @@ const Select = styled.select`
   font-size: 1.5em;
   border: 2px solid palevioletred;
   border-radius: 3px;
-  position: absolute;
+  position: relative;
   top: 35%;
   left: 26%;
 `
 
 // this.state.input.split('').map((a, i) => <option value={a}>i</option>)
 
-export default () => (
+export default (props) => (
   <div>
     <Select>
       <option value='0'>Select Character</option>

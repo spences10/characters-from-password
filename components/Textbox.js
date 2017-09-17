@@ -13,7 +13,7 @@ const Input = styled.input.attrs({
   font-size: 3em;
   border: 2px solid palevioletred;
   border-radius: 3px;
-  position: absolute;
+  position: relative;
   top: 25%;
   left: 25%;
 
@@ -29,24 +29,20 @@ const Input = styled.input.attrs({
 // )
 
 class Textbox extends React.Component {
-  constructor(){
+  constructor() {
     super()
-    this.state={
-      txt:''
+    this.state = {
+      txt: ''
     }
   }
   update(e) {
-    console.log(e.target.value)
-    // this.setState({txt: e.target.value})
+    this.setState({ txt: e.target.value })
+    console.log(this.state)
   }
   render() {
     return (
       <div>
-        <Input
-          placeholder='Pasta password here'
-          size='10px'
-          onChange={this.update.bind(this)}
-        />
+        <Input placeholder='Pasta password here' size='10px' onChange={this.update.bind(this)} />
       </div>
     )
   }
