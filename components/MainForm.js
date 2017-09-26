@@ -8,7 +8,7 @@ class MainForm extends React.Component {
   render() {
     return (
       <form>
-        <Layout />>
+        <Layout />
       </form>
     )
   }
