@@ -9,12 +9,12 @@ export default class Form extends React.Component {
     // make variable to store the options in from <input>
     const items = [...this.state.password]
 
-    const list = items.map(item => {
+    const list = items.map((item, index) => {
       // console.log('====================')
       // console.log(item)
       // console.log('====================')
       return (
-        <option>{item}</option>
+        <option key={index}>{index}</option>
       )
     })
     
