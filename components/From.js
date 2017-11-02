@@ -7,15 +7,6 @@ export default class Form extends React.Component {
     character: ''
   }
 
-  componentWillUpdate(nextProps, nextState) {
-    console.log('====================')
-    console.log(nextProps)
-    console.log('====================')
-    console.log('====================')
-    console.log(nextState)
-    console.log('====================')
-  }
-
   render(){
     // make variable to store the options in from <input>
     const items = [...this.state.password]
@@ -36,7 +27,7 @@ export default class Form extends React.Component {
             key={index}
             letter={item}
           >
-            {index}
+            {index+1}
           </option>
         )
       // }
@@ -46,7 +37,7 @@ export default class Form extends React.Component {
     // console.log(items)
     // console.log('====================')
 
-    const characterFromPassword = this.state.password.charAt(this.state.selected) 
+    const characterFromPassword = this.state.password.charAt(this.state.selected-1) 
     // characterFromPassword = characterFromPassword.charAt(this.state.selected)
 
     return (
