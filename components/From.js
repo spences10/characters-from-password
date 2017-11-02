@@ -7,7 +7,11 @@ export default class Form extends React.Component {
 
   render(){
     // make variable to store the options in from <input>
-    const items = this.state.password
+    const items = [...this.state.password]
+    
+    console.log('====================')
+    console.log(items)
+    console.log('====================')
 
     return (
       <form>
