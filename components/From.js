@@ -2,7 +2,8 @@ import React from 'react'
 
 export default class Form extends React.Component {
   state = {
-    password: ''
+    password: '',
+    selected: 0
   }
 
   render(){
@@ -30,7 +31,9 @@ export default class Form extends React.Component {
           value={this.state.password}
           onChange={e => this.setState({password: e.target.value})}
         />
-        <select>
+        <select
+          onChange={e => this.setState({selected: e.target.value})}
+        >
           {list}
         </select>
       </form>
