@@ -1,4 +1,17 @@
 import React from 'react'
+import styled from 'styled-components'
+
+
+
+const ResultsDiv = styled.div`
+  color: palevioletred;
+  font-size: 1.5em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+  position: absolute;
+  top: 35%;
+  left: 26%;
+`
 
 class MainForm extends React.Component {
   state = {
@@ -55,7 +68,9 @@ class MainForm extends React.Component {
             {list}
           </select>
         </form>
-        <label>{characterFromPassword}</label>
+        <ResultsDiv>
+          <label>{characterFromPassword}</label>
+        </ResultsDiv>
       </div>
     )
   }
