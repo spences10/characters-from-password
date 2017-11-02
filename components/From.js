@@ -8,10 +8,19 @@ export default class Form extends React.Component {
   render(){
     // make variable to store the options in from <input>
     const items = [...this.state.password]
+
+    const list = items.map(item => {
+      // console.log('====================')
+      // console.log(item)
+      // console.log('====================')
+      return (
+        <option>{item}</option>
+      )
+    })
     
-    console.log('====================')
-    console.log(items)
-    console.log('====================')
+    // console.log('====================')
+    // console.log(items)
+    // console.log('====================')
 
     return (
       <form>
@@ -21,7 +30,9 @@ export default class Form extends React.Component {
           value={this.state.password}
           onChange={e => this.setState({password: e.target.value})}
         />
-        <select></select>
+        <select>
+          {list}
+        </select>
       </form>
     )
   }
