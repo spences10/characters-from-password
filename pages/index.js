@@ -1,9 +1,6 @@
 import React from 'react'
-import Layout from '../components/Layout'
-import Form from '../components/Form'
+import MainForm from '../components/MainForm'
 
 export default () => (
-  <Layout>
-    <Form />
-  </Layout>
+  <MainForm />
 )
