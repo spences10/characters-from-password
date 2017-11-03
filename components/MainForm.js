@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const WrapperForm = styled.form`
+  position: absolute;
+`
+
 const CharacterInput = styled.input.attrs({
   // we can define static props
   type: 'password',
@@ -14,9 +18,9 @@ const CharacterInput = styled.input.attrs({
   font-size: 3em;
   border: 2px solid purple;
   border-radius: 3px;
-  position: absolute;
-  top: 25%;
-  left: 25%;
+  // position: absolute;
+  // top: 25%;
+  // left: 25%;
 
   /* here we use the dynamically computed props */
   margin: ${props => props.margin};
@@ -28,18 +32,18 @@ const CharacterSelect = styled.select`
   font-size: 1.5em;
   border: 2px solid purple;
   border-radius: 3px;
-  position: absolute;
+  /* position: absolute;
   top: 35%;
-  left: 26%;
+  left: 26%; */
 `
 
 const ResultsDiv = styled.div`
   color: purple;
   font-size: 5em;
   border-radius: 3px;
-  position: absolute;
+  /* position: absolute;
   top: 15%;
-  left: 26%;
+  left: 26%; */
 `
 
 class MainForm extends React.Component {
@@ -83,7 +87,7 @@ class MainForm extends React.Component {
 
     return (
       <div>
-        <form>
+        <WrapperForm>
           <CharacterInput
             value={this.state.password}
             onChange={e => this.setState({ password: e.target.value })}
@@ -93,10 +97,10 @@ class MainForm extends React.Component {
           >
             {list}
           </CharacterSelect>
-        </form>
-        <ResultsDiv>
-          <label>{characterFromPassword}</label>
-        </ResultsDiv>
+          <ResultsDiv>
+            <label>{characterFromPassword}</label>
+          </ResultsDiv>
+        </WrapperForm>
       </div>
     )
   }
