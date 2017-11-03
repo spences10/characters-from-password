@@ -6,8 +6,8 @@ const Input = styled.input.attrs({
   type: 'password',
 
   // or we can define dynamic ones
-  margin: (props) => props.size || '10px',
-  padding: (props) => props.size || '10px'
+  margin: props => props.size || '10px',
+  padding: props => props.size || '10px'
 })`
   color: palevioletred;
   font-size: 3em;
@@ -18,8 +18,8 @@ const Input = styled.input.attrs({
   left: 25%;
 
   /* here we use the dynamically computed props */
-  margin: ${(props) => props.margin};
-  padding: ${(props) => props.padding};
+  margin: ${props => props.margin};
+  padding: ${props => props.padding};
 `
 
 // export default () => (
@@ -42,7 +42,11 @@ class Textbox extends React.Component {
   render() {
     return (
       <div>
-        <Input placeholder='Pasta password here' size='10px' onChange={this.update.bind(this)} />
+        <Input
+          placeholder="Pasta password here"
+          size="10px"
+          onChange={this.update.bind(this)}
+        />
       </div>
     )
   }

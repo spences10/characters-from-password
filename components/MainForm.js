@@ -7,39 +7,38 @@ const CharacterInput = styled.input.attrs({
   placeholder: 'Pasta password here',
 
   // or we can define dynamic ones
-  margin: (props) => props.size || '10px',
-  padding: (props) => props.size || '10px'
+  margin: props => props.size || '10px',
+  padding: props => props.size || '10px'
 })`
-  color: palevioletred;
+  color: purple;
   font-size: 3em;
-  border: 2px solid palevioletred;
+  border: 2px solid purple;
   border-radius: 3px;
-  position: relative;
+  position: absolute;
   top: 25%;
   left: 25%;
 
   /* here we use the dynamically computed props */
-  margin: ${(props) => props.margin};
-  padding: ${(props) => props.padding};
+  margin: ${props => props.margin};
+  padding: ${props => props.padding};
 `
 
 const CharacterSelect = styled.select`
-  color: palevioletred;
+  color: purple;
   font-size: 1.5em;
-  border: 2px solid palevioletred;
+  border: 2px solid purple;
   border-radius: 3px;
-  position: relative;
+  position: absolute;
   top: 35%;
   left: 26%;
 `
 
 const ResultsDiv = styled.div`
-  color: palevioletred;
-  font-size: 1.5em;
-  border: 2px solid palevioletred;
+  color: purple;
+  font-size: 5em;
   border-radius: 3px;
   position: absolute;
-  top: 35%;
+  top: 15%;
   left: 26%;
 `
 
@@ -50,7 +49,7 @@ class MainForm extends React.Component {
     character: ''
   }
 
-  render(){
+  render() {
     // make variable to store the options in from <input>
     const items = [...this.state.password]
 
@@ -65,14 +64,11 @@ class MainForm extends React.Component {
       //     <option key={index}>Select Character</option>
       //   )
       // } else {
-        return (
-          <option 
-            key={index}
-            letter={item}
-          >
-            {index+1}
-          </option>
-        )
+      return (
+        <option key={index} letter={item}>
+          {index + 1}
+        </option>
+      )
       // }
     })
 
@@ -80,18 +76,20 @@ class MainForm extends React.Component {
     // console.log(items)
     // console.log('====================')
 
-    const characterFromPassword = this.state.password.charAt(this.state.selected-1) 
+    const characterFromPassword = this.state.password.charAt(
+      this.state.selected - 1
+    )
     // characterFromPassword = characterFromPassword.charAt(this.state.selected)
 
     return (
       <div>
         <form>
-          <CharacterInput 
+          <CharacterInput
             value={this.state.password}
-            onChange={e => this.setState({password: e.target.value})}
+            onChange={e => this.setState({ password: e.target.value })}
           />
           <CharacterSelect
-            onChange={e => this.setState({selected: e.target.value})}
+            onChange={e => this.setState({ selected: e.target.value })}
           >
             {list}
           </CharacterSelect>

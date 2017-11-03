@@ -13,14 +13,14 @@ const Select = styled.select`
 
 // this.state.input.split('').map((a, i) => <option value={a}>i</option>)
 
-export default (props) => (
+export default props => (
   <div>
     <Select>
-      <option value='0'>Select Character</option>
-      <option value='1'>Saab</option>
-      <option value='2'>Mercedes</option>
-      <option value='3'>Audi</option>
-      <option value='4'>Ford</option>
+      <option value="0">Select Character</option>
+      <option value="1">Saab</option>
+      <option value="2">Mercedes</option>
+      <option value="3">Audi</option>
+      <option value="4">Ford</option>
     </Select>
   </div>
 )
