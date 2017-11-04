@@ -2,7 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 const WrapperForm = styled.form`
-  position: absolute;
+  /* position: absolute; */
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(1, 1fr)
 `
 
 const CharacterInput = styled.input.attrs({
