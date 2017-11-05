@@ -1,6 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const Body = styled.body`
+  color: purple;
+  font-size: 1.5em;
+  border-radius: 5px;
+  text-align: center;  
+`
+
 const WrapperForm = styled.form`
   /* position: absolute; */
   display: grid;
@@ -32,7 +39,6 @@ const CharacterInput = styled.input.attrs({
 `
 
 const CharacterSelect = styled.select`
-  color: purple;
   font-size: 1.5em;
   border: 2px solid purple;
   border-radius: 5px;
@@ -43,7 +49,6 @@ const CharacterSelect = styled.select`
 `
 
 const ResultsDiv = styled.div`
-  color: purple;
   font-size: 10em;
   border-radius: 5px;
   text-align: center;
@@ -53,7 +58,6 @@ const ResultsDiv = styled.div`
 `
 
 const CharacterLabel = styled.label`
-  color: purple;
   font-size: 1.5em;
   /* margin: 10px 200px 10px 200px; */
   padding: 10px;
@@ -112,7 +116,12 @@ class MainForm extends React.Component {
     // characterFromPassword = characterFromPassword.charAt(this.state.selected)
 
     return (
-      <div>
+      <Body>
+        <div>
+          <p>I use strong passwords, "correct battery horse staple" ftw!</p> 
+          <p>But I also get quite annoyed counting out my password onto my fingers when prompted to give characters 18, 7 and 12 from my password.</p>
+          <p>I put this together for just that, paste or type in your password then pick out your character you need.</p>
+        </div>
         <WrapperForm>
           <CharacterInput
             value={this.state.password}
@@ -126,11 +135,11 @@ class MainForm extends React.Component {
               {list}
             </CharacterSelect>
           </SelectDiv>
+        </WrapperForm>
           <ResultsDiv>
             <label>`{characterFromPassword}`</label>
           </ResultsDiv>
-        </WrapperForm>
-      </div>
+      </Body>
     )
   }
 }
