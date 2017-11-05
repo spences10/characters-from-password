@@ -6,6 +6,7 @@ const Body = styled.body`
   font-size: 1.5em;
   border-radius: 5px;
   text-align: center;  
+  font-family: verdana
 `
 
 const WrapperForm = styled.form`
@@ -48,15 +49,6 @@ const CharacterSelect = styled.select`
   left: 26%; */
 `
 
-const ResultsDiv = styled.div`
-  font-size: 10em;
-  border-radius: 5px;
-  text-align: center;
-  /* position: absolute;
-  top: 15%;
-  left: 26%; */
-`
-
 const CharacterLabel = styled.label`
   font-size: 1.5em;
   /* margin: 10px 200px 10px 200px; */
@@ -74,6 +66,15 @@ const SelectDiv = styled.div`
   /* margin: 10px 200px 10px 200px; */
   /* padding: 10px; */
   /* border: 10px; */
+`
+
+const ResultsDiv = styled.div`
+  font-size: 10em;
+  border-radius: 5px;
+  text-align: center;
+  /* position: absolute;
+  top: 15%;
+  left: 26%; */
 `
 
 class MainForm extends React.Component {
