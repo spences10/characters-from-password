@@ -8,4 +8,4 @@ But I also get quite annoyed counting out my password onto my fingers when promp
 
 I put this together for just that, paste or type in your password then pick out your character you need.
 
-Demo: 
+Demo: https://cfromp.scottspence.me
