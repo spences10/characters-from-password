@@ -6,7 +6,7 @@ const WrapperForm = styled.form`
   display: grid;
   grid-template-rows: repeat(1, 1fr);
   grid-template-columns: repeat(1, 1fr);
-  grid-row-gap: 2em;
+  grid-gap: 2em;
 `
 
 const CharacterInput = styled.input.attrs({
@@ -36,6 +36,7 @@ const CharacterSelect = styled.select`
   font-size: 1.5em;
   border: 2px solid purple;
   border-radius: 5px;
+  justify-self: start;
   /* position: absolute;
   top: 35%;
   left: 26%; */
@@ -57,12 +58,16 @@ const CharacterLabel = styled.label`
   /* margin: 10px 200px 10px 200px; */
   padding: 10px;
   border: 10px;
+  justify-self: end;
 `
 
 const SelectDiv = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   color: purple;
+  align-items: center
   /* font-size: 1.5em; */
-  margin: 10px 200px 10px 200px;
+  /* margin: 10px 200px 10px 200px; */
   /* padding: 10px; */
   /* border: 10px; */
 `
