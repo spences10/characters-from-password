@@ -45,7 +45,7 @@ const CharacterSelect = styled.select`
 
 const ResultsDiv = styled.div`
   color: purple;
-  font-size: 5em;
+  font-size: 10em;
   border-radius: 5px;
   text-align: center;
   /* position: absolute;
@@ -99,13 +99,16 @@ class MainForm extends React.Component {
             value={this.state.password}
             onChange={e => this.setState({ password: e.target.value })}
           />
-          <CharacterSelect
-            onChange={e => this.setState({ selected: e.target.value })}
-          >
-            {list}
-          </CharacterSelect>
+          <label>
+            Character:
+            <CharacterSelect
+              onChange={e => this.setState({ selected: e.target.value })}
+            >
+              {list}
+            </CharacterSelect>
+          </label>
           <ResultsDiv>
-            <label>{characterFromPassword}</label>
+            <label>`{characterFromPassword}`</label>
           </ResultsDiv>
         </WrapperForm>
       </div>
