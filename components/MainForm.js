@@ -6,11 +6,7 @@ const Body = styled.body`
   font-size: 1.5em;
   border-radius: 5px;
   text-align: center;  
-  font-family: verdana
-`
-
-const WrapperForm = styled.form`
-  /* position: absolute; */
+  font-family: verdana;
   display: grid;
   grid-template-rows: repeat(1, 1fr);
   grid-template-columns: repeat(1, 1fr);
@@ -20,7 +16,7 @@ const WrapperForm = styled.form`
 const CharacterInput = styled.input.attrs({
   // we can define static props
   type: 'password',
-  placeholder: 'Pasta password here',
+  placeholder: 'Pasta your password here',
 
   // or we can define dynamic ones
   margin: props => props.size || '10px',
@@ -30,9 +26,6 @@ const CharacterInput = styled.input.attrs({
   font-size: 3em;
   border: 2px solid purple;
   border-radius: 5px;
-  // position: absolute;
-  // top: 25%;
-  // left: 25%;
 
   /* here we use the dynamically computed props */
   margin: ${props => props.margin};
@@ -44,14 +37,10 @@ const CharacterSelect = styled.select`
   border: 2px solid purple;
   border-radius: 5px;
   justify-self: start;
-  /* position: absolute;
-  top: 35%;
-  left: 26%; */
 `
 
 const CharacterLabel = styled.label`
   font-size: 1.5em;
-  /* margin: 10px 200px 10px 200px; */
   padding: 10px;
   border: 10px;
   justify-self: end;
@@ -62,19 +51,12 @@ const SelectDiv = styled.div`
   grid-template-columns: repeat(2, 1fr);
   color: purple;
   align-items: center
-  /* font-size: 1.5em; */
-  /* margin: 10px 200px 10px 200px; */
-  /* padding: 10px; */
-  /* border: 10px; */
 `
 
 const ResultsDiv = styled.div`
   font-size: 10em;
   border-radius: 5px;
   text-align: center;
-  /* position: absolute;
-  top: 15%;
-  left: 26%; */
 `
 
 class MainForm extends React.Component {
@@ -123,23 +105,21 @@ class MainForm extends React.Component {
           <p>But I also get quite annoyed counting out my password onto my fingers when prompted to give characters 18, 7 and 12 from my password.</p>
           <p>I put this together for just that, paste or type in your password then pick out your character you need.</p>
         </div>
-        <WrapperForm>
-          <CharacterInput
-            value={this.state.password}
-            onChange={e => this.setState({ password: e.target.value })}
-          />
-          <SelectDiv>
-            <CharacterLabel>Character:</CharacterLabel>
-            <CharacterSelect
-              onChange={e => this.setState({ selected: e.target.value })}
-            >
-              {list}
-            </CharacterSelect>
-          </SelectDiv>
-        </WrapperForm>
-          <ResultsDiv>
-            <label>`{characterFromPassword}`</label>
-          </ResultsDiv>
+        <CharacterInput
+          value={this.state.password}
+          onChange={e => this.setState({ password: e.target.value })}
+        />
+        <SelectDiv>
+          <CharacterLabel>Character:</CharacterLabel>
+          <CharacterSelect
+            onChange={e => this.setState({ selected: e.target.value })}
+          >
+            {list}
+          </CharacterSelect>
+        </SelectDiv>
+        <ResultsDiv>
+          <label>`{characterFromPassword}`</label>
+        </ResultsDiv>
       </Body>
     )
   }
