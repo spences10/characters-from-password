@@ -5,7 +5,8 @@ const WrapperForm = styled.form`
   /* position: absolute; */
   display: grid;
   grid-template-rows: repeat(1, 1fr);
-  grid-template-columns: repeat(1, 1fr)
+  grid-template-columns: repeat(1, 1fr);
+  grid-row-gap: 2em;
 `
 
 const CharacterInput = styled.input.attrs({
@@ -20,7 +21,7 @@ const CharacterInput = styled.input.attrs({
   color: purple;
   font-size: 3em;
   border: 2px solid purple;
-  border-radius: 3px;
+  border-radius: 5px;
   // position: absolute;
   // top: 25%;
   // left: 25%;
@@ -34,7 +35,9 @@ const CharacterSelect = styled.select`
   color: purple;
   font-size: 1.5em;
   border: 2px solid purple;
-  border-radius: 3px;
+  border-radius: 5px;
+  margin: 10px 200px 10px 200px;
+  padding: 10px;
   /* position: absolute;
   top: 35%;
   left: 26%; */
@@ -43,7 +46,8 @@ const CharacterSelect = styled.select`
 const ResultsDiv = styled.div`
   color: purple;
   font-size: 5em;
-  border-radius: 3px;
+  border-radius: 5px;
+  text-align: center;
   /* position: absolute;
   top: 15%;
   left: 26%; */
