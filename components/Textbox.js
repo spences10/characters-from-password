@@ -10,12 +10,9 @@ const Input = styled.input.attrs({
   padding: props => props.size || '10px'
 })`
   color: palevioletred;
-  font-size: 3em;
+  font-size: 2em;
   border: 2px solid palevioletred;
   border-radius: 3px;
-  position: relative;
-  top: 25%;
-  left: 25%;
 
   /* here we use the dynamically computed props */
   margin: ${props => props.margin};
@@ -43,7 +40,7 @@ class Textbox extends React.Component {
     return (
       <div>
         <Input
-          placeholder="Pasta password here"
+          placeholder="Paste password here"
           size="10px"
           onChange={this.update.bind(this)}
         />

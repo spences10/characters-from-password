@@ -1,49 +1,80 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Body = styled.body`
+const Container = styled.div`
+//for mobile
   color: purple;
-  font-size: 1.5em;
   border-radius: 5px;
   text-align: center;  
   font-family: verdana;
-  display: grid;
-  grid-template-rows: repeat(1, 1fr);
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 2em;
+  font-size: 2em;
+
+//for tablets
+  @media only screen and (max-width: 425px) and (min-width: 768px) {
+    font-size: 1.5em;
+  }
+
+//for desktops
+  @media only screen and (min-width: 768px) {
+    font-size:1m;
+  }  
 `
 
 const CharacterInput = styled.input.attrs({
   // we can define static props
   type: 'password',
-  placeholder: 'Pasta your password here',
+  placeholder: 'Paste your password here',
 
   // or we can define dynamic ones
   margin: props => props.size || '10px',
-  padding: props => props.size || '10px'
+  padding: props => props.size || '10px',
 })`
+//for mobile phones
   color: purple;
-  font-size: 3em;
+  font-size: 2em;
   border: 2px solid purple;
   border-radius: 5px;
+  
+  //there's probably a better way of doing this XD 
+  //border-width hard coded
+  width: calc(100% - ${props => props.margin} - ${props => props.margin} - ${props => props.padding} - ${props => props.padding} - 4px);
 
   /* here we use the dynamically computed props */
   margin: ${props => props.margin};
   padding: ${props => props.padding};
+
+//for tablets
+  @media only screen and (max-width: 425px) and (min-width: 768px) {
+    font-size: 1.5em;
+  }
+
+//for desktops
+  @media only screen and (min-width: 768px) {
+    font-size: 1em;
+  }  
 `
 
 const CharacterSelect = styled.select`
-  font-size: 1.5em;
   border: 2px solid purple;
   border-radius: 5px;
   justify-self: start;
+  font-size: 1.5em;
+
+//for tablets
+/*  @media only screen and (max-width: 425px) and (min-width: 768px) {
+    font-size: 1.5em;
+  }*/
+
+//for desktops
+  @media only screen and (min-width: 768px) {
+    font-size: 2em;
+  }  
 `
 
 const CharacterLabel = styled.label`
-  font-size: 1.5em;
   padding: 10px;
   border: 10px;
-  justify-self: end;
+  justify-self: end; 
 `
 
 const SelectDiv = styled.div`
@@ -54,9 +85,19 @@ const SelectDiv = styled.div`
 `
 
 const ResultsDiv = styled.div`
-  font-size: 10em;
   border-radius: 5px;
   text-align: center;
+  font-size: 6em;
+
+//for tablets
+  /*@media only screen and (max-width: 425px) and (min-width: 768px) {
+    font-size: 6em;
+  }*/
+
+//for desktops
+  @media only screen and (min-width: 768px) {
+    font-size: 10em;
+  }  
 `
 
 class MainForm extends React.Component {
@@ -99,7 +140,7 @@ class MainForm extends React.Component {
     // characterFromPassword = characterFromPassword.charAt(this.state.selected)
 
     return (
-      <Body>
+      <Container>
         <div>
           <p>I use strong passwords, "correct battery horse staple" ftw!</p> 
           <p>But I also get quite annoyed counting out my password onto my fingers when prompted to give characters 18, 7 and 12 from my password.</p>
@@ -120,7 +161,7 @@ class MainForm extends React.Component {
         <ResultsDiv>
           <label>`{characterFromPassword}`</label>
         </ResultsDiv>
-      </Body>
+      </Container>
     )
   }
 }
