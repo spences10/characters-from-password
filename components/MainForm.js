@@ -23,7 +23,8 @@ const Container = styled.div`
 const CharacterInput = styled.input.attrs({
   // we can define static props
   type: 'password',
-  placeholder: 'Paste your password here',
+  //Yes Pasta is intentional!
+  placeholder: 'Pasta your password here',
 
   // or we can define dynamic ones
   margin: props => props.size || '10px',
