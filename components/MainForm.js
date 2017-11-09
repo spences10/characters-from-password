@@ -123,7 +123,7 @@ class MainForm extends React.Component {
       //   )
       // } else {
       return (
-        <option key={index} letter={item}>
+        <option key={index} letter={item} style={{fontSize:0.5 + 'em'}}>
           {index + 1}
         </option>
       )
