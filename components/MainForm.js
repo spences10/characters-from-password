@@ -2,19 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-//for mobile
+  /* for mobile */
   color: purple;
   border-radius: 5px;
   text-align: center;  
   font-family: verdana;
   font-size: 2em;
 
-//for tablets
+  /* for tablets */
   @media only screen and (max-width: 425px) and (min-width: 768px) {
     font-size: 1.5em;
   }
 
-//for desktops
+  /* for desktops */
   @media only screen and (min-width: 768px) {
     font-size:1m;
   }  
@@ -30,26 +30,26 @@ const CharacterInput = styled.input.attrs({
   margin: props => props.size || '10px',
   padding: props => props.size || '10px',
 })`
-//for mobile phones
+  // for mobile phones
   color: purple;
   font-size: 2em;
   border: 2px solid purple;
   border-radius: 5px;
   
-  //there's probably a better way of doing this XD 
-  //border-width hard coded
+  // there's probably a better way of doing this XD 
+  // border-width hard coded
   width: calc(100% - ${props => props.margin} - ${props => props.margin} - ${props => props.padding} - ${props => props.padding} - 4px);
 
   /* here we use the dynamically computed props */
   margin: ${props => props.margin};
   padding: ${props => props.padding};
 
-//for tablets
+  // for tablets
   @media only screen and (max-width: 425px) and (min-width: 768px) {
     font-size: 1.5em;
   }
 
-//for desktops
+  // for desktops
   @media only screen and (min-width: 768px) {
     font-size: 1em;
   }  
@@ -61,12 +61,12 @@ const CharacterSelect = styled.select`
   justify-self: start;
   font-size: 1.5em;
 
-//for tablets
-/*  @media only screen and (max-width: 425px) and (min-width: 768px) {
+  /* for tablets */
+  /* @media only screen and (max-width: 425px) and (min-width: 768px) {
     font-size: 1.5em;
   }*/
 
-//for desktops
+  /* for desktops */
   @media only screen and (min-width: 768px) {
     font-size: 2em;
   }  
@@ -90,12 +90,12 @@ const ResultsDiv = styled.div`
   text-align: center;
   font-size: 6em;
 
-//for tablets
+  /* for tablets */
   /*@media only screen and (max-width: 425px) and (min-width: 768px) {
     font-size: 6em;
   }*/
 
-//for desktops
+  /* for desktops */
   @media only screen and (min-width: 768px) {
     font-size: 10em;
   }  
