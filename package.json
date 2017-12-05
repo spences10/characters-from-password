@@ -10,7 +10,7 @@
     "format": "prettier es5 --no-semi --single-quote --write **/*.js"
   },
   "dependencies": {
-    "next": "4.1.4",
+    "next": "4.2.0",
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "styled-components": "2.2.4"
