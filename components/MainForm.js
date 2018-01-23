@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { getFunName } from '../helpers'
+
 const Container = styled.div`
   /* for mobile */
   color: purple;
   border-radius: 5px;
-  text-align: center;  
+  text-align: center;
   font-family: verdana;
   font-size: 2em;
 
@@ -16,8 +18,8 @@ const Container = styled.div`
 
   /* for desktops */
   @media only screen and (min-width: 768px) {
-    font-size:1m;
-  }  
+    font-size: 1m;
+  }
 `
 
 const CharacterInput = styled.input.attrs({
@@ -28,17 +30,20 @@ const CharacterInput = styled.input.attrs({
 
   // or we can define dynamic ones
   margin: props => props.size || '10px',
-  padding: props => props.size || '10px',
+  padding: props => props.size || '10px'
 })`
   // for mobile phones
   color: purple;
   font-size: 2em;
   border: 2px solid purple;
   border-radius: 5px;
-  
-  // there's probably a better way of doing this XD 
+
+  // there's probably a better way of doing this XD
   // border-width hard coded
-  width: calc(100% - ${props => props.margin} - ${props => props.margin} - ${props => props.padding} - ${props => props.padding} - 4px);
+  width: calc(
+    100% - ${props => props.margin} - ${props => props.margin} -
+      ${props => props.padding} - ${props => props.padding} - 4px
+  );
 
   /* here we use the dynamically computed props */
   margin: ${props => props.margin};
@@ -52,7 +57,7 @@ const CharacterInput = styled.input.attrs({
   // for desktops
   @media only screen and (min-width: 768px) {
     font-size: 1em;
-  }  
+  }
 `
 
 const CharacterSelect = styled.select`
@@ -69,20 +74,20 @@ const CharacterSelect = styled.select`
   /* for desktops */
   @media only screen and (min-width: 768px) {
     font-size: 2em;
-  }  
+  }
 `
 
 const CharacterLabel = styled.label`
   padding: 10px;
   border: 10px;
-  justify-self: end; 
+  justify-self: end;
 `
 
 const SelectDiv = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   color: purple;
-  align-items: center
+  align-items: center;
 `
 
 const ResultsDiv = styled.div`
@@ -98,7 +103,7 @@ const ResultsDiv = styled.div`
   /* for desktops */
   @media only screen and (min-width: 768px) {
     font-size: 10em;
-  }  
+  }
 `
 
 class MainForm extends React.Component {
@@ -124,7 +129,11 @@ class MainForm extends React.Component {
       //   )
       // } else {
       return (
-        <option key={index} letter={item} style={{fontSize:0.33 + 'em'}}>
+        <option
+          key={index}
+          letter={item}
+          style={{ fontSize: 0.33 + 'em' }}
+        >
           {index + 1}
         </option>
       )
@@ -143,9 +152,19 @@ class MainForm extends React.Component {
     return (
       <Container>
         <div>
-          <p>I use strong passwords, "correct battery horse staple" ftw!</p> 
-          <p>But I also get quite annoyed counting out my password onto my fingers when prompted to give characters 18, 7 and 12 from my password.</p>
-          <p>I put this together for just that, paste or type in your password then pick out your character you need.</p>
+          <p>
+            I use strong passwords, "correct battery horse staple"
+            ftw!
+          </p>
+          <p>
+            But I also get quite annoyed counting out my password onto
+            my fingers when prompted to give characters 18, 7 and 12
+            from my password.
+          </p>
+          <p>
+            I put this together for just that, paste or type in your
+            password then pick out your character you need.
+          </p>
         </div>
         <CharacterInput
           value={this.state.password}
@@ -154,7 +173,9 @@ class MainForm extends React.Component {
         <SelectDiv>
           <CharacterLabel>Character:</CharacterLabel>
           <CharacterSelect
-            onChange={e => this.setState({ selected: e.target.value })}
+            onChange={e =>
+              this.setState({ selected: e.target.value })
+            }
           >
             {list}
           </CharacterSelect>
@@ -162,6 +183,7 @@ class MainForm extends React.Component {
         <ResultsDiv>
           <label>`{characterFromPassword}`</label>
         </ResultsDiv>
+        <div>{getFunName()}</div>
       </Container>
     )
   }
