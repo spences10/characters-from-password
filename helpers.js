@@ -108,5 +108,7 @@ export function getFunName() {
     'data'
   ]
 
-  return ` ${rando(adjectives)} ${rando(adjectives)} ${rando(nouns)}`
+  return `${rando(verbs)} ${rando(adjectives)} ${rando(
+    adjectives
+  )} ${rando(nouns)}`
 }
