@@ -12,11 +12,11 @@ const Container = styled.div`
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
-    'p p p p p p p p p p p p'
-    't t t t t t t t t t t t'
-    's s s s s s s s s s s s'
-    'r r r r r r r r r r r r'
-    'n n n n n n n n n n n n';
+    '. . p p p p p p p p . .'
+    '. . t t t t t t t t . .'
+    '. . s s s s s s s s . .'
+    '. . r r r r r r r r . .'
+    '. . n n n n n n n n . .';
 
   text-align: center;
 
@@ -24,18 +24,44 @@ const Container = styled.div`
     background: goldenrod;
   `};
   ${media.desktop`
-      background: dodgerblue;
+    background: dodgerblue;
   `};
   ${media.tablet`
-      background: mediumseagreen;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      '. p p p p p p p .'
+      '. t t t t t t t .'
+      '. s s s s s s s .'
+      '. r r r r r r r .'
+      '. n n n n n n n .';
+    background: mediumseagreen;
   `};
   ${media.phone`
-      background: palevioletred;
+    margin: 0rem;
+    padding: 0rem;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      '. p p p p p p p .'
+      't t t t t t t t t'
+      '. s s s s s s s .'
+      '. r r r r r r r .'
+      '. n n n n n n n .';
+    background: palevioletred;
   `};
 `
 
 const Preamble = styled.div`
   grid-area: p;
+`
+
+const StyledLink = styled.a.attrs({
+  target: '_blank',
+  rel: 'noopener',
+  href: props => props.url
+})`
+  color: palevioletred;
 `
 
 const CharacterInput = styled.input.attrs({
@@ -78,10 +104,18 @@ const CharacterInput = styled.input.attrs({
 `
 
 const CharacterSelect = styled.select`
+  margin: 1rem;
+  padding: 1rem;
   border: 2px solid purple;
   border-radius: 5px;
   justify-self: start;
   font-size: 1.5em;
+
+  height: 30px;
+  font-size: 10pt;
+  width: 199px;
+  margin-left: 13px;
+  text-overflow: '';
 
   /* for tablets */
   /* @media only screen and (max-width: 425px) and (min-width: 768px) {
@@ -89,9 +123,9 @@ const CharacterSelect = styled.select`
   }*/
 
   /* for desktops */
-  @media only screen and (min-width: 768px) {
+  /* @media only screen and (min-width: 768px) {
     font-size: 2em;
-  }
+  } */
 `
 
 const CharacterLabel = styled.label`
@@ -177,7 +211,11 @@ class MainForm extends React.Component {
       <Container>
         <Preamble>
           <p>
-            I use strong passwords, "correct battery horse staple"
+            <h1>Password Character Picker</h1>
+            I use strong passwords,{' '}
+            <StyledLink url={'https://xkcd.com/936/'}>
+              "correct battery horse staple"
+            </StyledLink>{' '}
             ftw!
           </p>
           <p>
