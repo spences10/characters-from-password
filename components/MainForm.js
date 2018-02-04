@@ -27,11 +27,13 @@ const Container = styled.div`
     background: dodgerblue;
   `};
   ${media.tablet`
+    margin: 0rem;
+    padding: 0rem;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: auto;
     grid-template-areas:
       '. p p p p p p p .'
-      '. t t t t t t t .'
+      't t t t t t t t t'
       '. s s s s s s s .'
       '. r r r r r r r .'
       '. n n n n n n n .';
