@@ -1,25 +1,41 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { media } from '../theme/globalStyle'
 import { getFunName } from '../helpers'
 
 const Container = styled.div`
-  /* for mobile */
-  color: purple;
-  border-radius: 5px;
+  margin: 1rem;
+  padding: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    'p p p p p p p p p p p p'
+    't t t t t t t t t t t t'
+    's s s s s s s s s s s s'
+    'r r r r r r r r r r r r'
+    'n n n n n n n n n n n n';
+
   text-align: center;
-  font-family: verdana;
-  font-size: 2em;
 
-  /* for tablets */
-  @media only screen and (max-width: 425px) and (min-width: 768px) {
-    font-size: 1.5em;
-  }
+  ${media.giant`
+    background: goldenrod;
+  `};
+  ${media.desktop`
+      background: dodgerblue;
+  `};
+  ${media.tablet`
+      background: mediumseagreen;
+  `};
+  ${media.phone`
+      background: palevioletred;
+  `};
+`
 
-  /* for desktops */
-  @media only screen and (min-width: 768px) {
-    font-size: 1m;
-  }
+const Preamble = styled.div`
+  grid-area: p;
 `
 
 const CharacterInput = styled.input.attrs({
@@ -33,10 +49,11 @@ const CharacterInput = styled.input.attrs({
   padding: props => props.size || '10px'
 })`
   // for mobile phones
-  color: purple;
+  grid-area: t;
+  /* color: purple;
   font-size: 2em;
   border: 2px solid purple;
-  border-radius: 5px;
+  border-radius: 5px; */
 
   // there's probably a better way of doing this XD
   // border-width hard coded
@@ -84,13 +101,16 @@ const CharacterLabel = styled.label`
 `
 
 const SelectDiv = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-area: s;
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr); */
   color: purple;
   align-items: center;
 `
 
 const ResultsDiv = styled.div`
+  grid-area: r;
+
   border-radius: 5px;
   text-align: center;
   font-size: 6em;
@@ -104,6 +124,10 @@ const ResultsDiv = styled.div`
   @media only screen and (min-width: 768px) {
     font-size: 10em;
   }
+`
+
+const NewPassword = styled.div`
+  grid-area: n;
 `
 
 class MainForm extends React.Component {
@@ -151,7 +175,7 @@ class MainForm extends React.Component {
 
     return (
       <Container>
-        <div>
+        <Preamble>
           <p>
             I use strong passwords, "correct battery horse staple"
             ftw!
@@ -165,7 +189,7 @@ class MainForm extends React.Component {
             I put this together for just that, paste or type in your
             password then pick out your character you need.
           </p>
-        </div>
+        </Preamble>
         <CharacterInput
           value={this.state.password}
           onChange={e => this.setState({ password: e.target.value })}
@@ -183,7 +207,7 @@ class MainForm extends React.Component {
         <ResultsDiv>
           <label>`{characterFromPassword}`</label>
         </ResultsDiv>
-        <div>{getFunName()}</div>
+        <NewPassword>{getFunName()}</NewPassword>
       </Container>
     )
   }
