@@ -2,7 +2,7 @@ import styled, { injectGlobal, css } from 'styled-components'
 
 export const theme = {
   text: '#272727',
-  white: '#fff',
+  white: '#fafafa',
   dark: '#453463',
   light: '#755f9f',
   green: '#8ac3a9',
@@ -34,13 +34,13 @@ injectGlobal`
 
   body {
     margin: 0;
-    font-family: Roboto, georgia, serif;
+    font-family: 'Roboto', georgia, serif;
     word-wrap: break-word;
-    background-color: #fafafa;
+    background-color: ${props => props.theme.white}
   }
 
   h1 {
-    font-family: Open Sans;
+    font-family: 'Open Sans';
   }
 
   a {
