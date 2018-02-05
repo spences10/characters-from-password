@@ -1,7 +1,7 @@
 import styled, { injectGlobal, css } from 'styled-components'
 
 export const theme = {
-  text: '#272727',
+  black: '#272727',
   white: '#fafafa',
   dark: '#453463',
   light: '#755f9f',
