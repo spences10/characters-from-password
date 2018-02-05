@@ -63,7 +63,7 @@ const StyledLink = styled.a.attrs({
   rel: 'noopener',
   href: props => props.url
 })`
-  color: palevioletred;
+  color: ${props => props.theme.blue};
   &:hover {
     text-decoration: underline;
   }
@@ -82,8 +82,8 @@ const CharacterInput = styled.input.attrs({
   grid-area: t;
 
   color: ${props => props.theme.text};
-  border: 1px solid purple;
-  background-color: purple;
+  border: 1px solid ${props => props.theme.text};
+  background-color: ${props => props.theme.white};
   border-radius: 5px;
   text-align: center;
 `
@@ -131,6 +131,7 @@ const ResultsDiv = styled.div`
 
 const NewPassword = styled.div`
   grid-area: n;
+  font-size: 2rem;
 `
 
 class MainForm extends React.Component {
@@ -156,11 +157,7 @@ class MainForm extends React.Component {
       //   )
       // } else {
       return (
-        <option
-          key={index}
-          letter={item}
-          style={{ fontSize: 0.33 + 'em' }}
-        >
+        <option key={index} letter={item}>
           {index + 1}
         </option>
       )
