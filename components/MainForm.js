@@ -64,6 +64,9 @@ const StyledLink = styled.a.attrs({
   href: props => props.url
 })`
   color: palevioletred;
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 const CharacterInput = styled.input.attrs({
@@ -74,12 +77,14 @@ const CharacterInput = styled.input.attrs({
 })`
   margin: 0.5rem;
   padding: 0.5rem;
-  grid-area: t;
-  color: purple;
   font-size: 1rem;
-  border: 1px solid purple;
-  border-radius: 5px;
 
+  grid-area: t;
+
+  color: ${props => props.theme.text};
+  border: 1px solid purple;
+  background-color: purple;
+  border-radius: 5px;
   text-align: center;
 `
 
@@ -111,7 +116,7 @@ const ResultsDiv = styled.div`
 
   border-radius: 5px;
   text-align: center;
-  font-size: 6em;
+  font-size: 6rem;
 
   /* for tablets */
   /*@media only screen and (max-width: 425px) and (min-width: 768px) {
@@ -183,9 +188,8 @@ class MainForm extends React.Component {
             ftw!
           </p>
           <p>
-            But I also get quite annoyed counting out my password onto
-            my fingers when prompted to give characters 18, 7 and 12
-            from my password.
+            But I also get quite annoyed counting out characters 18, 7
+            and 12 from my password.
           </p>
           <p>
             I put this together for just that, paste or type in your
