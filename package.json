@@ -3,11 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "pages/index.js",
+  "now": {
+    "name": "cfromp"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "format": "prettier es5 --no-semi --single-quote --write **/*.js"
+    "format": "prettier es5 --no-semi --single-quote --write **/*.js",
+    "deploy": "now ",
+    "alias:dev": "now alias cfromp.now.sh",
+    "alias:prod": "now alias cfromp.scottspence.me"
   },
   "dependencies": {
     "next": "4.2.3",
@@ -20,13 +26,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/spences10/characters-from-password.git"
+    "url":
+      "git+https://github.com/spences10/characters-from-password.git"
   },
   "keywords": [],
-  "author": "Scott Spence <spences10apps@gmail.com> (https://blog.scottspence.me/)",
+  "author":
+    "Scott Spence <spences10apps@gmail.com> (https://blog.scottspence.me/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/spences10/characters-from-password/issues"
+    "url":
+      "https://github.com/spences10/characters-from-password/issues"
   },
-  "homepage": "https://github.com/spences10/characters-from-password#readme"
+  "homepage":
+    "https://github.com/spences10/characters-from-password#readme"
 }
