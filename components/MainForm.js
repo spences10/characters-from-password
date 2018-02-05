@@ -33,7 +33,7 @@ const Container = styled.div`
     grid-template-rows: auto;
     grid-template-areas:
       '. p p p p p p p .'
-      't t t t t t t t t'
+      '. t t t t t t t .'
       '. s s s s s s s .'
       '. r r r r r r r .'
       '. n n n n n n n .';
@@ -46,7 +46,7 @@ const Container = styled.div`
     grid-template-rows: auto;
     grid-template-areas:
       '. p p p p p p p .'
-      't t t t t t t t t'
+      '. t t t t t t t .'
       '. s s s s s s s .'
       '. r r r r r r r .'
       '. n n n n n n n .';
@@ -81,8 +81,10 @@ const CharacterInput = styled.input.attrs({
 
   grid-area: t;
 
-  color: ${props => props.theme.text};
-  border: 1px solid ${props => props.theme.text};
+  width: 100%;
+
+  color: ${props => props.theme.black};
+  border: 1px solid ${props => props.theme.black};
   background-color: ${props => props.theme.white};
   border-radius: 5px;
   text-align: center;
@@ -93,7 +95,7 @@ const CharacterSelect = styled.select`
   padding: 0rem 0.5rem;
   font-size: 1rem;
   height: 2rem;
-  border: 1px solid purple;
+  border: 1px solid ${props => props.theme.black};
   border-radius: 5px;
 `
 
@@ -101,6 +103,7 @@ const CharacterLabel = styled.label`
   padding: 10px;
   border: 10px;
   justify-self: end;
+  color: ${props => props.theme.black};
 `
 
 const SelectDiv = styled.div`
@@ -124,9 +127,9 @@ const ResultsDiv = styled.div`
   }*/
 
   /* for desktops */
-  @media only screen and (min-width: 768px) {
+  /* @media only screen and (min-width: 768px) {
     font-size: 10em;
-  }
+  } */
 `
 
 const NewPassword = styled.div`
@@ -208,7 +211,7 @@ class MainForm extends React.Component {
           </CharacterSelect>
         </SelectDiv>
         <ResultsDiv>
-          <label>`{characterFromPassword}`</label>
+          <label>"{characterFromPassword}"</label>
         </ResultsDiv>
         <NewPassword>{getFunName()}</NewPassword>
       </Container>
