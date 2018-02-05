@@ -36,7 +36,7 @@ injectGlobal`
     margin: 0;
     font-family: 'Roboto', georgia, serif;
     word-wrap: break-word;
-    background-color: ${props => props.theme.white}
+    background-color: #fafafa;
   }
 
   h1 {

@@ -96,6 +96,7 @@ const CharacterSelect = styled.select`
   font-size: 1rem;
   height: 2rem;
   border: 1px solid ${props => props.theme.black};
+  background-color: ${props => props.theme.white};
   border-radius: 5px;
 `
 
@@ -213,7 +214,7 @@ class MainForm extends React.Component {
         <ResultsDiv>
           <label>"{characterFromPassword}"</label>
         </ResultsDiv>
-        <NewPassword>{getFunName()}</NewPassword>
+        {/* <NewPassword>{getFunName()}</NewPassword> */}
       </Container>
     )
   }
