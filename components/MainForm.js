@@ -1,99 +1,126 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { media } from '../theme/globalStyle'
 import { getFunName } from '../helpers'
 
 const Container = styled.div`
-  /* for mobile */
-  color: purple;
-  border-radius: 5px;
+  margin: 1rem;
+  padding: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    '. . p p p p p p p p . .'
+    '. . t t t t t t t t . .'
+    '. . s s s s s s s s . .'
+    '. . r r r r r r r r . .'
+    '. . n n n n n n n n . .';
+
   text-align: center;
-  font-family: verdana;
-  font-size: 2em;
 
-  /* for tablets */
-  @media only screen and (max-width: 425px) and (min-width: 768px) {
-    font-size: 1.5em;
-  }
+  ${media.giant`
+    background: goldenrod;
+  `};
+  ${media.desktop`
+    background: dodgerblue;
+  `};
+  ${media.tablet`
+    margin: 0rem;
+    padding: 0rem;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      '. p p p p p p p .'
+      '. t t t t t t t .'
+      '. s s s s s s s .'
+      '. r r r r r r r .'
+      '. n n n n n n n .';
+    background: mediumseagreen;
+  `};
+  ${media.phone`
+    margin: 0rem;
+    padding: 0rem;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      '. p p p p p p p .'
+      '. t t t t t t t .'
+      '. s s s s s s s .'
+      '. r r r r r r r .'
+      '. n n n n n n n .';
+    background: palevioletred;
+  `};
+`
 
-  /* for desktops */
-  @media only screen and (min-width: 768px) {
-    font-size: 1m;
+const Preamble = styled.div`
+  grid-area: p;
+`
+
+const StyledLink = styled.a.attrs({
+  target: '_blank',
+  rel: 'noopener',
+  href: props => props.url
+})`
+  color: ${props => props.theme.blue};
+  &:hover {
+    text-decoration: underline;
   }
 `
 
 const CharacterInput = styled.input.attrs({
   // we can define static props
   type: 'password',
-  //Yes Pasta is intentional!
-  placeholder: 'Pasta your password here',
-
-  // or we can define dynamic ones
-  margin: props => props.size || '10px',
-  padding: props => props.size || '10px'
+  // Yes Pasta is intentional!
+  placeholder: 'Pasta your password here'
 })`
-  // for mobile phones
-  color: purple;
-  font-size: 2em;
-  border: 2px solid purple;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+
+  grid-area: t;
+
+  width: 100%;
+
+  color: ${props => props.theme.black};
+  border: 1px solid ${props => props.theme.black};
+  background-color: ${props => props.theme.white};
   border-radius: 5px;
-
-  // there's probably a better way of doing this XD
-  // border-width hard coded
-  width: calc(
-    100% - ${props => props.margin} - ${props => props.margin} -
-      ${props => props.padding} - ${props => props.padding} - 4px
-  );
-
-  /* here we use the dynamically computed props */
-  margin: ${props => props.margin};
-  padding: ${props => props.padding};
-
-  // for tablets
-  @media only screen and (max-width: 425px) and (min-width: 768px) {
-    font-size: 1.5em;
-  }
-
-  // for desktops
-  @media only screen and (min-width: 768px) {
-    font-size: 1em;
-  }
+  text-align: center;
 `
 
 const CharacterSelect = styled.select`
-  border: 2px solid purple;
+  margin: 0rem;
+  padding: 0rem 0.5rem;
+  font-size: 1rem;
+  height: 2rem;
+  border: 1px solid ${props => props.theme.black};
+  background-color: ${props => props.theme.white};
   border-radius: 5px;
-  justify-self: start;
-  font-size: 1.5em;
-
-  /* for tablets */
-  /* @media only screen and (max-width: 425px) and (min-width: 768px) {
-    font-size: 1.5em;
-  }*/
-
-  /* for desktops */
-  @media only screen and (min-width: 768px) {
-    font-size: 2em;
-  }
 `
 
 const CharacterLabel = styled.label`
   padding: 10px;
   border: 10px;
   justify-self: end;
+  color: ${props => props.theme.black};
 `
 
 const SelectDiv = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-area: s;
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr); */
   color: purple;
   align-items: center;
 `
 
 const ResultsDiv = styled.div`
+  grid-area: r;
+
   border-radius: 5px;
   text-align: center;
-  font-size: 6em;
+  font-size: 6rem;
 
   /* for tablets */
   /*@media only screen and (max-width: 425px) and (min-width: 768px) {
@@ -101,9 +128,14 @@ const ResultsDiv = styled.div`
   }*/
 
   /* for desktops */
-  @media only screen and (min-width: 768px) {
+  /* @media only screen and (min-width: 768px) {
     font-size: 10em;
-  }
+  } */
+`
+
+const NewPassword = styled.div`
+  grid-area: n;
+  font-size: 2rem;
 `
 
 class MainForm extends React.Component {
@@ -129,11 +161,7 @@ class MainForm extends React.Component {
       //   )
       // } else {
       return (
-        <option
-          key={index}
-          letter={item}
-          style={{ fontSize: 0.33 + 'em' }}
-        >
+        <option key={index} letter={item}>
           {index + 1}
         </option>
       )
@@ -151,21 +179,24 @@ class MainForm extends React.Component {
 
     return (
       <Container>
-        <div>
+        <Preamble>
           <p>
-            I use strong passwords, "correct battery horse staple"
+            <h1>Password Character Picker</h1>
+            I use strong passwords,{' '}
+            <StyledLink url={'https://xkcd.com/936/'}>
+              "correct battery horse staple"
+            </StyledLink>{' '}
             ftw!
           </p>
           <p>
-            But I also get quite annoyed counting out my password onto
-            my fingers when prompted to give characters 18, 7 and 12
-            from my password.
+            But I also get quite annoyed counting out characters 18, 7
+            and 12 from my password.
           </p>
           <p>
             I put this together for just that, paste or type in your
             password then pick out your character you need.
           </p>
-        </div>
+        </Preamble>
         <CharacterInput
           value={this.state.password}
           onChange={e => this.setState({ password: e.target.value })}
@@ -181,9 +212,9 @@ class MainForm extends React.Component {
           </CharacterSelect>
         </SelectDiv>
         <ResultsDiv>
-          <label>`{characterFromPassword}`</label>
+          <label>"{characterFromPassword}"</label>
         </ResultsDiv>
-        <div>{getFunName()}</div>
+        {/* <NewPassword>{getFunName()}</NewPassword> */}
       </Container>
     )
   }

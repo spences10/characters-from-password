@@ -1,4 +1,11 @@
 import React from 'react'
-import MainForm from '../components/MainForm'
+import { ThemeProvider } from 'styled-components'
 
-export default () => <MainForm />
+import MainForm from '../components/MainForm'
+import { theme } from '../theme/globalStyle'
+
+export default () => (
+  <ThemeProvider theme={theme}>
+    <MainForm />
+  </ThemeProvider>
+)
