@@ -69,65 +69,27 @@ const StyledLink = styled.a.attrs({
 const CharacterInput = styled.input.attrs({
   // we can define static props
   type: 'password',
-  //Yes Pasta is intentional!
-  placeholder: 'Pasta your password here',
-
-  // or we can define dynamic ones
-  margin: props => props.size || '10px',
-  padding: props => props.size || '10px'
+  // Yes Pasta is intentional!
+  placeholder: 'Pasta your password here'
 })`
-  // for mobile phones
+  margin: 0.5rem;
+  padding: 0.5rem;
   grid-area: t;
-  /* color: purple;
-  font-size: 2em;
-  border: 2px solid purple;
-  border-radius: 5px; */
+  color: purple;
+  font-size: 1rem;
+  border: 1px solid purple;
+  border-radius: 5px;
 
-  // there's probably a better way of doing this XD
-  // border-width hard coded
-  width: calc(
-    100% - ${props => props.margin} - ${props => props.margin} -
-      ${props => props.padding} - ${props => props.padding} - 4px
-  );
-
-  /* here we use the dynamically computed props */
-  margin: ${props => props.margin};
-  padding: ${props => props.padding};
-
-  // for tablets
-  @media only screen and (max-width: 425px) and (min-width: 768px) {
-    font-size: 1.5em;
-  }
-
-  // for desktops
-  @media only screen and (min-width: 768px) {
-    font-size: 1em;
-  }
+  text-align: center;
 `
 
 const CharacterSelect = styled.select`
-  margin: 1rem;
-  padding: 1rem;
-  border: 2px solid purple;
+  margin: 0rem;
+  padding: 0rem 0.5rem;
+  font-size: 1rem;
+  height: 2rem;
+  border: 1px solid purple;
   border-radius: 5px;
-  justify-self: start;
-  font-size: 1.5em;
-
-  height: 30px;
-  font-size: 10pt;
-  width: 199px;
-  margin-left: 13px;
-  text-overflow: '';
-
-  /* for tablets */
-  /* @media only screen and (max-width: 425px) and (min-width: 768px) {
-    font-size: 1.5em;
-  }*/
-
-  /* for desktops */
-  /* @media only screen and (min-width: 768px) {
-    font-size: 2em;
-  } */
 `
 
 const CharacterLabel = styled.label`
