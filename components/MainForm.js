@@ -21,10 +21,10 @@ const Container = styled.div`
   text-align: center;
 
   ${media.giant`
-    background: goldenrod;
+    /* background: goldenrod; */
   `};
   ${media.desktop`
-    background: dodgerblue;
+    /* background: dodgerblue; */
   `};
   ${media.tablet`
     margin: 0rem;
@@ -37,7 +37,7 @@ const Container = styled.div`
       '. s s s s s s s .'
       '. r r r r r r r .'
       '. n n n n n n n .';
-    background: mediumseagreen;
+    /* background: mediumseagreen; */
   `};
   ${media.phone`
     margin: 0rem;
@@ -50,7 +50,7 @@ const Container = styled.div`
       '. s s s s s s s .'
       '. r r r r r r r .'
       '. n n n n n n n .';
-    background: palevioletred;
+    /* background: palevioletred; */
   `};
 `
 
