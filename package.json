@@ -20,24 +20,20 @@
     "next": "5.0.0",
     "react": "16.2.0",
     "react-dom": "16.2.0",
-    "styled-components": "3.2.0"
+    "styled-components": "3.2.1"
   },
   "devDependencies": {
     "prettier": "1.11.1"
   },
   "repository": {
     "type": "git",
-    "url":
-      "git+https://github.com/spences10/characters-from-password.git"
+    "url": "git+https://github.com/spences10/characters-from-password.git"
   },
   "keywords": [],
-  "author":
-    "Scott Spence <spences10apps@gmail.com> (https://blog.scottspence.me/)",
+  "author": "Scott Spence <spences10apps@gmail.com> (https://blog.scottspence.me/)",
   "license": "MIT",
   "bugs": {
-    "url":
-      "https://github.com/spences10/characters-from-password/issues"
+    "url": "https://github.com/spences10/characters-from-password/issues"
   },
-  "homepage":
-    "https://github.com/spences10/characters-from-password#readme"
+  "homepage": "https://github.com/spences10/characters-from-password#readme"
 }
