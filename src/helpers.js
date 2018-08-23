@@ -1,5 +1,13 @@
+import hash from 'sha1'
+
 export function rando(arr) {
   return arr[Math.floor(Math.random() * arr.length)]
+}
+
+//
+export function sha1(message) {
+  // E5F4765BAFAF188C737271B4CF7574633F0
+  return hash(message)
 }
 
 export function getFunName() {
