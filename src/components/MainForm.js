@@ -18,7 +18,8 @@ const Container = styled.div`
     '. . t t t t t t t t . .'
     '. . s s s s s s s s . .'
     '. . r r r r r r r r . .'
-    '. . n n n n n n n n . .';
+    '. . n n n n n n n n . .'
+    '. . h h h h h h h h . .';
 
   text-align: center;
 
@@ -38,7 +39,8 @@ const Container = styled.div`
       '. t t t t t t t .'
       '. s s s s s s s .'
       '. r r r r r r r .'
-      '. n n n n n n n .';
+      '. n n n n n n n .'
+      '. h h h h h h h .';
     /* background: mediumseagreen; */
   `};
   ${media.phone`
@@ -51,7 +53,8 @@ const Container = styled.div`
       '. t t t t t t t .'
       '. s s s s s s s .'
       '. r r r r r r r .'
-      '. n n n n n n n .';
+      '. n n n n n n n .'
+      '. h h h h h h h .';
     /* background: palevioletred; */
   `};
 `
@@ -111,9 +114,9 @@ const CharacterLabel = styled.label`
 
 const SelectDiv = styled.div`
   grid-area: s;
-  /* display: grid;
-  grid-template-columns: repeat(2, 1fr); */
-  color: purple;
+  // display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  */color: purple;
   align-items: center;
 `
 
@@ -139,6 +142,10 @@ const ResultsDiv = styled.div`
 //   grid-area: n;
 //   font-size: 2rem;
 // `
+
+const HIBPWrapper = styled.div`
+  grid-area: h;
+`
 
 class MainForm extends React.Component {
   state = {
@@ -217,7 +224,9 @@ class MainForm extends React.Component {
           <label>"{characterFromPassword}"</label>
         </ResultsDiv>
         {/* <NewPassword>{getFunName()}</NewPassword> */}
-        <HaveIBeenPwned password={this.state.password} />
+        <HIBPWrapper>
+          <HaveIBeenPwned password={this.state.password} />
+        </HIBPWrapper>
       </Container>
     )
   }
