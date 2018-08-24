@@ -33,4 +33,14 @@ that fist five chars. Then you need to check the remainder
 The number after the colon is the amount of time it has been found in
 password dumps.
 
+# Further reading
+
+https://haveibeenpwned.com/API/v2#PwnedPasswords
+https://haveibeenpwned.com/Passwords
+https://www.troyhunt.com/ive-just-launched-pwned-passwords-version-2/
+
+## Related
+
+https://passwordsecurity.info/
+
 ["correct battery horse staple"]: https://xkcd.com/936/
