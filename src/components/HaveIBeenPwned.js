@@ -1,16 +1,17 @@
-import React from 'react'
-import hash from 'sha1'
+import React from 'react';
+import hash from 'sha1';
+
+import { Dump } from '../helpers';
 
 class HaveIBeenPwned extends React.Component {
   state = {
     sha1: null,
     firstFiveHashChars: '',
     restHashChars: ''
-  }
+  };
 
-  componentDidUpdate() {
-    this.setState({ sha1: hash(this.props.password) })
-  }
+  componentDidUpdate() {}
+
   componentDidMount() {}
 
   componentWillReceiveProps() {}
@@ -19,10 +20,11 @@ class HaveIBeenPwned extends React.Component {
     return (
       <React.Fragment>
         <p>{this.sha1}</p>
+        <Dump props={this.props.password} />
         {/* <p>{hash(this.props.password)}</p> */}
       </React.Fragment>
-    )
+    );
   }
 }
 
-export default HaveIBeenPwned
+export default HaveIBeenPwned;
