@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import HaveIBeenPwned from './HaveIBeenPwned'
+
 import { media } from '../theme/globalStyle'
-import { getFunName } from '../helpers'
+// import { getFunName } from '../helpers'
 
 const Container = styled.div`
   margin: 1rem;
@@ -72,7 +74,7 @@ const StyledLink = styled.a.attrs({
 const CharacterInput = styled.input.attrs({
   // we can define static props
   type: 'password',
-  // Yes Pasta is intentional!
+  // Yes Pasta is intentional!!!!1!
   placeholder: 'Pasta your password here'
 })`
   margin: 0.5rem;
@@ -133,10 +135,10 @@ const ResultsDiv = styled.div`
   } */
 `
 
-const NewPassword = styled.div`
-  grid-area: n;
-  font-size: 2rem;
-`
+// const NewPassword = styled.div`
+//   grid-area: n;
+//   font-size: 2rem;
+// `
 
 class MainForm extends React.Component {
   state = {
@@ -180,8 +182,8 @@ class MainForm extends React.Component {
     return (
       <Container>
         <Preamble>
+          <h1>Password Character Picker</h1>
           <p>
-            <h1>Password Character Picker</h1>
             I use strong passwords,{' '}
             <StyledLink url={'https://xkcd.com/936/'}>
               "correct battery horse staple"
@@ -215,6 +217,7 @@ class MainForm extends React.Component {
           <label>"{characterFromPassword}"</label>
         </ResultsDiv>
         {/* <NewPassword>{getFunName()}</NewPassword> */}
+        <HaveIBeenPwned password={this.state.password} />
       </Container>
     )
   }
