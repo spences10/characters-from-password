@@ -4,23 +4,25 @@ import hash from 'sha1';
 import { Dump } from '../helpers';
 
 class HaveIBeenPwned extends React.Component {
-  state = {
-    sha1: null,
-    firstFiveHashChars: '',
-    restHashChars: ''
-  };
-
-  componentDidUpdate() {}
-
-  componentDidMount() {}
-
-  componentWillReceiveProps() {}
+  getHash(stringToHash) {
+    return hash(stringToHash);
+  }
 
   render() {
     return (
       <React.Fragment>
-        <p>{this.sha1}</p>
-        <Dump props={this.props.password} />
+        <Dump
+          password={this.props.password}
+          sha1={this.getHash(this.props.password)}
+          firstFive={this.getHash(this.props.password).substring(
+            0,
+            5
+          )}
+          rest={this.getHash(this.props.password).slice(
+            5,
+            this.getHash(this.props.password).length
+          )}
+        />
         {/* <p>{hash(this.props.password)}</p> */}
       </React.Fragment>
     );
