@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import HaveIBeenPwned from './HaveIBeenPwned';
+// import HaveIBeenPwned from './HaveIBeenPwned'
 
-import { media } from '../theme/globalStyle';
+import { media } from '../theme/globalStyle'
 // import { getFunName } from '../helpers'
 
 const Container = styled.div`
@@ -57,11 +57,11 @@ const Container = styled.div`
       '. h h h h h h h .';
     /* background: palevioletred; */
   `};
-`;
+`
 
 const Preamble = styled.div`
   grid-area: p;
-`;
+`
 
 const StyledLink = styled.a.attrs({
   target: '_blank',
@@ -72,7 +72,7 @@ const StyledLink = styled.a.attrs({
   &:hover {
     text-decoration: underline;
   }
-`;
+`
 
 const CharacterInput = styled.input.attrs({
   // we can define static props
@@ -93,7 +93,7 @@ const CharacterInput = styled.input.attrs({
   background-color: ${props => props.theme.white};
   border-radius: 5px;
   text-align: center;
-`;
+`
 
 const CharacterSelect = styled.select`
   margin: 0rem;
@@ -103,14 +103,14 @@ const CharacterSelect = styled.select`
   border: 1px solid ${props => props.theme.black};
   background-color: ${props => props.theme.white};
   border-radius: 5px;
-`;
+`
 
 const CharacterLabel = styled.label`
   padding: 10px;
   border: 10px;
   justify-self: end;
   color: ${props => props.theme.black};
-`;
+`
 
 const SelectDiv = styled.div`
   grid-area: s;
@@ -118,7 +118,7 @@ const SelectDiv = styled.div`
   grid-template-columns: repeat(2, 1fr);
   */color: purple;
   align-items: center;
-`;
+`
 
 const ResultsDiv = styled.div`
   grid-area: r;
@@ -136,7 +136,7 @@ const ResultsDiv = styled.div`
   /* @media only screen and (min-width: 768px) {
     font-size: 10em;
   } */
-`;
+`
 
 // const NewPassword = styled.div`
 //   grid-area: n;
@@ -145,18 +145,18 @@ const ResultsDiv = styled.div`
 
 const HIBPWrapper = styled.div`
   grid-area: h;
-`;
+`
 
 class MainForm extends React.Component {
   state = {
     password: '',
     selected: 0,
     character: ''
-  };
+  }
 
   render() {
     // make variable to store the options in from <input>
-    const items = [...this.state.password];
+    const items = [...this.state.password]
 
     // map over contents of items to make <options>
     // use index for unique key and also option
@@ -173,9 +173,9 @@ class MainForm extends React.Component {
         <option key={index} letter={item}>
           {index + 1}
         </option>
-      );
+      )
       // }
-    });
+    })
 
     // console.log('====================')
     // console.log(items)
@@ -183,7 +183,7 @@ class MainForm extends React.Component {
 
     const characterFromPassword = this.state.password.charAt(
       this.state.selected - 1
-    );
+    )
     // characterFromPassword = characterFromPassword.charAt(this.state.selected)
 
     return (
@@ -225,11 +225,11 @@ class MainForm extends React.Component {
         </ResultsDiv>
         {/* <NewPassword>{getFunName()}</NewPassword> */}
         <HIBPWrapper>
-          <HaveIBeenPwned password={this.state.password} />
+          {/* <HaveIBeenPwned password={this.state.password} /> */}
         </HIBPWrapper>
       </Container>
-    );
+    )
   }
 }
 
-export default MainForm;
+export default MainForm
