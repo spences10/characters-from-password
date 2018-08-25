@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
+// import HaveIBeenPwned from './HaveIBeenPwned'
+
 import { media } from '../theme/globalStyle'
-import { getFunName } from '../helpers'
+// import { getFunName } from '../helpers'
 
 const Container = styled.div`
   margin: 1rem;
@@ -16,7 +18,8 @@ const Container = styled.div`
     '. . t t t t t t t t . .'
     '. . s s s s s s s s . .'
     '. . r r r r r r r r . .'
-    '. . n n n n n n n n . .';
+    '. . n n n n n n n n . .'
+    '. . h h h h h h h h . .';
 
   text-align: center;
 
@@ -36,7 +39,8 @@ const Container = styled.div`
       '. t t t t t t t .'
       '. s s s s s s s .'
       '. r r r r r r r .'
-      '. n n n n n n n .';
+      '. n n n n n n n .'
+      '. h h h h h h h .';
     /* background: mediumseagreen; */
   `};
   ${media.phone`
@@ -49,7 +53,8 @@ const Container = styled.div`
       '. t t t t t t t .'
       '. s s s s s s s .'
       '. r r r r r r r .'
-      '. n n n n n n n .';
+      '. n n n n n n n .'
+      '. h h h h h h h .';
     /* background: palevioletred; */
   `};
 `
@@ -72,7 +77,7 @@ const StyledLink = styled.a.attrs({
 const CharacterInput = styled.input.attrs({
   // we can define static props
   type: 'password',
-  // Yes Pasta is intentional!
+  // Yes Pasta is intentional!!!!1!
   placeholder: 'Pasta your password here'
 })`
   margin: 0.5rem;
@@ -109,9 +114,9 @@ const CharacterLabel = styled.label`
 
 const SelectDiv = styled.div`
   grid-area: s;
-  /* display: grid;
-  grid-template-columns: repeat(2, 1fr); */
-  color: purple;
+  // display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  */color: purple;
   align-items: center;
 `
 
@@ -133,9 +138,13 @@ const ResultsDiv = styled.div`
   } */
 `
 
-const NewPassword = styled.div`
-  grid-area: n;
-  font-size: 2rem;
+// const NewPassword = styled.div`
+//   grid-area: n;
+//   font-size: 2rem;
+// `
+
+const HIBPWrapper = styled.div`
+  grid-area: h;
 `
 
 class MainForm extends React.Component {
@@ -180,8 +189,8 @@ class MainForm extends React.Component {
     return (
       <Container>
         <Preamble>
+          <h1>Password Character Picker</h1>
           <p>
-            <h1>Password Character Picker</h1>
             I use strong passwords,{' '}
             <StyledLink url={'https://xkcd.com/936/'}>
               "correct battery horse staple"
@@ -215,6 +224,9 @@ class MainForm extends React.Component {
           <label>"{characterFromPassword}"</label>
         </ResultsDiv>
         {/* <NewPassword>{getFunName()}</NewPassword> */}
+        <HIBPWrapper>
+          {/* <HaveIBeenPwned password={this.state.password} /> */}
+        </HIBPWrapper>
       </Container>
     )
   }

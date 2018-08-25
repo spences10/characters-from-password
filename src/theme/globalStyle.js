@@ -1,4 +1,4 @@
-import styled, { injectGlobal, css } from 'styled-components'
+import { injectGlobal, css } from 'styled-components'
 
 export const theme = {
   black: '#272727',
@@ -40,7 +40,7 @@ injectGlobal`
   }
 
   h1 {
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
   }
 
   a {

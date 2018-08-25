@@ -1,39 +1,19 @@
 {
   "name": "characters-from-password",
-  "version": "1.0.0",
-  "description": "",
-  "main": "pages/index.js",
-  "now": {
-    "name": "cfromp"
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "0.18.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.5",
+    "sha1": "1.1.1",
+    "styled-components": "3.4.4"
   },
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "format": "prettier es5 --no-semi --single-quote --write **/*.js",
-    "deploy": "now ",
-    "alias:dev": "now alias cfromp.now.sh",
-    "alias:prod": "now alias cfromp.scottspence.me",
-    "cleanup": "now rm cfromp --safe --yes"
-  },
-  "dependencies": {
-    "react-dom": "16.4.2",
-    "react": "16.4.2",
-    "next": "6.1.1",
-    "styled-components": "3.4.5"
-  },
-  "devDependencies": {
-    "prettier": "1.14.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/spences10/characters-from-password.git"
-  },
-  "keywords": [],
-  "author": "Scott Spence <spences10apps@gmail.com> (https://blog.scottspence.me/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/spences10/characters-from-password/issues"
-  },
-  "homepage": "https://github.com/spences10/characters-from-password#readme"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }
