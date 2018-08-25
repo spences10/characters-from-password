@@ -1,11 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-<<<<<<< HEAD
 // import HaveIBeenPwned from './HaveIBeenPwned'
-=======
-import HaveIBeenPwned from './HaveIBeenPwned'
->>>>>>> 44c407800cf39c32aab9cab2933dd411e431f668
 
 import { media } from '../theme/globalStyle'
 // import { getFunName } from '../helpers'
