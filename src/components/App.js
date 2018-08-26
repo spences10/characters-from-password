@@ -10,15 +10,22 @@ const App = () => (
   <React.Fragment>
     <PasswordContext.Consumer>
       {({ password, selected, character }) => (
-        <MainForm
-          password={password}
-          selected={selected}
-          character={character}
-        />
+        <React.Fragment>
+          <MainForm
+            password={password}
+            selected={selected}
+            character={character}
+          />
+          <HaveIBeenPwned
+            passwordHash={passwordHash}
+            sha1={sha1}
+            firstFive={firstFive}
+            rest={rest}
+            hibpHashe={hibpHashe}
+          />
+        </React.Fragment>
       )}
     </PasswordContext.Consumer>
-
-    <HaveIBeenPwned />
   </React.Fragment>
 )
 
