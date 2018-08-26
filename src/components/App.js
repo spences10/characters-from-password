@@ -9,7 +9,16 @@ import { PasswordContext } from '../contexts/PasswordContext'
 const App = () => (
   <React.Fragment>
     <PasswordContext.Consumer>
-      {({ password, selected, character }) => (
+      {({
+        password,
+        selected,
+        character,
+        passwordHash,
+        sha1,
+        firstFive,
+        rest,
+        hibpHashes
+      }) => (
         <React.Fragment>
           <MainForm
             password={password}
@@ -21,7 +30,7 @@ const App = () => (
             sha1={sha1}
             firstFive={firstFive}
             rest={rest}
-            hibpHashe={hibpHashe}
+            hibpHashes={hibpHashes}
           />
         </React.Fragment>
       )}
