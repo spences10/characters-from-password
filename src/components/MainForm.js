@@ -143,9 +143,9 @@ const ResultsDiv = styled.div`
 //   font-size: 2rem;
 // `
 
-const HIBPWrapper = styled.div`
-  grid-area: h;
-`
+// const HIBPWrapper = styled.div`
+//   grid-area: h;
+// `
 
 class MainForm extends React.Component {
   state = {
@@ -210,9 +210,9 @@ class MainForm extends React.Component {
           <label>"{characterFromPassword}"</label>
         </ResultsDiv>
         {/* <NewPassword>{getFunName()}</NewPassword> */}
-        <HIBPWrapper>
-          {/* <HaveIBeenPwned password={this.state.password} /> */}
-        </HIBPWrapper>
+        {/* <HIBPWrapper>
+          <HaveIBeenPwned password={this.state.password} />
+        </HIBPWrapper> */}
       </Container>
     )
   }
