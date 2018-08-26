@@ -17,6 +17,16 @@ export class PasswordProvider extends React.Component {
     hibpHashes: []
   }
 
+  handlePasswordChange = e => {
+    const password = e.target.value
+    this.setState({ password })
+  }
+
+  handleSelectedChange = e => {
+    const selected = e.target.value
+    this.setState({ selected })
+  }
+
   getHash = stringToHash => {
     this.setState({
       sha1: hash(stringToHash)
