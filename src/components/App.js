@@ -12,29 +12,30 @@ const App = () => (
       {({
         password,
         selected,
-        character,
         handlePasswordChange,
         handleSelectedChange,
         passwordHash,
         sha1,
         firstFive,
         rest,
-        hibpHashes
+        hibpHashes,
+        getHash
       }) => (
         <React.Fragment>
           <MainForm
             password={password}
             selected={selected}
-            character={character}
             handlePasswordChange={handlePasswordChange}
             handleSelectedChange={handleSelectedChange}
           />
           <HaveIBeenPwned
+            password={password}
             passwordHash={passwordHash}
             sha1={sha1}
             firstFive={firstFive}
             rest={rest}
             hibpHashes={hibpHashes}
+            getHash={getHash}
           />
         </React.Fragment>
       )}

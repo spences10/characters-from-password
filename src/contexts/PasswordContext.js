@@ -19,18 +19,12 @@ export class PasswordProvider extends React.Component {
 
   handlePasswordChange = e => {
     const password = e.target.value
-    this.setState({ password })
+    this.setState({ password, sha1: hash(password) })
   }
 
   handleSelectedChange = e => {
     const selected = e.target.value
     this.setState({ selected })
-  }
-
-  getHash = stringToHash => {
-    this.setState({
-      sha1: hash(stringToHash)
-    })
   }
 
   getHIBPHashes() {}
@@ -42,7 +36,6 @@ export class PasswordProvider extends React.Component {
           ...this.state,
           handlePasswordChange: this.handlePasswordChange,
           handleSelectedChange: this.handleSelectedChange,
-          getHash: this.getHash,
           getHIBPHashes: this.getHIBPHashes
         }}
       >
