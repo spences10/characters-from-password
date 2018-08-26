@@ -209,10 +209,6 @@ class MainForm extends React.Component {
         <ResultsDiv>
           <label>"{characterFromPassword}"</label>
         </ResultsDiv>
-        {/* <NewPassword>{getFunName()}</NewPassword> */}
-        {/* <HIBPWrapper>
-          <HaveIBeenPwned password={this.state.password} />
-        </HIBPWrapper> */}
       </Container>
     )
   }
