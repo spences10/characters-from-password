@@ -12,14 +12,17 @@ export class PasswordProvider extends React.Component {
     character: '',
     passwordHash: '',
     sha1: '',
-    firstFive: '',
-    rest: '',
+    firstFiveHashChars: '',
+    restHashChars: '',
     hibpHashes: []
   }
 
   handlePasswordChange = e => {
     const password = e.target.value
-    this.setState({ password, sha1: hash(password) })
+    this.setState({
+      password,
+      sha1: hash(password)
+    })
   }
 
   handleSelectedChange = e => {
