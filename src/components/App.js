@@ -6,9 +6,9 @@ import MainForm from './MainForm'
 class App extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <MainForm />
-      </div>
+      </React.Fragment>
     )
   }
 }
