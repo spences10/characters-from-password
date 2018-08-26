@@ -1,4 +1,5 @@
 import React from 'react'
+import hash from 'sha1'
 // Context is made up of two things
 // Provider - Single as close to top level as possible
 // Consumer - Multiple have multiple consumers
@@ -16,10 +17,9 @@ export class PasswordProvider extends React.Component {
     hibpHashes: []
   }
 
-  getHash = () => {
+  getHash = stringToHash => {
     this.setState({
-      item1: 2,
-      item2: 3
+      sha1: hash(stringToHash)
     })
   }
 
