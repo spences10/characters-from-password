@@ -40,6 +40,8 @@ export class PasswordProvider extends React.Component {
       <PasswordContext.Provider
         value={{
           ...this.state,
+          handlePasswordChange: this.handlePasswordChange,
+          handleSelectedChange: this.handleSelectedChange,
           getHash: this.getHash,
           getHIBPHashes: this.getHIBPHashes
         }}

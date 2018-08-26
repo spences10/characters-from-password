@@ -13,6 +13,8 @@ const App = () => (
         password,
         selected,
         character,
+        handlePasswordChange,
+        handleSelectedChange,
         passwordHash,
         sha1,
         firstFive,
@@ -24,6 +26,8 @@ const App = () => (
             password={password}
             selected={selected}
             character={character}
+            handlePasswordChange={handlePasswordChange}
+            handleSelectedChange={handleSelectedChange}
           />
           <HaveIBeenPwned
             passwordHash={passwordHash}
