@@ -19,7 +19,8 @@ export class PasswordProvider extends React.Component {
     firstFiveHashChars: '',
     restHashChars: '',
     apiUrl: 'https://api.pwnedpasswords.com/range/',
-    hibpHashes: []
+    hibpHashes: [],
+    passwordUsed: ''
   }
 
   handlePasswordChange = e => {
@@ -49,9 +50,11 @@ export class PasswordProvider extends React.Component {
   //www.npmjs.com/package/throttle-debounce
   componentDidUpdate(prevProps, prevState) {
     // filter for password in hashes
-    console.log('=====================')
-    console.log(this.matchHash())
-    console.log('=====================')
+    const p = this.matchHash()[0]
+
+    if (typeof p !== 'undefined') {
+      p.substring(p.indexOf(':') + 1, p.length)
+    }
   }
 
   matchHash = () => {
