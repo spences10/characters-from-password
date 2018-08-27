@@ -1,4 +1,9 @@
 import React from 'react'
+import axios from 'axios'
+
+export async function fetchHIBPData(dataUrl) {
+  return await axios.get(dataUrl)
+}
 
 export const Dump = props => (
   <div
