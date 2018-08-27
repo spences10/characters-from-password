@@ -6,6 +6,7 @@ const HaveIBeenPwned = ({
   password,
   passwordHash,
   sha1,
+  firstFiveHashChars,
   restHashChars,
   hibpHashes
 }) => {
@@ -14,8 +15,8 @@ const HaveIBeenPwned = ({
       <Dump
         password={password}
         sha1={sha1}
-        firstFive={sha1.substring(0, 5)}
-        rest={sha1.slice(5, sha1.length)}
+        firstFiveHashChars={firstFiveHashChars}
+        restHashChars={restHashChars}
       />
       {/* <p>{hash(this.props.password)}</p> */}
     </React.Fragment>
