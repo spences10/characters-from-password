@@ -35,16 +35,6 @@ export class PasswordProvider extends React.Component {
     this.setState({ selected })
   }
 
-  //www.npmjs.com/package/throttle-debounce
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.password !== this.state.password) {
-      // this.state.password
-      // console.log('=====================')
-      // console.log(this.state)
-      // console.log('=====================')
-    }
-  }
-
   componentWillUpdate(nextProps, nextState) {
     if (nextState.sha1 !== this.state.sha1) {
       // update string mutations from nextState
@@ -52,10 +42,14 @@ export class PasswordProvider extends React.Component {
         firstFiveHashChars: nextState.sha1.substring(0, 5),
         restHashChars: nextState.sha1.slice(5, nextState.sha1.length)
       })
-      // console.log('=====================')
-      // console.log(nextState.sha1)
-      // console.log('=====================')
       this.getHIBPHashes(nextState.apiUrl, nextState.sha1)
+    }
+  }
+
+  //www.npmjs.com/package/throttle-debounce
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.password !== this.state.password) {
+      // filter for password in hashes
     }
   }
 
@@ -68,9 +62,9 @@ export class PasswordProvider extends React.Component {
   getHIBPHashes(apiUrl, sha1) {
     fetchHIBPData(`${apiUrl}/${sha1.substring(0, 5)}`).then(
       result => {
-        console.log('=====================')
-        console.log(result.data)
-        console.log('=====================')
+        this.setState({
+          hibpHashes: result.data.split('\r\n')
+        })
       }
     )
   }

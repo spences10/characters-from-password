@@ -4,7 +4,6 @@ import { Dump } from '../helpers'
 
 const HaveIBeenPwned = ({
   password,
-  passwordHash,
   sha1,
   firstFiveHashChars,
   restHashChars,
