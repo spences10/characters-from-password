@@ -2,6 +2,8 @@ import React from 'react'
 import hash from 'sha1'
 // import { throttle } from "throttle-debounce";
 
+import { fetchHIBPData } from '../helpers'
+
 // Context is made up of two things
 // Provider - Single as close to top level as possible
 // Consumer - Multiple have multiple consumers
@@ -16,6 +18,7 @@ export class PasswordProvider extends React.Component {
     sha1: '',
     firstFiveHashChars: '',
     restHashChars: '',
+    apiUrl: 'https://api.pwnedpasswords.com/range/',
     hibpHashes: []
   }
 
@@ -36,9 +39,23 @@ export class PasswordProvider extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevState.password !== this.state.password) {
       // this.state.password
-      console.log('=====================')
-      console.log(this.state.password)
-      console.log('=====================')
+      // console.log('=====================')
+      // console.log(this.state)
+      // console.log('=====================')
+    }
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    if (nextState.sha1 !== this.state.sha1) {
+      // update string mutations from nextState
+      this.setState({
+        firstFiveHashChars: nextState.sha1.substring(0, 5),
+        restHashChars: nextState.sha1.slice(5, nextState.sha1.length)
+      })
+      // console.log('=====================')
+      // console.log(nextState.sha1)
+      // console.log('=====================')
+      this.getHIBPHashes(nextState.apiUrl, nextState.sha1)
     }
   }
 
@@ -48,7 +65,15 @@ export class PasswordProvider extends React.Component {
     })
   }
 
-  getHIBPHashes() {}
+  getHIBPHashes(apiUrl, sha1) {
+    fetchHIBPData(`${apiUrl}/${sha1.substring(0, 5)}`).then(
+      result => {
+        console.log('=====================')
+        console.log(result.data)
+        console.log('=====================')
+      }
+    )
+  }
 
   render() {
     return (
