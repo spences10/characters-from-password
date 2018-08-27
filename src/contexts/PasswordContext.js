@@ -53,7 +53,9 @@ export class PasswordProvider extends React.Component {
     const p = this.matchHash()[0]
 
     if (typeof p !== 'undefined') {
-      p.substring(p.indexOf(':') + 1, p.length)
+      console.log('=====================')
+      console.log(p.substring(p.indexOf(':') + 1, p.length))
+      console.log('=====================')
     }
   }
 
