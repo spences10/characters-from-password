@@ -16,8 +16,8 @@ const App = () => (
         handleSelectedChange,
         passwordHash,
         sha1,
-        firstFive,
-        rest,
+        firstFiveHashChars,
+        restHashChars,
         hibpHashes,
         getHash
       }) => (
@@ -32,8 +32,8 @@ const App = () => (
             password={password}
             passwordHash={passwordHash}
             sha1={sha1}
-            firstFive={firstFive}
-            rest={rest}
+            firstFiveHashChars={firstFiveHashChars}
+            restHashChars={restHashChars}
             hibpHashes={hibpHashes}
             getHash={getHash}
           />
