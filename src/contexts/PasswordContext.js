@@ -26,7 +26,7 @@ export class PasswordProvider extends React.Component {
     const password = e.target.value
     this.setState({
       password,
-      sha1: hash(password)
+      sha1: hash(password).toUpperCase()
     })
   }
 
@@ -48,9 +48,19 @@ export class PasswordProvider extends React.Component {
 
   //www.npmjs.com/package/throttle-debounce
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.password !== this.state.password) {
-      // filter for password in hashes
-    }
+    // filter for password in hashes
+    console.log('=====================')
+    console.log(this.matchHash())
+    console.log('=====================')
+  }
+
+  matchHash = () => {
+    const hashes = this.state.hibpHashes
+    return hashes.filter(
+      hash =>
+        hash.substring(0, hash.indexOf(':')) ===
+        this.state.restHashChars
+    )
   }
 
   apiCallsThrottled = query => {
