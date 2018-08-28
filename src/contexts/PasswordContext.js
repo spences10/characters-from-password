@@ -59,6 +59,7 @@ export class PasswordProvider extends React.Component {
     }
   }
 
+  // filter hash list to see if password appears
   matchHash = () => {
     const hashes = this.state.hibpHashes
     return hashes.filter(
@@ -74,6 +75,7 @@ export class PasswordProvider extends React.Component {
     })
   }
 
+  // get Have I Been Pwned hash list
   getHIBPHashes(apiUrl, sha1) {
     fetchHIBPData(`${apiUrl}/${sha1.substring(0, 5)}`).then(
       result => {
