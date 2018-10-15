@@ -1,9 +1,8 @@
-import hash from 'sha1';
-import React from 'react';
+import React from 'react'
+import axios from 'axios'
 
-export function sha1(message) {
-  // E5F4765BAFAF188C737271B4CF7574633F0
-  return hash(message);
+export async function fetchHIBPData(dataUrl) {
+  return await axios.get(dataUrl)
 }
 
 export const Dump = props => (
@@ -24,11 +23,10 @@ export const Dump = props => (
       </pre>
     ))}
   </div>
-);
+)
 
-export default Dump;
 export function rando(arr) {
-  return arr[Math.floor(Math.random() * arr.length)];
+  return arr[Math.floor(Math.random() * arr.length)]
 }
 
 export function getFunName() {
@@ -69,7 +67,7 @@ export function getFunName() {
     'thoughtless',
     'uptight',
     'worried'
-  ];
+  ]
 
   const verbs = [
     'correct',
@@ -102,7 +100,7 @@ export function getFunName() {
     'mean',
     'keep',
     'let'
-  ];
+  ]
 
   const nouns = [
     'women',
@@ -135,9 +133,9 @@ export function getFunName() {
     'phenomena',
     'criteria',
     'data'
-  ];
+  ]
 
   return `${rando(verbs)} ${rando(adjectives)} ${rando(
     adjectives
-  )} ${rando(nouns)}`;
+  )} ${rando(nouns)}`
 }
