@@ -150,7 +150,6 @@ const ResultsDiv = styled.div`
 const MainForm = ({
   password,
   selected,
-  character,
   handlePasswordChange,
   handleSelectedChange
 }) => {
