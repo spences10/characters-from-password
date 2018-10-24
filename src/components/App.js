@@ -2,6 +2,7 @@ import React from 'react'
 
 import MainForm from './MainForm'
 import HaveIBeenPwned from './HaveIBeenPwned'
+import { GlobalStyle } from '../theme/globalStyle'
 
 import { PasswordContext } from '../contexts/PasswordContext'
 // import { theme } from '../theme/globalStyle';
@@ -22,6 +23,7 @@ const App = () => (
         getHash
       }) => (
         <React.Fragment>
+          <GlobalStyle />
           <MainForm
             password={password}
             selected={selected}
