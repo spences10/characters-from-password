@@ -1,12 +1,12 @@
 {
   "name": "characters-from-password",
-  "version": "0.1.32",
+  "version": "0.1.33",
   "private": true,
   "dependencies": {
     "axios": "0.18.0",
     "react": "16.8.4",
     "react-dom": "16.8.4",
-    "react-scripts": "2.1.5",
+    "react-scripts": "2.1.6",
     "sha1": "1.1.1",
     "styled-components": "4.1.3"
   },
