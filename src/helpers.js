@@ -1,8 +1,8 @@
-import React from 'react'
-import axios from 'axios'
+import axios from 'axios';
+import React from 'react';
 
 export async function fetchHIBPData(dataUrl) {
-  return await axios.get(dataUrl)
+  return await axios.get(dataUrl);
 }
 
 export const Dump = props => (
@@ -11,7 +11,7 @@ export const Dump = props => (
       fontSize: 20,
       border: '1px solid #efefef',
       padding: 10,
-      background: 'white'
+      background: 'white',
     }}
   >
     {Object.keys(props).map(prop => (
@@ -23,10 +23,10 @@ export const Dump = props => (
       </pre>
     ))}
   </div>
-)
+);
 
 export function rando(arr) {
-  return arr[Math.floor(Math.random() * arr.length)]
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
 export function getFunName() {
@@ -66,8 +66,8 @@ export function getFunName() {
     'scary',
     'thoughtless',
     'uptight',
-    'worried'
-  ]
+    'worried',
+  ];
 
   const verbs = [
     'correct',
@@ -99,8 +99,8 @@ export function getFunName() {
     'put',
     'mean',
     'keep',
-    'let'
-  ]
+    'let',
+  ];
 
   const nouns = [
     'women',
@@ -132,10 +132,10 @@ export function getFunName() {
     'crises',
     'phenomena',
     'criteria',
-    'data'
-  ]
+    'data',
+  ];
 
   return `${rando(verbs)} ${rando(adjectives)} ${rando(
     adjectives
-  )} ${rando(nouns)}`
+  )} ${rando(nouns)}`;
 }
