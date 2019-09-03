@@ -1,14 +1,16 @@
 {
   "name": "characters-from-password",
-  "version": "0.1.55",
+  "version": "0.1.56",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "format": "pretty-quick"
+    "dev": "gatsby develop -p 3333 -o",
+    "build": "gatsby build"
   },
   "dependencies": {
     "axios": "0.19.0",
+    "babel-plugin-styled-components": "1.10.6",
+    "gatsby": "2.15.3",
+    "gatsby-plugin-styled-components": "3.1.4",
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "react-scripts": "3.1.1",
@@ -16,7 +18,7 @@
     "styled-components": "4.3.2"
   },
   "devDependencies": {
-    "husky": "3.0.4",
+    "husky": "3.0.5",
     "prettier": "1.18.2",
     "pretty-quick": "1.11.1"
   },

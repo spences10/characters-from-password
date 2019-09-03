@@ -1,14 +1,15 @@
-import React from 'react'
+import React from 'react';
+import HaveIBeenPwned from '../components/HaveIBeenPwned';
+import MainForm from '../components/MainForm';
+import {
+  PasswordContext,
+  PasswordProvider,
+} from '../contexts/PasswordContext';
+import { GlobalStyle } from '../theme/globalStyle';
 
-import MainForm from './MainForm'
-import HaveIBeenPwned from './HaveIBeenPwned'
-import { GlobalStyle } from '../theme/globalStyle'
-
-import { PasswordContext } from '../contexts/PasswordContext'
 // import { theme } from '../theme/globalStyle';
-
-const App = () => (
-  <React.Fragment>
+export default () => (
+  <PasswordProvider>
     <PasswordContext.Consumer>
       {({
         password,
@@ -20,9 +21,9 @@ const App = () => (
         firstFiveHashChars,
         restHashChars,
         hibpHashes,
-        getHash
+        getHash,
       }) => (
-        <React.Fragment>
+        <>
           <GlobalStyle />
           <MainForm
             password={password}
@@ -39,10 +40,8 @@ const App = () => (
             hibpHashes={hibpHashes}
             getHash={getHash}
           />
-        </React.Fragment>
+        </>
       )}
     </PasswordContext.Consumer>
-  </React.Fragment>
-)
-
-export default App
+  </PasswordProvider>
+);
