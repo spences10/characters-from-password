@@ -1,6 +1,6 @@
 {
   "name": "characters-from-password",
-  "version": "0.1.74",
+  "version": "0.1.75",
   "private": true,
   "scripts": {
     "dev": "gatsby develop -p 3333 -o",
@@ -15,7 +15,7 @@
     "react-dom": "16.9.0",
     "react-scripts": "3.1.2",
     "sha1": "1.1.1",
-    "styled-components": "4.3.2"
+    "styled-components": "4.4.0"
   },
   "devDependencies": {
     "husky": "3.0.5",
