@@ -1,13 +1,13 @@
 {
   "name": "characters-from-password",
-  "version": "0.1.109",
+  "version": "0.1.110",
   "private": true,
   "scripts": {
     "dev": "gatsby develop -p 3333 -o",
     "build": "gatsby build"
   },
   "dependencies": {
-    "axios": "0.19.1",
+    "axios": "0.19.2",
     "babel-plugin-styled-components": "1.10.6",
     "gatsby": "2.19.1",
     "gatsby-plugin-styled-components": "3.1.18",
