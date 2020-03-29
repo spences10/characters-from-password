@@ -3,7 +3,7 @@
   "version": "0.1.135",
   "private": true,
   "scripts": {
-    "dev": "gatsby develop -p 3333 -o",
+    "dev": "gatsby develop -p 6587 -o",
     "build": "gatsby build"
   },
   "dependencies": {
@@ -13,7 +13,6 @@
     "gatsby-plugin-styled-components": "3.2.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-scripts": "3.4.1",
     "sha1": "1.1.1",
     "styled-components": "4.4.1"
   },
@@ -26,11 +25,5 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  }
 }
