@@ -30,5 +30,10 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
+  },
+  "prettier": {
+    "printWidth": 70,
+    "singleQuote": true,
+    "jsxSingleQuote": true
   }
 }
