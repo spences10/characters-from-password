@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-// import HaveIBeenPwned from './HaveIBeenPwned'
+import { getFunName } from '../helpers'
 import { media } from '../theme/global-style'
-
-// import { getFunName } from '../helpers'
 
 const Container = styled.div`
   margin: 1rem;
@@ -137,6 +135,7 @@ const ResultsDiv = styled.div`
 export const MainForm = () => {
   const [selected, setSelected] = useState(``)
   const [password, setPassword] = useState(``)
+  const [funPassword, setFunPassword] = useState(``)
 
   // make variable to store the options in from <input>
   const items = [...password]
@@ -157,6 +156,10 @@ export const MainForm = () => {
 
   function handlePasswordChange(e) {
     setPassword(e.target.value)
+  }
+
+  function handleFunPassword() {
+    setFunPassword(getFunName)
   }
 
   const characterFromPassword = password.charAt(selected - 1)
@@ -194,6 +197,8 @@ export const MainForm = () => {
       <ResultsDiv>
         <label>"{characterFromPassword}"</label>
       </ResultsDiv>
+      <button onClick={handleFunPassword}>Get Fun Name</button>
+      <p>{funPassword}</p>
     </Container>
   )
 }
