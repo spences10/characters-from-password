@@ -1,4 +1,19 @@
+const siteMetadata = {
+  title: `Characters from Password`,
+  description: `Pick Characters from Password`,
+  image: `/default-site-image.jpg`,
+  siteUrl: `https://cfromp.scottspence.me`,
+  siteLanguage: `en-GB`,
+  siteLocale: `en_gb`,
+  twitterUsername: `@spences10`,
+  authorName: `Scott Spence`,
+  favicon: `./static/favicon.svg`,
+  backgroundColor: `#f7f0eb`,
+  themeColor: `#a2466c`,
+};
+
 module.exports = {
+  siteMetadata,
   plugins: [
     `gatsby-plugin-styled-components`,
     {
@@ -13,5 +28,18 @@ module.exports = {
         display: 'swap',
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: siteMetadata.title,
+        short_name: `C.from.P`,
+        start_url: `/`,
+        background_color: siteMetadata.backgroundColor,
+        theme_color: siteMetadata.themeColor,
+        display: `standalone`,
+        icon: siteMetadata.favicon,
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 };
