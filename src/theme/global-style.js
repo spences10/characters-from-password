@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components';
 
 export const theme = {
   black: '#272727',
@@ -22,12 +22,10 @@ export const theme = {
   redviolet: '#eb238e', // red violet
   sushi: '#7cc142', // sushi
   bombay: '#adadaf', // Bombay
-  jsYellow: '#f7e018' // JS yellow
-}
+  jsYellow: '#f7e018', // JS yellow
+};
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Titillium+Web');
-
   *, *:before, *:after {
     box-sizing: border-box;
   }
@@ -61,27 +59,27 @@ export const GlobalStyle = createGlobalStyle`
   ::-moz-focus-inner {
     border:0;
   }
-`
+`;
 
 const sizes = {
   giant: 1170,
   desktop: 992,
   tablet: 768,
-  phone: 376
-}
+  phone: 376,
+};
 
 // iterate through the sizes and create a media template
 export const media = Object.keys(sizes).reduce(
   (accumulator, label) => {
     // use em in breakpoints to work properly cross-browser and support users
     // changing their browsers font-size: https://zellwk.com/blog/media-query-units/
-    const emSize = sizes[label] / 16
+    const emSize = sizes[label] / 16;
     accumulator[label] = (...args) => css`
       @media (max-width: ${emSize}em) {
         ${css(...args)};
       }
-    `
-    return accumulator
+    `;
+    return accumulator;
   },
   {}
-)
+);

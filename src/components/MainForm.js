@@ -1,9 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-
+import React from 'react';
+import styled from 'styled-components';
 // import HaveIBeenPwned from './HaveIBeenPwned'
+import { media } from '../theme/global-style';
 
-import { media } from '../theme/globalStyle'
 // import { getFunName } from '../helpers'
 
 const Container = styled.div`
@@ -57,28 +56,28 @@ const Container = styled.div`
       '. h h h h h h h .';
     /* background: palevioletred; */
   `};
-`
+`;
 
 const Preamble = styled.div`
   grid-area: p;
-`
+`;
 
 const StyledLink = styled.a.attrs({
   target: '_blank',
   rel: 'noopener',
-  href: props => props.url
+  href: props => props.url,
 })`
   color: ${props => props.theme.blue};
   &:hover {
     text-decoration: underline;
   }
-`
+`;
 
 const CharacterInput = styled.input.attrs({
   // we can define static props
   type: 'password',
   // Yes Pasta is intentional!!!!1!
-  placeholder: 'Pasta your password here'
+  placeholder: 'Pasta your password here',
 })`
   margin: 0.5rem;
   padding: 0.5rem;
@@ -93,7 +92,7 @@ const CharacterInput = styled.input.attrs({
   background-color: ${props => props.theme.white};
   border-radius: 5px;
   text-align: center;
-`
+`;
 
 const CharacterSelect = styled.select`
   margin: 0rem;
@@ -103,14 +102,14 @@ const CharacterSelect = styled.select`
   border: 1px solid ${props => props.theme.black};
   background-color: ${props => props.theme.white};
   border-radius: 5px;
-`
+`;
 
 const CharacterLabel = styled.label`
   padding: 10px;
   border: 10px;
   justify-self: end;
   color: ${props => props.theme.black};
-`
+`;
 
 const SelectDiv = styled.div`
   grid-area: s;
@@ -118,7 +117,7 @@ const SelectDiv = styled.div`
   grid-template-columns: repeat(2, 1fr);
   */color: purple;
   align-items: center;
-`
+`;
 
 const ResultsDiv = styled.div`
   grid-area: r;
@@ -136,7 +135,7 @@ const ResultsDiv = styled.div`
   /* @media only screen and (min-width: 768px) {
     font-size: 10em;
   } */
-`
+`;
 
 // const NewPassword = styled.div`
 //   grid-area: n;
@@ -151,10 +150,10 @@ const MainForm = ({
   password,
   selected,
   handlePasswordChange,
-  handleSelectedChange
+  handleSelectedChange,
 }) => {
   // make variable to store the options in from <input>
-  const items = [...password]
+  const items = [...password];
 
   // map over contents of items to make <options>
   // use index for unique key and also option
@@ -163,10 +162,10 @@ const MainForm = ({
       <option key={index} letter={item}>
         {index + 1}
       </option>
-    )
-  })
+    );
+  });
 
-  const characterFromPassword = password.charAt(selected - 1)
+  const characterFromPassword = password.charAt(selected - 1);
 
   return (
     <Container>
@@ -202,7 +201,7 @@ const MainForm = ({
         <label>"{characterFromPassword}"</label>
       </ResultsDiv>
     </Container>
-  )
-}
+  );
+};
 
-export default MainForm
+export default MainForm;

@@ -5,7 +5,7 @@ import {
   PasswordContext,
   PasswordProvider,
 } from '../contexts/PasswordContext';
-import { GlobalStyle } from '../theme/globalStyle';
+import { GlobalStyle } from '../theme/global-style';
 
 // import { theme } from '../theme/globalStyle';
 export default () => (
