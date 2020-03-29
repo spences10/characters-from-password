@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react'
+import styled from 'styled-components'
 // import HaveIBeenPwned from './HaveIBeenPwned'
-import { media } from '../theme/global-style';
+import { media } from '../theme/global-style'
 
 // import { getFunName } from '../helpers'
 
@@ -56,22 +56,22 @@ const Container = styled.div`
       '. h h h h h h h .';
     /* background: palevioletred; */
   `};
-`;
+`
 
 const Preamble = styled.div`
   grid-area: p;
-`;
+`
 
 const StyledLink = styled.a.attrs({
   target: '_blank',
   rel: 'noopener',
-  href: (props) => props.url,
+  href: props => props.url,
 })`
   color: ${({ theme }) => theme.blue};
   &:hover {
     text-decoration: underline;
   }
-`;
+`
 
 const CharacterInput = styled.input.attrs({
   // we can define static props
@@ -92,7 +92,7 @@ const CharacterInput = styled.input.attrs({
   background-color: ${({ theme }) => theme.white};
   border-radius: 5px;
   text-align: center;
-`;
+`
 
 const CharacterSelect = styled.select`
   margin: 0rem;
@@ -102,18 +102,18 @@ const CharacterSelect = styled.select`
   border: 1px solid ${({ theme }) => theme.black};
   background-color: ${({ theme }) => theme.white};
   border-radius: 5px;
-`;
+`
 
 const CharacterLabel = styled.label`
   padding: 10px;
   border: 10px;
   justify-self: end;
   color: ${({ theme }) => theme.black};
-`;
+`
 
 const SelectDiv = styled.div`
   grid-area: s;
-`;
+`
 
 const ResultsDiv = styled.div`
   grid-area: r;
@@ -122,16 +122,8 @@ const ResultsDiv = styled.div`
   text-align: center;
   font-size: 6rem;
 
-  /* for tablets */
-  /*@media only screen and (max-width: 425px) and (min-width: 768px) {
-    font-size: 6em;
-  }*/
-
-  /* for desktops */
-  /* @media only screen and (min-width: 768px) {
-    font-size: 10em;
-  } */
-`;
+  font-family: 'Space Mono';
+`
 
 // const NewPassword = styled.div`
 //   grid-area: n;
@@ -142,14 +134,12 @@ const ResultsDiv = styled.div`
 //   grid-area: h;
 // `
 
-const MainForm = ({
-  password,
-  selected,
-  handlePasswordChange,
-  handleSelectedChange,
-}) => {
+export const MainForm = () => {
+  const [selected, setSelected] = useState(``)
+  const [password, setPassword] = useState(``)
+
   // make variable to store the options in from <input>
-  const items = [...password];
+  const items = [...password]
 
   // map over contents of items to make <options>
   // use index for unique key and also option
@@ -158,10 +148,18 @@ const MainForm = ({
       <option key={index} letter={item}>
         {index + 1}
       </option>
-    );
-  });
+    )
+  })
 
-  const characterFromPassword = password.charAt(selected - 1);
+  function handleSelectedChange(e) {
+    setSelected(e.target.value)
+  }
+
+  function handlePasswordChange(e) {
+    setPassword(e.target.value)
+  }
+
+  const characterFromPassword = password.charAt(selected - 1)
 
   return (
     <Container>
@@ -185,11 +183,11 @@ const MainForm = ({
       </Preamble>
       <CharacterInput
         value={password}
-        onChange={(e) => handlePasswordChange(e)}
+        onChange={e => handlePasswordChange(e)}
       />
       <SelectDiv>
         <CharacterLabel>Character:</CharacterLabel>
-        <CharacterSelect onChange={(e) => handleSelectedChange(e)}>
+        <CharacterSelect onChange={e => handleSelectedChange(e)}>
           {list}
         </CharacterSelect>
       </SelectDiv>
@@ -197,7 +195,5 @@ const MainForm = ({
         <label>"{characterFromPassword}"</label>
       </ResultsDiv>
     </Container>
-  );
-};
-
-export default MainForm;
+  )
+}
