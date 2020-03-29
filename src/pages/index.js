@@ -1,7 +1,8 @@
 import React from 'react';
 import SEO from 'react-seo-component';
 import HaveIBeenPwned from '../components/HaveIBeenPwned';
-import MainForm from '../components/MainForm';
+import { HIBPHashList } from '../components/hibp-hash-list';
+import MainForm from '../components/main-form';
 import {
   PasswordContext,
   PasswordProvider,
@@ -39,7 +40,7 @@ export default () => {
             <SEO
               title={`Characters from Password`}
               titleTemplate={title}
-              description={description || `nothin’`}
+              description={description}
               image={`${siteUrl}${image}`}
               pathname={siteUrl}
               siteLanguage={siteLanguage}
@@ -52,6 +53,7 @@ export default () => {
               handlePasswordChange={handlePasswordChange}
               handleSelectedChange={handleSelectedChange}
             />
+            <HIBPHashList />
             <HaveIBeenPwned
               password={password}
               passwordHash={passwordHash}

@@ -65,9 +65,9 @@ const Preamble = styled.div`
 const StyledLink = styled.a.attrs({
   target: '_blank',
   rel: 'noopener',
-  href: props => props.url,
+  href: (props) => props.url,
 })`
-  color: ${props => props.theme.blue};
+  color: ${({ theme }) => theme.blue};
   &:hover {
     text-decoration: underline;
   }
@@ -87,9 +87,9 @@ const CharacterInput = styled.input.attrs({
 
   width: 100%;
 
-  color: ${props => props.theme.black};
-  border: 1px solid ${props => props.theme.black};
-  background-color: ${props => props.theme.white};
+  color: ${({ theme }) => theme.black};
+  border: 1px solid ${({ theme }) => theme.black};
+  background-color: ${({ theme }) => theme.white};
   border-radius: 5px;
   text-align: center;
 `;
@@ -99,8 +99,8 @@ const CharacterSelect = styled.select`
   padding: 0rem 0.5rem;
   font-size: 1rem;
   height: 2rem;
-  border: 1px solid ${props => props.theme.black};
-  background-color: ${props => props.theme.white};
+  border: 1px solid ${({ theme }) => theme.black};
+  background-color: ${({ theme }) => theme.white};
   border-radius: 5px;
 `;
 
@@ -108,15 +108,11 @@ const CharacterLabel = styled.label`
   padding: 10px;
   border: 10px;
   justify-self: end;
-  color: ${props => props.theme.black};
+  color: ${({ theme }) => theme.black};
 `;
 
 const SelectDiv = styled.div`
   grid-area: s;
-  // display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  */color: purple;
-  align-items: center;
 `;
 
 const ResultsDiv = styled.div`
@@ -189,11 +185,11 @@ const MainForm = ({
       </Preamble>
       <CharacterInput
         value={password}
-        onChange={e => handlePasswordChange(e)}
+        onChange={(e) => handlePasswordChange(e)}
       />
       <SelectDiv>
         <CharacterLabel>Character:</CharacterLabel>
-        <CharacterSelect onChange={e => handleSelectedChange(e)}>
+        <CharacterSelect onChange={(e) => handleSelectedChange(e)}>
           {list}
         </CharacterSelect>
       </SelectDiv>
