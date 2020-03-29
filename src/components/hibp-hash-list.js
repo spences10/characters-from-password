@@ -36,16 +36,18 @@ export const HIBPHashList = () => {
 
     const breaches = match[0]
     if (!breaches) return
-    return breaches.substring(
+    const numberOfBreaches = breaches.substring(
       breaches.indexOf(`:`) + 1,
       breaches.length
     )
+    const number = new Intl.NumberFormat()
+    return number.format(numberOfBreaches)
   }
 
   return (
     <>
       {numberOfBreaches() && (
-        <p>{`This password shows in ${numberOfBreaches()} breaches.`}</p>
+        <p>{`This password shows in ${numberOfBreaches().toLocaleString()} breaches.`}</p>
       )}
       <input
         value={getPassword}
