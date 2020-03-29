@@ -1,16 +1,15 @@
-import React from 'react'
-
-import { Dump } from '../helpers'
+import React from 'react';
+import { Dump } from '../helpers';
 
 const HaveIBeenPwned = ({
   password,
   sha1,
   firstFiveHashChars,
   restHashChars,
-  hibpHashes
+  hibpHashes,
 }) => {
   return (
-    <React.Fragment>
+    <>
       <Dump
         password={password}
         sha1={sha1}
@@ -18,7 +17,7 @@ const HaveIBeenPwned = ({
         restHashChars={restHashChars}
       />
       {/* <p>{hash(this.props.password)}</p> */}
-    </React.Fragment>
-  )
-}
-export default HaveIBeenPwned
+    </>
+  );
+};
+export default HaveIBeenPwned;

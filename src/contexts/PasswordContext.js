@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import hash from 'sha1';
 // import { throttle } from "throttle-debounce";
 import { fetchHIBPData } from '../helpers';
@@ -6,7 +6,7 @@ import { fetchHIBPData } from '../helpers';
 // Context is made up of two things
 // Provider - Single as close to top level as possible
 // Consumer - Multiple have multiple consumers
-export const PasswordContext = React.createContext();
+export const PasswordContext = createContext();
 
 export class PasswordProvider extends React.Component {
   state = {
@@ -28,7 +28,7 @@ export class PasswordProvider extends React.Component {
     console.log('=====================');
   }
 
-  handlePasswordChange = e => {
+  handlePasswordChange = (e) => {
     const password = e.target.value;
     this.setState({
       password,
@@ -36,7 +36,7 @@ export class PasswordProvider extends React.Component {
     });
   };
 
-  handleSelectedChange = e => {
+  handleSelectedChange = (e) => {
     const selected = e.target.value;
     this.setState({ selected });
   };
@@ -52,7 +52,6 @@ export class PasswordProvider extends React.Component {
     }
   }
 
-  //www.npmjs.com/package/throttle-debounce
   componentDidUpdate(prevProps, prevState) {
     // filter for password in hashes
     const p = this.matchHash()[0];
@@ -68,13 +67,13 @@ export class PasswordProvider extends React.Component {
   matchHash = () => {
     const hashes = this.state.hibpHashes;
     return hashes.filter(
-      hash =>
+      (hash) =>
         hash.substring(0, hash.indexOf(':')) ===
         this.state.restHashChars
     );
   };
 
-  apiCallsThrottled = query => {
+  apiCallsThrottled = (query) => {
     this.setState({
       // hibpHashes: throttle(500, query)
     });
@@ -83,7 +82,7 @@ export class PasswordProvider extends React.Component {
   // get Have I Been Pwned hash list
   getHIBPHashes(apiUrl, sha1) {
     fetchHIBPData(`${apiUrl}/${sha1.substring(0, 5)}`).then(
-      result => {
+      (result) => {
         this.setState({
           hibpHashes: result.data.split('\r\n'),
         });
