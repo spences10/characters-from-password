@@ -1,6 +1,6 @@
 {
   "name": "characters-from-password",
-  "version": "0.1.135",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "gatsby develop -p 6587 -o",
@@ -37,5 +37,20 @@
     "jsxSingleQuote": true,
     "semi": false,
     "arrowParens": "avoid"
-  }
+  },
+  "description": "Pick specific characters from your password",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spences10/characters-from-password.git"
+  },
+  "keywords": [
+    "password",
+    "picker"
+  ],
+  "author": "Scott Spence <yo@scottspence.dev>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spences10/characters-from-password/issues"
+  },
+  "homepage": "https://github.com/spences10/characters-from-password#readme"
 }
