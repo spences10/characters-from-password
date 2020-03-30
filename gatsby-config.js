@@ -10,7 +10,7 @@ const siteMetadata = {
   favicon: `./static/favicon.svg`,
   backgroundColor: `#f7f0eb`,
   themeColor: `#a2466c`,
-};
+}
 
 module.exports = {
   siteMetadata,
@@ -20,9 +20,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `open sans\:400,500,700`,
-          `roboto\:400,700`,
-          `tillium web\:400,700`,
+          `work sans\:400,500,700`,
+          `rhodium libre\:400,700`,
           `space mono\:400,700`,
         ],
         display: 'swap',
@@ -42,4 +41,4 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
   ],
-};
+}
