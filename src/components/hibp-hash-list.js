@@ -73,7 +73,7 @@ export const HIBPHashList = () => {
         type='text'
         placeholder='password me up yo!'
       />
-      <select onChange={e => handleSelectedChange(e)}>{list}</select>
+      <select onBlur={e => handleSelectedChange(e)}>{list}</select>
       <label>"{characterFromPassword}"</label>
       <button onClick={handleFunPassword}>Get Fun Name</button>
       <p>{funPassword}</p>
