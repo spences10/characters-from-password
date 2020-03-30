@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import hash from 'sha1'
-import { fetchHIBPData, getFunName } from '../helpers'
+import { Dump, fetchHIBPData, getFunName } from '../helpers'
 
 const apiUrl = `https://api.pwnedpasswords.com/range/`
 
@@ -80,6 +80,7 @@ export const HIBPHashList = () => {
       {getNumberOfBreaches() && (
         <p>{`This password shows in ${getNumberOfBreaches().toLocaleString()} breaches.`}</p>
       )}
+      <Dump sha1={getSha1} yo={hashes} />
     </>
   )
 }
