@@ -1,7 +1,6 @@
 import React from 'react'
 import SEO from 'react-seo-component'
 import { HIBPHashList } from '../components/hibp-hash-list'
-import { MainForm } from '../components/main-form'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 import { GlobalStyle } from '../theme/global-style'
 
@@ -28,7 +27,6 @@ export default () => {
         siteLocale={siteLocale}
         twitterUsername={twitterUsername}
       />
-      <MainForm />
       <HIBPHashList />
     </>
   )
