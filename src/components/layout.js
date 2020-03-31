@@ -1,11 +1,19 @@
 import React from 'react'
-// import { down, up } from 'styled-breakpoints'
 import styled from 'styled-components'
 
 const AppStyles = styled.main`
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 0 20px;
+  h1 {
+    font-family: ${({ theme }) => theme.font.sans};
+  }
+  p,
+  label,
+  input,
+  select {
+    font-family: ${({ theme }) => theme.font.serif};
+  }
+  section {
+    font-family: ${({ theme }) => theme.font.monospace};
+  }
 `
 
 export const Layout = ({ children }) => {

@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import hash from 'sha1'
-import { Dump, fetchHIBPData, getFunName } from '../helpers'
+import styled from 'styled-components'
+import { fetchHIBPData, getFunName } from '../helpers'
+
+const Wrapper = styled.div`
+  input {
+    text-align: center;
+    min-width: 900px;
+  }
+`
 
 const apiUrl = `https://api.pwnedpasswords.com/range/`
 
@@ -66,21 +74,30 @@ export const HIBPHashList = () => {
   }
 
   return (
-    <>
+    <Wrapper>
+      <label htmlFor='passwordInput'>
+        Enter Password You Want to Pick Characters From:
+      </label>
       <input
+        id='passwordInput'
+        type='password'
+        placeholder='password me up yo!'
         value={getPassword}
         onChange={e => handleInputChange(e)}
-        type='text'
-        placeholder='password me up yo!'
       />
-      <select onBlur={e => handleSelectedChange(e)}>{list}</select>
-      <label>"{characterFromPassword}"</label>
+      <label htmlFor='characterFromPassword'>Select Character:</label>
+      <select
+        id='characterFromPassword'
+        onChange={e => handleSelectedChange(e)}
+      >
+        {list}
+      </select>
+      <section>"{characterFromPassword}"</section>
       <button onClick={handleFunPassword}>Get Fun Name</button>
       <p>{funPassword}</p>
       {getNumberOfBreaches() && (
         <p>{`This password shows in ${getNumberOfBreaches().toLocaleString()} breaches.`}</p>
       )}
-      <Dump sha1={getSha1} yo={hashes} />
-    </>
+    </Wrapper>
   )
 }
