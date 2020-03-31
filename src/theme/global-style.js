@@ -146,6 +146,6 @@ export const GlobalStyle = createGlobalStyle`
   body {
     line-height: ${({ theme }) => theme.lineHeight.relaxed};
     letter-spacing: ${({ theme }) => theme.letterSpacing.wide};
-    background-color: ${({ theme }) => theme.colours.grey[100]};
+    background-color: ${({ theme }) => theme.colours.white};
   }
 `
