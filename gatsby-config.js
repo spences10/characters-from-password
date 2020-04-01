@@ -21,7 +21,7 @@ module.exports = {
       options: {
         fonts: [
           `work sans\:400,500,700`,
-          `rhodium libre\:400,700`,
+          `arvo\:400,700`,
           `space mono\:400,700`,
         ],
         display: 'swap',

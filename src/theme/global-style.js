@@ -40,7 +40,7 @@ export const theme = {
   },
   font: {
     sans: '"Work Sans", sans-serif',
-    serif: '"Rhodium Libre", sans',
+    serif: 'Arvo, sans',
     monospace: '"Space Mono", monospace',
   },
   fontSize: {
