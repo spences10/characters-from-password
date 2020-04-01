@@ -37,7 +37,8 @@
     "singleQuote": true,
     "jsxSingleQuote": true,
     "semi": false,
-    "arrowParens": "avoid"
+    "arrowParens": "avoid",
+    "proseWrap": "always"
   },
   "description": "Pick specific characters from your password",
   "repository": {
