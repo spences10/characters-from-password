@@ -24,6 +24,8 @@ const Wrapper = styled.form`
     min-width: 900px;
     font-size: ${({ theme }) => theme.fontSize['3xl']};
     border-radius: ${({ theme }) => theme.borderRadius.lg};
+    border-style: none;
+    border: solid 1px ${({ theme }) => theme.colours.grey[500]};
   }
   select {
   }
@@ -105,6 +107,7 @@ export const HIBPHashList = () => {
 
   function handleSelectedChange(e) {
     setSelected(e.target.value)
+    console.log(isLowerCase(e.target.value))
   }
 
   const list = items.map((item, index) => {
@@ -117,6 +120,10 @@ export const HIBPHashList = () => {
 
   function handleFunPassword() {
     setFunPassword(getFunName)
+  }
+
+  function isLowerCase(character) {
+    return character.charCodeAt(0)
   }
 
   return (
