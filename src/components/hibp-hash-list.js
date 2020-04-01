@@ -3,10 +3,26 @@ import hash from 'sha1'
 import styled from 'styled-components'
 import { fetchHIBPData, getFunName } from '../helpers'
 
-const Wrapper = styled.div`
+const Wrapper = styled.form`
   input {
     text-align: center;
     min-width: 900px;
+    font-size: ${({ theme }) => theme.fontSize['3xl']};
+    border-radius: ${({ theme }) => theme.borderRadius.lg};
+  }
+  label {
+    font-size: ${({ theme }) => theme.fontSize.xl};
+  }
+  button,
+  input,
+  select {
+    outline: none;
+    &:focus {
+      box-shadow: ${({ theme }) => theme.boxShadow.outline};
+    }
+  }
+  section {
+    font-family: ${({ theme }) => theme.font.monospace};
   }
 `
 
@@ -75,6 +91,7 @@ export const HIBPHashList = () => {
 
   return (
     <Wrapper>
+      <h1>Password Character Picker</h1>
       <label htmlFor='passwordInput'>
         Enter Password You Want to Pick Characters From:
       </label>
