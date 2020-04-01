@@ -4,11 +4,37 @@ import styled from 'styled-components'
 import { fetchHIBPData, getFunName } from '../helpers'
 
 const Wrapper = styled.form`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    '. title     .'
+    '. preamble  .'
+    '. password  .'
+    '. character .'
+    '. result    .'
+    '. result    .'
+    '. generate  .'
+    '. new       .';
+  h1 {
+    grid-area: title;
+  }
   input {
     text-align: center;
     min-width: 900px;
     font-size: ${({ theme }) => theme.fontSize['3xl']};
     border-radius: ${({ theme }) => theme.borderRadius.lg};
+  }
+  select {
+  }
+  section {
+    grid-area: result;
+    text-align: center;
+    font-family: ${({ theme }) => theme.font.monospace};
+    font-size: 6rem;
+    span {
+      font-family: ${({ theme }) => theme.font.sans};
+    }
   }
   label {
     font-size: ${({ theme }) => theme.fontSize.xl};
@@ -21,9 +47,13 @@ const Wrapper = styled.form`
       box-shadow: ${({ theme }) => theme.boxShadow.outline};
     }
   }
-  section {
-    font-family: ${({ theme }) => theme.font.monospace};
-  }
+`
+
+const PasswordFieldset = styled.fieldset`
+  grid-area: password;
+`
+const PickerFieldset = styled.fieldset`
+  grid-area: character;
 `
 
 const apiUrl = `https://api.pwnedpasswords.com/range/`
@@ -90,31 +120,41 @@ export const HIBPHashList = () => {
   }
 
   return (
-    <Wrapper>
+    <Wrapper onClick={e => e.preventDefault()}>
       <h1>Password Character Picker</h1>
-      <label htmlFor='passwordInput'>
-        Enter Password You Want to Pick Characters From:
-      </label>
-      <input
-        id='passwordInput'
-        type='password'
-        placeholder='password me up yo!'
-        value={getPassword}
-        onChange={e => handleInputChange(e)}
-      />
-      <label htmlFor='characterFromPassword'>Select Character:</label>
-      <select
-        id='characterFromPassword'
-        onChange={e => handleSelectedChange(e)}
-      >
-        {list}
-      </select>
-      <section>"{characterFromPassword}"</section>
-      <button onClick={handleFunPassword}>Get Fun Name</button>
-      <p>{funPassword}</p>
-      {getNumberOfBreaches() && (
-        <p>{`This password shows in ${getNumberOfBreaches().toLocaleString()} breaches.`}</p>
-      )}
+      <PasswordFieldset>
+        <label htmlFor='passwordInput'>
+          Enter Password You Want to Pick Characters From:
+        </label>
+        <input
+          id='passwordInput'
+          type='password'
+          placeholder='password me up yo!'
+          value={getPassword}
+          onChange={e => handleInputChange(e)}
+        />
+      </PasswordFieldset>
+      <PickerFieldset>
+        <label htmlFor='characterFromPassword'>
+          Select Character:
+        </label>
+        <select
+          id='characterFromPassword'
+          onChange={e => handleSelectedChange(e)}
+        >
+          {list}
+        </select>
+        <section>
+          <span>"</span>
+          {characterFromPassword}
+          <span>"</span>
+        </section>
+        {getNumberOfBreaches() && (
+          <p>{`This password shows in ${getNumberOfBreaches().toLocaleString()} breaches.`}</p>
+        )}
+        <button onClick={handleFunPassword}>Get Fun Name</button>
+        <p>{funPassword}</p>
+      </PickerFieldset>
     </Wrapper>
   )
 }
