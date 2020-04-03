@@ -1,5 +1,5 @@
 {
-  "name": "characters-from-password",
+  "name": "password-character-picker",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -47,6 +47,7 @@
   },
   "keywords": [
     "password",
+    "character",
     "picker"
   ],
   "author": "Scott Spence <yo@scottspence.dev>",
