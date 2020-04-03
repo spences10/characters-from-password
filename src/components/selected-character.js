@@ -18,7 +18,7 @@ export const SelectedCharacter = ({ char }) => {
       <span>"</span>
       {char}
       <span>"</span>
-      {char && <h2>This character is {whatIsIt()}</h2>}
+      {char && <h5>This character is {whatIsIt()}</h5>}
     </section>
   )
 }
