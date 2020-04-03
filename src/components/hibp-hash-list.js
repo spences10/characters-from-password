@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import hash from 'sha1'
 import styled from 'styled-components'
 import { fetchHIBPData, getFunName } from '../helpers'
+import { SelectedCharacter } from './selected-character'
 
 const Wrapper = styled.form`
   display: grid;
@@ -107,7 +108,6 @@ export const HIBPHashList = () => {
 
   function handleSelectedChange(e) {
     setSelected(e.target.value)
-    console.log(isLowerCase(e.target.value))
   }
 
   const list = items.map((item, index) => {
@@ -122,10 +122,6 @@ export const HIBPHashList = () => {
     setFunPassword(getFunName)
   }
 
-  function isLowerCase(character) {
-    return character.charCodeAt(0)
-  }
-
   return (
     <Wrapper onClick={e => e.preventDefault()}>
       <h1>Password Character Picker</h1>
@@ -135,7 +131,7 @@ export const HIBPHashList = () => {
         </label>
         <input
           id='passwordInput'
-          type='password'
+          // type='password'
           placeholder='password me up yo!'
           value={getPassword}
           onChange={e => handleInputChange(e)}
@@ -151,11 +147,7 @@ export const HIBPHashList = () => {
         >
           {list}
         </select>
-        <section>
-          <span>"</span>
-          {characterFromPassword}
-          <span>"</span>
-        </section>
+        <SelectedCharacter char={characterFromPassword} />
         {getNumberOfBreaches() && (
           <p>{`This password shows in ${getNumberOfBreaches().toLocaleString()} breaches.`}</p>
         )}
