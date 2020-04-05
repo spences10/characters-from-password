@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import { getFunName } from '../helpers'
+import { getFunPassword } from '../helpers'
 
 export const GetFunPassword = ({ handleFunPassword }) => {
   const [funPassword, setFunPassword] = useState(null)
   function handleFunPassword() {
-    setFunPassword(getFunName)
+    setFunPassword(getFunPassword)
   }
   return (
     <>
-      <button onClick={handleFunPassword}>Get Fun Name</button>
+      <button onClick={handleFunPassword}>Get Fun Password</button>
       <p>{funPassword}</p>
     </>
   )
