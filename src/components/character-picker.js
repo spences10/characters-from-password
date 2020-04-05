@@ -24,8 +24,6 @@ const Wrapper = styled.form`
   }
   input {
     text-align: center;
-    /* min-width: 900px; */
-    font-size: ${({ theme }) => theme.fontSize['4xl']};
     border-radius: ${({ theme }) => theme.borderRadius.full};
     border-style: none;
     border: solid 1px ${({ theme }) => theme.colours.grey[500]};
@@ -33,16 +31,6 @@ const Wrapper = styled.form`
     margin-bottom: ${({ theme }) => theme.spacing[3]};
   }
   select {
-    font-size: ${({ theme }) => theme.fontSize.xl};
-  }
-  section {
-    grid-area: result;
-    text-align: center;
-    font-family: ${({ theme }) => theme.font.monospace};
-    font-size: 6rem;
-    span {
-      font-family: ${({ theme }) => theme.font.sans};
-    }
   }
   label {
     font-size: ${({ theme }) => theme.fontSize.xl};
