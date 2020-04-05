@@ -2,6 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const AppStyles = styled.main`
+  position: relative;
+  max-width: 88vw;
+  margin: 0 auto;
+  display: block;
+
   h1 {
     font-family: ${({ theme }) => theme.font.serif};
     font-size: ${({ theme }) => theme.fontSize['5xl']};

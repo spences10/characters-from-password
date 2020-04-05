@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import hash from 'sha1'
 import styled from 'styled-components'
-import { fetchHIBPData, getFunName } from '../helpers'
+import { fetchHIBPData } from '../helpers'
+import { GetFunPassword } from './get-fun-password'
+import { NumberOfBreaches } from './number-of-breaches'
 import { SelectedCharacter } from './selected-character'
 
 const Wrapper = styled.form`
@@ -22,7 +24,7 @@ const Wrapper = styled.form`
   }
   input {
     text-align: center;
-    min-width: 900px;
+    /* min-width: 900px; */
     font-size: ${({ theme }) => theme.fontSize['4xl']};
     border-radius: ${({ theme }) => theme.borderRadius.full};
     border-style: none;
@@ -69,7 +71,6 @@ export const HIBPHashList = () => {
   const [getSha1, setSha1] = useState(``)
   const [getPassword, setPassword] = useState(``)
   const [selected, setSelected] = useState(``)
-  const [funPassword, setFunPassword] = useState(``)
 
   useEffect(() => {
     function getHIBPHashes(apiUrl, sha1) {
@@ -122,10 +123,6 @@ export const HIBPHashList = () => {
     )
   })
 
-  function handleFunPassword() {
-    setFunPassword(getFunName)
-  }
-
   return (
     <Wrapper onClick={e => e.preventDefault()}>
       <h1>Password Character Picker</h1>
@@ -152,11 +149,10 @@ export const HIBPHashList = () => {
           {list}
         </select>
         <SelectedCharacter char={characterFromPassword} />
-        {getNumberOfBreaches() && (
-          <p>{`This password shows in ${getNumberOfBreaches().toLocaleString()} breaches.`}</p>
-        )}
-        <button onClick={handleFunPassword}>Get Fun Name</button>
-        <p>{funPassword}</p>
+        <NumberOfBreaches
+          breaches={getPassword.length ? getNumberOfBreaches() : null}
+        />
+        <GetFunPassword />
       </PickerFieldset>
     </Wrapper>
   )

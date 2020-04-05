@@ -140,7 +140,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-family: ${({ theme }) => theme.font.sans};
-    font-size: ${({ theme }) => theme.fontSize.xl};
+    font-size: ${({ theme }) => theme.fontSize.base};
     color: ${({ theme }) => theme.colours.grey[900]};
   }
   body {
