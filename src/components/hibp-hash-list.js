@@ -124,6 +124,9 @@ export const HIBPHashList = () => {
 
   function handleFunPassword() {
     setFunPassword(getFunName)
+    console.log('=====================')
+    console.log(process.env.GATSBY_FATHOM_TRACKING_ID_CFROMP)
+    console.log('=====================')
   }
 
   return (
