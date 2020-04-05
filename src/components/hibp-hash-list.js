@@ -73,6 +73,7 @@ export const HIBPHashList = () => {
 
   useEffect(() => {
     function getHIBPHashes(apiUrl, sha1) {
+      if (sha1.length < 5) return null
       fetchHIBPData(`${apiUrl}/${sha1.substring(0, 5)}`).then(
         result => {
           setHashes(result.data.split('\r\n'))
@@ -134,7 +135,7 @@ export const HIBPHashList = () => {
         </label>
         <input
           id='passwordInput'
-          // type='password'
+          type='password'
           placeholder='password me up yo!'
           value={getPassword}
           onChange={e => handleInputChange(e)}
