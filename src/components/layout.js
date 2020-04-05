@@ -6,16 +6,16 @@ const AppStyles = styled.main`
   position: relative;
 
   ${down('sm')} {
-    background-color: seagreen;
+    /* background-color: seagreen; */
   }
   ${up('md')} {
-    background-color: dodgerblue;
+    /* background-color: dodgerblue; */
   }
   ${up('lg')} {
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
   }
   ${up('xl')} {
-    background-color: hotpink;
+    /* background-color: hotpink; */
   }
 `
 

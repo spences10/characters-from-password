@@ -33,7 +33,6 @@ const Wrapper = styled.form`
   select {
   }
   label {
-    font-size: ${({ theme }) => theme.fontSize.xl};
   }
   button,
   input,
