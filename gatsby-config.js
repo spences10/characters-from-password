@@ -2,7 +2,7 @@ const siteMetadata = {
   title: `Characters from Password`,
   description: `Pick Characters from Password`,
   image: `/default-site-image.jpg`,
-  siteUrl: `https://cfromp.scottspence.me`,
+  siteUrl: `https://cfromp.xyz`,
   siteLanguage: `en-GB`,
   siteLocale: `en_gb`,
   twitterUsername: `@spences10`,
