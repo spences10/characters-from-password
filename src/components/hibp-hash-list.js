@@ -91,7 +91,7 @@ export const HIBPHashList = () => {
   }
 
   function getNumberOfBreaches() {
-    if (!hashes) return
+    if (!hashes) return 0
     const match = hashes.filter(
       hash =>
         hash.substring(0, hash.indexOf(':')) ===
@@ -99,13 +99,12 @@ export const HIBPHashList = () => {
     )
 
     const breaches = match[0]
-    if (!breaches) return
+    if (!breaches) return 0
     const numberOfBreaches = breaches.substring(
       breaches.indexOf(`:`) + 1,
       breaches.length
     )
-    const number = new Intl.NumberFormat()
-    return number.format(numberOfBreaches)
+    return numberOfBreaches
   }
 
   const items = [...getPassword]
@@ -150,7 +149,8 @@ export const HIBPHashList = () => {
         </select>
         <SelectedCharacter char={characterFromPassword} />
         <NumberOfBreaches
-          breaches={getPassword.length ? getNumberOfBreaches() : null}
+          breaches={getNumberOfBreaches()}
+          passwordLength={getPassword}
         />
         <GetFunPassword />
       </PickerFieldset>
