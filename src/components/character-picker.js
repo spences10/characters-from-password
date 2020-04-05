@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import hash from 'sha1'
 import styled from 'styled-components'
 import { fetchHIBPData } from '../helpers'
-import { GetFunPassword } from './get-fun-password'
+import { FunPassword } from './get-fun-password'
 import { NumberOfBreaches } from './number-of-breaches'
 import { SelectedCharacter } from './selected-character'
 
@@ -139,7 +139,7 @@ export const CharacterPicker = () => {
           breaches={getNumberOfBreaches()}
           passwordLength={getPassword}
         />
-        <GetFunPassword />
+        <FunPassword />
       </PickerFieldset>
     </Wrapper>
   )

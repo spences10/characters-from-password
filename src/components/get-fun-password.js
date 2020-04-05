@@ -25,7 +25,7 @@ const GetPassword = styled.section`
   }
 `
 
-export const GetFunPassword = ({ handleFunPassword }) => {
+export const FunPassword = ({ handleFunPassword }) => {
   const [funPassword, setFunPassword] = useState(null)
   function handleFunPassword() {
     setFunPassword(getFunPassword)
