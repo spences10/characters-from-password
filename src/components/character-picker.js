@@ -66,7 +66,7 @@ const PickerFieldset = styled.fieldset`
 
 const apiUrl = `https://api.pwnedpasswords.com/range/`
 
-export const HIBPHashList = () => {
+export const CharacterPicker = () => {
   const [hashes, setHashes] = useState(``)
   const [getSha1, setSha1] = useState(``)
   const [getPassword, setPassword] = useState(``)
