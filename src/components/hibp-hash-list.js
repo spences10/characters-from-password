@@ -23,12 +23,15 @@ const Wrapper = styled.form`
   input {
     text-align: center;
     min-width: 900px;
-    font-size: ${({ theme }) => theme.fontSize['3xl']};
-    border-radius: ${({ theme }) => theme.borderRadius.lg};
+    font-size: ${({ theme }) => theme.fontSize['4xl']};
+    border-radius: ${({ theme }) => theme.borderRadius.full};
     border-style: none;
     border: solid 1px ${({ theme }) => theme.colours.grey[500]};
+    padding: ${({ theme }) => theme.spacing[3]};
+    margin-bottom: ${({ theme }) => theme.spacing[3]};
   }
   select {
+    font-size: ${({ theme }) => theme.fontSize.xl};
   }
   section {
     grid-area: result;

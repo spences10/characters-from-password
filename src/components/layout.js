@@ -5,6 +5,7 @@ const AppStyles = styled.main`
   h1 {
     font-family: ${({ theme }) => theme.font.serif};
     font-size: ${({ theme }) => theme.fontSize['5xl']};
+    margin-bottom: ${({ theme }) => theme.spacing[10]};
   }
   h2 {
     font-family: ${({ theme }) => theme.font.serif};
