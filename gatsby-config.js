@@ -1,3 +1,12 @@
+const activeEnv =
+  process.env.ACTIVE_ENV || process.env.NODE_ENV || 'development'
+
+console.log(`Using environment config: '${activeEnv}'`)
+
+require('dotenv').config({
+  path: `.env.${activeEnv}`,
+})
+
 const siteMetadata = {
   title: `Characters from Password`,
   description: `Pick Characters from Password`,
@@ -37,6 +46,12 @@ module.exports = {
         theme_color: siteMetadata.themeColor,
         display: `standalone`,
         icon: siteMetadata.favicon,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-fathom`,
+      options: {
+        siteId: process.env.GATSBY_FATHOM_TRACKING_ID_CFROMP,
       },
     },
     `gatsby-plugin-offline`,
