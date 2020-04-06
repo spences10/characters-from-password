@@ -8,17 +8,19 @@ import { SelectedCharacter } from './selected-character'
 
 const Wrapper = styled.form`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
-    '. title     .'
-    '. preamble  .'
-    '. password  .'
-    '. character .'
-    '. result    .'
-    '. result    .'
-    '. generate  .'
-    '. new       .';
+    '. title     title     title     .'
+    '. preamble  preamble  preamble  .'
+    '. password  password  password  .'
+    '. character character character .'
+    '. result    result    result    .'
+    '. result    result    result    .'
+    '. generate  generate  generate  .'
+    '. new       new       new       .';
   h1 {
     grid-area: title;
   }
@@ -29,6 +31,7 @@ const Wrapper = styled.form`
     border: solid 1px ${({ theme }) => theme.colours.grey[500]};
     padding: ${({ theme }) => theme.spacing[3]};
     margin-bottom: ${({ theme }) => theme.spacing[3]};
+    width: 100%;
   }
   select {
   }
@@ -116,6 +119,7 @@ export const CharacterPicker = () => {
         <label htmlFor='passwordInput'>
           Enter Password You Want to Pick Characters From:
         </label>
+        <br />
         <input
           id='passwordInput'
           type='password'

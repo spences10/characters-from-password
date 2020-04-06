@@ -6,16 +6,32 @@ const AppStyles = styled.main`
   position: relative;
 
   ${down('sm')} {
-    /* background-color: seagreen; */
+    background-color: seagreen;
+    h1 {
+      font-size: ${({ theme }) => theme.fontSize.xl};
+      margin-bottom: ${({ theme }) => theme.spacing['4']};
+    }
   }
   ${up('md')} {
-    /* background-color: dodgerblue; */
+    background-color: dodgerblue;
+    h1 {
+      font-size: ${({ theme }) => theme.fontSize['2xl']};
+      margin-bottom: ${({ theme }) => theme.spacing['6']};
+    }
   }
   ${up('lg')} {
-    /* background-color: rebeccapurple; */
+    background-color: rebeccapurple;
+    h1 {
+      font-size: ${({ theme }) => theme.fontSize['3xl']};
+      margin-bottom: ${({ theme }) => theme.spacing['10']};
+    }
   }
   ${up('xl')} {
-    /* background-color: hotpink; */
+    background-color: hotpink;
+    h1 {
+      font-size: ${({ theme }) => theme.fontSize['4xl']};
+      margin-bottom: ${({ theme }) => theme.spacing['20']};
+    }
   }
 `
 
