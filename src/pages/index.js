@@ -1,8 +1,7 @@
 import React from 'react'
 import SEO from 'react-seo-component'
-import { HIBPHashList } from '../components/hibp-hash-list'
+import { CharacterPicker } from '../components/character-picker'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
-import { GlobalStyle } from '../theme/global-style'
 
 export default () => {
   const {
@@ -16,7 +15,6 @@ export default () => {
   } = useSiteMetadata()
   return (
     <>
-      <GlobalStyle />
       <SEO
         title={`Characters from Password`}
         titleTemplate={title}
@@ -27,7 +25,7 @@ export default () => {
         siteLocale={siteLocale}
         twitterUsername={twitterUsername}
       />
-      <HIBPHashList />
+      <CharacterPicker />
     </>
   )
 }

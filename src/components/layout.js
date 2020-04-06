@@ -1,37 +1,21 @@
 import React from 'react'
+import { down, up } from 'styled-breakpoints'
 import styled from 'styled-components'
 
 const AppStyles = styled.main`
-  h1 {
-    font-family: ${({ theme }) => theme.font.serif};
-    font-size: ${({ theme }) => theme.fontSize['5xl']};
-    margin-bottom: ${({ theme }) => theme.spacing[10]};
+  position: relative;
+
+  ${down('sm')} {
+    /* background-color: seagreen; */
   }
-  h2 {
-    font-family: ${({ theme }) => theme.font.serif};
-    font-size: ${({ theme }) => theme.fontSize['4xl']};
+  ${up('md')} {
+    /* background-color: dodgerblue; */
   }
-  h3 {
-    font-family: ${({ theme }) => theme.font.serif};
-    font-size: ${({ theme }) => theme.fontSize['3xl']};
+  ${up('lg')} {
+    /* background-color: rebeccapurple; */
   }
-  h4 {
-    font-family: ${({ theme }) => theme.font.serif};
-    font-size: ${({ theme }) => theme.fontSize['2xl']};
-  }
-  h5 {
-    font-family: ${({ theme }) => theme.font.serif};
-    font-size: ${({ theme }) => theme.fontSize.xl};
-  }
-  h6 {
-    font-family: ${({ theme }) => theme.font.serif};
-    font-size: ${({ theme }) => theme.fontSize.lg};
-  }
-  p,
-  label,
-  input,
-  select {
-    font-family: ${({ theme }) => theme.font.sans};
+  ${up('xl')} {
+    /* background-color: hotpink; */
   }
 `
 

@@ -8,7 +8,7 @@ export function rando(arr) {
   return arr[Math.floor(Math.random() * arr.length)]
 }
 
-export function getFunName() {
+export function getFunPassword() {
   const adjectives = [
     'adorable',
     'beautiful',

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import hash from 'sha1'
 import styled from 'styled-components'
-import { fetchHIBPData, getFunName } from '../helpers'
+import { fetchHIBPData } from '../helpers'
+import { FunPassword } from './get-fun-password'
+import { NumberOfBreaches } from './number-of-breaches'
 import { SelectedCharacter } from './selected-character'
 
 const Wrapper = styled.form`
@@ -22,8 +24,6 @@ const Wrapper = styled.form`
   }
   input {
     text-align: center;
-    min-width: 900px;
-    font-size: ${({ theme }) => theme.fontSize['4xl']};
     border-radius: ${({ theme }) => theme.borderRadius.full};
     border-style: none;
     border: solid 1px ${({ theme }) => theme.colours.grey[500]};
@@ -31,19 +31,8 @@ const Wrapper = styled.form`
     margin-bottom: ${({ theme }) => theme.spacing[3]};
   }
   select {
-    font-size: ${({ theme }) => theme.fontSize.xl};
-  }
-  section {
-    grid-area: result;
-    text-align: center;
-    font-family: ${({ theme }) => theme.font.monospace};
-    font-size: 6rem;
-    span {
-      font-family: ${({ theme }) => theme.font.sans};
-    }
   }
   label {
-    font-size: ${({ theme }) => theme.fontSize.xl};
   }
   button,
   input,
@@ -64,12 +53,11 @@ const PickerFieldset = styled.fieldset`
 
 const apiUrl = `https://api.pwnedpasswords.com/range/`
 
-export const HIBPHashList = () => {
+export const CharacterPicker = () => {
   const [hashes, setHashes] = useState(``)
   const [getSha1, setSha1] = useState(``)
   const [getPassword, setPassword] = useState(``)
   const [selected, setSelected] = useState(``)
-  const [funPassword, setFunPassword] = useState(``)
 
   useEffect(() => {
     function getHIBPHashes(apiUrl, sha1) {
@@ -90,7 +78,7 @@ export const HIBPHashList = () => {
   }
 
   function getNumberOfBreaches() {
-    if (!hashes) return
+    if (!hashes) return 0
     const match = hashes.filter(
       hash =>
         hash.substring(0, hash.indexOf(':')) ===
@@ -98,13 +86,12 @@ export const HIBPHashList = () => {
     )
 
     const breaches = match[0]
-    if (!breaches) return
+    if (!breaches) return 0
     const numberOfBreaches = breaches.substring(
       breaches.indexOf(`:`) + 1,
       breaches.length
     )
-    const number = new Intl.NumberFormat()
-    return number.format(numberOfBreaches)
+    return numberOfBreaches
   }
 
   const items = [...getPassword]
@@ -121,10 +108,6 @@ export const HIBPHashList = () => {
       </option>
     )
   })
-
-  function handleFunPassword() {
-    setFunPassword(getFunName)
-  }
 
   return (
     <Wrapper onClick={e => e.preventDefault()}>
@@ -152,11 +135,11 @@ export const HIBPHashList = () => {
           {list}
         </select>
         <SelectedCharacter char={characterFromPassword} />
-        {getNumberOfBreaches() && (
-          <p>{`This password shows in ${getNumberOfBreaches().toLocaleString()} breaches.`}</p>
-        )}
-        <button onClick={handleFunPassword}>Get Fun Name</button>
-        <p>{funPassword}</p>
+        <NumberOfBreaches
+          breaches={getNumberOfBreaches()}
+          passwordLength={getPassword}
+        />
+        <FunPassword />
       </PickerFieldset>
     </Wrapper>
   )

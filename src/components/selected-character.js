@@ -1,4 +1,14 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const StyledCharacter = styled.section`
+  grid-area: character;
+  text-align: center;
+  font-family: ${({ theme }) => theme.font.monospace};
+  span {
+    font-family: ${({ theme }) => theme.font.sans};
+  }
+`
 
 export const SelectedCharacter = ({ char }) => {
   function whatIsIt() {
@@ -14,11 +24,11 @@ export const SelectedCharacter = ({ char }) => {
   }
 
   return (
-    <section>
+    <StyledCharacter>
       <span>"</span>
       {char}
       <span>"</span>
       {char && <h5>This character is {whatIsIt()}</h5>}
-    </section>
+    </StyledCharacter>
   )
 }
