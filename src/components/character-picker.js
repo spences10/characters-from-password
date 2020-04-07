@@ -1,50 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import hash from 'sha1'
-import styled from 'styled-components'
+import Preamble from '../copy/preamble.mdx'
 import { fetchHIBPData } from '../helpers'
 import { FunPassword } from './get-fun-password'
 import { NumberOfBreaches } from './number-of-breaches'
 import { SelectedCharacter } from './selected-character'
-
-const Wrapper = styled.form`
-  display: grid;
-  height: 100vh;
-  width: 100vw;
-  grid-template-rows: auto;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-areas:
-    '. . p p p p p p p p . .'
-    '. . t t t t t t t t . .'
-    '. . s s s s s s s s . .'
-    '. . r r r r r r r r . .'
-    '. . n n n n n n n n . .'
-    '. . h h h h h h h h . .';
-
-  section {
-    grid-area: p;
-    text-align: center;
-  }
-`
-
-const PasswordFieldset = styled.fieldset`
-  grid-area: t;
-  input {
-    text-align: center;
-    border-radius: ${({ theme }) => theme.borderRadius.full};
-    border-style: none;
-    border: solid 1px ${({ theme }) => theme.colours.grey[500]};
-    padding: ${({ theme }) => theme.spacing[3]};
-    margin-bottom: ${({ theme }) => theme.spacing[3]};
-    width: 100%;
-  }
-`
-const PickerFieldset = styled.fieldset`
-  grid-area: s;
-  text-align: center;
-  select {
-    margin: ${({ theme }) => theme.spacing['1']};
-  }
-`
 
 const apiUrl = `https://api.pwnedpasswords.com/range/`
 
@@ -105,9 +65,11 @@ export const CharacterPicker = () => {
   })
 
   return (
-    <Wrapper onClick={e => e.preventDefault()}>
-      <section>Password Character Picker</section>
-      <PasswordFieldset>
+    <form onClick={e => e.preventDefault()}>
+      <section>
+        <Preamble />
+      </section>
+      <fieldset>
         <label
           htmlFor='passwordInput'
           aria-label='Enter Password You Want to Pick Characters From:'
@@ -120,8 +82,8 @@ export const CharacterPicker = () => {
           value={getPassword}
           onChange={e => handleInputChange(e)}
         />
-      </PasswordFieldset>
-      <PickerFieldset>
+      </fieldset>
+      <fieldset>
         <label htmlFor='characterFromPassword'>
           Select Character:
         </label>
@@ -137,7 +99,7 @@ export const CharacterPicker = () => {
           passwordLength={getPassword}
         />
         <FunPassword />
-      </PickerFieldset>
-    </Wrapper>
+      </fieldset>
+    </form>
   )
 }
