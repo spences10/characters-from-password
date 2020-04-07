@@ -1,6 +1,6 @@
 {
   "name": "password-character-picker",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "scripts": {
     "dev": "gatsby develop -p 6587 -o",
@@ -9,7 +9,7 @@
   "dependencies": {
     "axios": "0.19.2",
     "babel-plugin-styled-components": "1.10.7",
-    "gatsby": "2.20.7",
+    "gatsby": "2.20.13",
     "gatsby-plugin-fathom": "1.2.0",
     "gatsby-plugin-google-fonts": "1.0.1",
     "gatsby-plugin-manifest": "2.3.3",
