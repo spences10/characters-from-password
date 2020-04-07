@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import hash from 'sha1'
-import Preamble from '../copy/preamble.mdx'
 import { fetchHIBPData } from '../helpers'
-import { FunPassword } from './get-fun-password'
 import { NumberOfBreaches } from './number-of-breaches'
 import { SelectedCharacter } from './selected-character'
 
@@ -66,9 +64,6 @@ export const CharacterPicker = () => {
 
   return (
     <form onClick={e => e.preventDefault()}>
-      <section>
-        <Preamble />
-      </section>
       <fieldset>
         <label
           htmlFor='passwordInput'
@@ -98,7 +93,6 @@ export const CharacterPicker = () => {
           breaches={getNumberOfBreaches()}
           passwordLength={getPassword}
         />
-        <FunPassword />
       </fieldset>
     </form>
   )
