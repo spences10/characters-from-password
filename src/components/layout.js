@@ -4,7 +4,8 @@ import styled from 'styled-components'
 
 const AppStyles = styled.main`
   position: relative;
-  max-width: 55vw;
+  min-width: 300px;
+  max-width: 700px;
   margin: 0 auto;
   input,
   select,
@@ -39,6 +40,15 @@ const AppStyles = styled.main`
       width: 100%;
     }
     word-break: break-word;
+  }
+  input {
+    text-align: center;
+    border-radius: ${({ theme }) => theme.borderRadius.full};
+    border-style: none;
+    border: solid 1px ${({ theme }) => theme.colours.grey[500]};
+    padding: ${({ theme }) => theme.spacing[3]};
+    margin-bottom: ${({ theme }) => theme.spacing[3]};
+    width: 100%;
   }
   ${down('sm')} {
     background-color: seagreen;
