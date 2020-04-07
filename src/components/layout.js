@@ -4,6 +4,8 @@ import styled from 'styled-components'
 
 const AppStyles = styled.main`
   position: relative;
+  max-width: 55vw;
+  margin: 0 auto;
   input,
   select,
   button {
@@ -12,33 +14,43 @@ const AppStyles = styled.main`
       box-shadow: ${({ theme }) => theme.boxShadow.outline};
     }
   }
+  h1 {
+    font-size: ${({ theme }) => theme.fontSize['4xl']};
+    font-family: ${({ theme }) => theme.font.serif};
+    margin-top: ${({ theme }) => theme.spacing[8]};
+    line-height: ${({ theme }) => theme.lineHeight.none};
+  }
+  h2 {
+    font-size: ${({ theme }) => theme.fontSize['3xl']};
+    font-family: ${({ theme }) => theme.font.serif};
+    margin-top: ${({ theme }) => theme.spacing[8]};
+    line-height: ${({ theme }) => theme.lineHeight.none};
+  }
+  p {
+    font-size: ${({ theme }) => theme.fontSize.base};
+    margin-top: ${({ theme }) => theme.spacing[3]};
+    strong {
+      font-weight: bold;
+    }
+    em {
+      font-style: italic;
+    }
+    img {
+      width: 100%;
+    }
+    word-break: break-word;
+  }
   ${down('sm')} {
     background-color: seagreen;
-    h1 {
-      font-size: ${({ theme }) => theme.fontSize['2xl']};
-      margin-bottom: ${({ theme }) => theme.spacing['4']};
-    }
   }
   ${up('md')} {
     background-color: dodgerblue;
-    h1 {
-      font-size: ${({ theme }) => theme.fontSize['2xl']};
-      margin-bottom: ${({ theme }) => theme.spacing['6']};
-    }
   }
   ${up('lg')} {
     background-color: rebeccapurple;
-    h1 {
-      font-size: ${({ theme }) => theme.fontSize['3xl']};
-      margin-bottom: ${({ theme }) => theme.spacing['10']};
-    }
   }
   ${up('xl')} {
     background-color: hotpink;
-    h1 {
-      font-size: ${({ theme }) => theme.fontSize['4xl']};
-      margin-bottom: ${({ theme }) => theme.spacing['20']};
-    }
   }
 `
 
