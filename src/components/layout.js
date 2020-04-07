@@ -4,11 +4,18 @@ import styled from 'styled-components'
 
 const AppStyles = styled.main`
   position: relative;
-
+  input,
+  select,
+  button {
+    outline: none;
+    &:focus {
+      box-shadow: ${({ theme }) => theme.boxShadow.outline};
+    }
+  }
   ${down('sm')} {
     background-color: seagreen;
     h1 {
-      font-size: ${({ theme }) => theme.fontSize.xl};
+      font-size: ${({ theme }) => theme.fontSize['2xl']};
       margin-bottom: ${({ theme }) => theme.spacing['4']};
     }
   }

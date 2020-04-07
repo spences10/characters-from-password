@@ -10,20 +10,24 @@ const Wrapper = styled.form`
   display: grid;
   height: 100vh;
   width: 100vw;
-  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;
+  grid-template-columns: repeat(12, 1fr);
   grid-template-areas:
-    '. title     title     title     .'
-    '. preamble  preamble  preamble  .'
-    '. password  password  password  .'
-    '. character character character .'
-    '. result    result    result    .'
-    '. result    result    result    .'
-    '. generate  generate  generate  .'
-    '. new       new       new       .';
-  h1 {
-    grid-area: title;
+    '. . p p p p p p p p . .'
+    '. . t t t t t t t t . .'
+    '. . s s s s s s s s . .'
+    '. . r r r r r r r r . .'
+    '. . n n n n n n n n . .'
+    '. . h h h h h h h h . .';
+
+  section {
+    grid-area: p;
+    text-align: center;
   }
+`
+
+const PasswordFieldset = styled.fieldset`
+  grid-area: t;
   input {
     text-align: center;
     border-radius: ${({ theme }) => theme.borderRadius.full};
@@ -33,25 +37,13 @@ const Wrapper = styled.form`
     margin-bottom: ${({ theme }) => theme.spacing[3]};
     width: 100%;
   }
-  select {
-  }
-  label {
-  }
-  button,
-  input,
-  select {
-    outline: none;
-    &:focus {
-      box-shadow: ${({ theme }) => theme.boxShadow.outline};
-    }
-  }
-`
-
-const PasswordFieldset = styled.fieldset`
-  grid-area: password;
 `
 const PickerFieldset = styled.fieldset`
-  grid-area: character;
+  grid-area: s;
+  text-align: center;
+  select {
+    margin: ${({ theme }) => theme.spacing['1']};
+  }
 `
 
 const apiUrl = `https://api.pwnedpasswords.com/range/`
@@ -114,12 +106,13 @@ export const CharacterPicker = () => {
 
   return (
     <Wrapper onClick={e => e.preventDefault()}>
-      <h1>Password Character Picker</h1>
+      <section>Password Character Picker</section>
       <PasswordFieldset>
-        <label htmlFor='passwordInput'>
-          Enter Password You Want to Pick Characters From:
-        </label>
-        <br />
+        <label
+          htmlFor='passwordInput'
+          aria-label='Enter Password You Want to Pick Characters From:'
+          aria-labelledby='passwordInput'
+        />
         <input
           id='passwordInput'
           type='password'
