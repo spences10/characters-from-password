@@ -23,6 +23,12 @@ const GetPassword = styled.section`
       background-color: ${({ theme }) => theme.colours.primary[700]};
     }
   }
+  p {
+    min-height: ${({ theme }) => theme.spacing['20']};
+    font-size: ${({ theme }) => theme.fontSize['5xl']};
+    margin-left: -${({ theme }) => theme.spacing['64']};
+    margin-right: -${({ theme }) => theme.spacing['64']};
+  }
 `
 
 export const FunPassword = () => {
