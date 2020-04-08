@@ -27,26 +27,22 @@ const GetPassword = styled.section`
   }
   p {
     ${down('sm')} {
-      background-color: seagreen;
       min-height: ${({ theme }) => theme.spacing['12']};
       font-size: ${({ theme }) => theme.fontSize['2xl']};
     }
     ${up('md')} {
-      background-color: dodgerblue;
       min-height: ${({ theme }) => theme.spacing['16']};
       font-size: ${({ theme }) => theme.fontSize['3xl']};
       margin-left: -${({ theme }) => theme.spacing['20']};
       margin-right: -${({ theme }) => theme.spacing['20']};
     }
     ${up('lg')} {
-      background-color: rebeccapurple;
       min-height: ${({ theme }) => theme.spacing['16']};
       font-size: ${({ theme }) => theme.fontSize['4xl']};
       margin-left: -${({ theme }) => theme.spacing['32']};
       margin-right: -${({ theme }) => theme.spacing['32']};
     }
     ${up('xl')} {
-      background-color: hotpink;
       min-height: ${({ theme }) => theme.spacing['20']};
       font-size: ${({ theme }) => theme.fontSize['5xl']};
       margin-left: -${({ theme }) => theme.spacing['64']};

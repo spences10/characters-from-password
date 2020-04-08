@@ -51,10 +51,19 @@ const AppStyles = styled.main`
     border: solid 1px ${({ theme }) => theme.colours.grey[500]};
     padding: ${({ theme }) => theme.spacing[3]};
     ${down('sm')} {
+      font-size: ${({ theme }) => theme.fontSize['1xl']};
+      margin-top: ${({ theme }) => theme.spacing[2]};
+      width: 100%;
     }
     ${up('md')} {
+      font-size: ${({ theme }) => theme.fontSize['2xl']};
+      margin-top: ${({ theme }) => theme.spacing[4]};
+      width: 100%;
     }
     ${up('lg')} {
+      font-size: ${({ theme }) => theme.fontSize['3xl']};
+      margin-top: ${({ theme }) => theme.spacing[8]};
+      width: 100%;
     }
     ${up('xl')} {
       font-size: ${({ theme }) => theme.fontSize['4xl']};
