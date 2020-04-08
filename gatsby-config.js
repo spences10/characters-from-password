@@ -28,6 +28,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

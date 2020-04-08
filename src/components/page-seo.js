@@ -1,9 +1,8 @@
 import React from 'react'
 import SEO from 'react-seo-component'
-import { CharacterPicker } from '../components/character-picker'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 
-export default () => {
+export const PageSEO = () => {
   const {
     description,
     title,
@@ -25,7 +24,6 @@ export default () => {
         siteLocale={siteLocale}
         twitterUsername={twitterUsername}
       />
-      <CharacterPicker />
     </>
   )
 }
