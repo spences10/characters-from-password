@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
 import { NumberOfBreaches } from './number-of-breaches'
 import { SelectedCharacter } from './selected-character'
+
+const CharacterWrapper = styled.section`
+  text-align: center;
+`
 
 export const CharacterPicker = ({ password, breaches }) => {
   const [selected, setSelected] = useState(``)
@@ -21,7 +26,7 @@ export const CharacterPicker = ({ password, breaches }) => {
   })
 
   return (
-    <fieldset>
+    <CharacterWrapper>
       <label htmlFor='characterFromPassword'>Select Character:</label>
       <select
         id='characterFromPassword'
@@ -34,6 +39,6 @@ export const CharacterPicker = ({ password, breaches }) => {
         breaches={breaches()}
         passwordLength={password}
       />
-    </fieldset>
+    </CharacterWrapper>
   )
 }
