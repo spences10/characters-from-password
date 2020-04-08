@@ -7,6 +7,7 @@ const AppStyles = styled.main`
   min-width: 300px;
   max-width: 700px;
   margin: 0 auto;
+  padding: 1rem;
   input,
   select,
   button {
@@ -17,6 +18,7 @@ const AppStyles = styled.main`
   }
   fieldset {
     text-align: center;
+    margin-top: ${({ theme }) => theme.spacing[3]};
     select {
       margin-left: ${({ theme }) => theme.spacing['4']};
     }
@@ -26,6 +28,15 @@ const AppStyles = styled.main`
     font-family: ${({ theme }) => theme.font.serif};
     margin-top: ${({ theme }) => theme.spacing[8]};
     line-height: ${({ theme }) => theme.lineHeight.none};
+    ${down('sm')} {
+      margin-top: ${({ theme }) => theme.spacing[3]};
+    }
+    ${up('md')} {
+    }
+    ${up('lg')} {
+    }
+    ${up('xl')} {
+    }
   }
   h2 {
     font-size: ${({ theme }) => theme.fontSize['3xl']};
@@ -39,10 +50,18 @@ const AppStyles = styled.main`
     border-style: none;
     border: solid 1px ${({ theme }) => theme.colours.grey[500]};
     padding: ${({ theme }) => theme.spacing[3]};
-    min-height: ${({ theme }) => theme.spacing['20']};
-    font-size: ${({ theme }) => theme.fontSize['5xl']};
-    margin-left: -${({ theme }) => theme.spacing['64']};
-    margin-right: -${({ theme }) => theme.spacing['64']};
+    ${down('sm')} {
+    }
+    ${up('md')} {
+    }
+    ${up('lg')} {
+    }
+    ${up('xl')} {
+      font-size: ${({ theme }) => theme.fontSize['4xl']};
+      margin-top: ${({ theme }) => theme.spacing[16]};
+      margin-left: -${({ theme }) => theme.spacing[64]};
+      margin-right: -${({ theme }) => theme.spacing[64]};
+    }
   }
   p {
     font-size: ${({ theme }) => theme.fontSize.base};
@@ -62,7 +81,7 @@ const AppStyles = styled.main`
     margin-top: 30px;
     margin-top: ${({ theme }) => theme.spacing[3]};
     li {
-      list-style-type: circle;
+      list-style-type: disc;
       margin-left: ${({ theme }) => theme.spacing['8']};
       p {
         margin-top: 10px;
@@ -70,16 +89,16 @@ const AppStyles = styled.main`
     }
   }
   ${down('sm')} {
-    background-color: seagreen;
+    /* background-color: seagreen; */
   }
   ${up('md')} {
-    background-color: dodgerblue;
+    /* background-color: dodgerblue; */
   }
   ${up('lg')} {
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
   }
   ${up('xl')} {
-    background-color: hotpink;
+    /* background-color: hotpink; */
   }
 `
 
