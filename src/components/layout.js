@@ -23,6 +23,14 @@ const AppStyles = styled.main`
       margin-left: ${({ theme }) => theme.spacing['4']};
     }
   }
+  a {
+    color: ${({ theme }) => theme.colours.grey[900]};
+    text-decoration: underline;
+    text-decoration-color: ${({ theme }) => theme.colours.grey[900]};
+    &:hover {
+      opacity: 0.5;
+    }
+  }
   h1 {
     font-size: ${({ theme }) => theme.fontSize['4xl']};
     font-family: ${({ theme }) => theme.font.serif};
@@ -43,6 +51,17 @@ const AppStyles = styled.main`
     font-family: ${({ theme }) => theme.font.serif};
     margin-top: ${({ theme }) => theme.spacing[8]};
     line-height: ${({ theme }) => theme.lineHeight.none};
+  }
+  h3 {
+    font-size: ${({ theme }) => theme.fontSize['2xl']};
+    font-family: ${({ theme }) => theme.font.serif};
+    margin-top: ${({ theme }) => theme.spacing[8]};
+    line-height: ${({ theme }) => theme.lineHeight.none};
+  }
+  hr {
+    margin: 60px 0;
+    opacity: 0.5;
+    color: ${({ theme }) => theme.colours.grey[300]};
   }
   input {
     text-align: center;
