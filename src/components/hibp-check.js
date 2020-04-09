@@ -46,7 +46,7 @@ export const HIBPCheck = () => {
   }
 
   return (
-    <form onClick={e => e.preventDefault()}>
+    <>
       <fieldset>
         <label
           htmlFor='passwordInput'
@@ -65,6 +65,6 @@ export const HIBPCheck = () => {
         password={getPassword}
         breaches={getNumberOfBreaches}
       />
-    </form>
+    </>
   )
 }

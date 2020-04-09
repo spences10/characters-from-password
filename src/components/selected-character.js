@@ -10,6 +10,7 @@ const StyledCharacter = styled.section`
     font-family: ${({ theme }) => theme.font.sans};
   }
   p {
+    min-height: ${({ theme }) => theme.spacing['12']};
     font-size: ${({ theme }) => theme.fontSize.xl};
   }
 `
@@ -32,7 +33,7 @@ export const SelectedCharacter = ({ char }) => {
       <span>"</span>
       {char}
       <span>"</span>
-      {char && <p>This character is {whatIsIt()}</p>}
+      <p>{char && <p>This character is {whatIsIt()}</p>}</p>
     </StyledCharacter>
   )
 }
