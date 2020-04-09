@@ -5,6 +5,9 @@ import { SelectedCharacter } from './selected-character'
 
 const CharacterWrapper = styled.section`
   text-align: center;
+  select {
+    margin-top: ${({ theme }) => theme.spacing[3]};
+  }
 `
 
 export const CharacterPicker = ({ password, breaches }) => {
