@@ -13,14 +13,11 @@ export const StyledA = styled.a`
 
 export const A = props => {
   const fa = useAnalytics()
-  const onClick = () => {
-    fa(props.goal)
-  }
   return (
     <StyledA
       {...props}
       id={props.id}
-      onClick={onClick}
+      onClick={() => fa(props.goal)}
       target='_blank'
       rel='noopener noreferrer'
     >
