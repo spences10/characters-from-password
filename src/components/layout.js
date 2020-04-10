@@ -23,14 +23,7 @@ const AppStyles = styled.main`
       margin-left: ${({ theme }) => theme.spacing['4']};
     }
   }
-  a {
-    color: ${({ theme }) => theme.colours.grey[900]};
-    text-decoration: underline;
-    text-decoration-color: ${({ theme }) => theme.colours.grey[900]};
-    &:hover {
-      opacity: 0.5;
-    }
-  }
+
   h1 {
     font-size: ${({ theme }) => theme.fontSize['4xl']};
     font-family: ${({ theme }) => theme.font.serif};
