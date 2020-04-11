@@ -1008,7 +1008,7 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@emotion/is-prop-valid@^0.8.8":
+"@emotion/is-prop-valid@^0.8.3":
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"
   integrity sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==
@@ -5192,10 +5192,10 @@ gatsby-plugin-manifest@2.3.3:
     semver "^5.7.1"
     sharp "^0.25.1"
 
-gatsby-plugin-mdx@1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.1.5.tgz#476737da0a3b4a77e79bb95cf259b3ed4ae40b73"
-  integrity sha512-qBYgtEuUisP0zXp2+bf/GY3MayQl+rBQJ2Sm8ulZFVYmBe/Dq47Mmb3YR6W5qWE8D8oJFfKScXMPQm+5UpKPmg==
+gatsby-plugin-mdx@1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.1.7.tgz#af94eff3f10ae2475ac0714b08f3e97d0fc77b0f"
+  integrity sha512-CTEeZQQ/hYDPv9mX06259zwiQc67OGBPzigBL8ZEMSgg5ANzzfR143Wd74RGPvT04GnMNjfWKcg8yBPTf75EaA==
   dependencies:
     "@babel/core" "^7.8.7"
     "@babel/generator" "^7.8.8"
@@ -5259,10 +5259,10 @@ gatsby-plugin-page-creator@^2.2.1:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-react-helmet@3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.2.1.tgz#28a89e884e5447f7aefead2a80749e3745f5f5a9"
-  integrity sha512-5oarZdVvp3k3keG26eVFagVHLYw7wCGs/MXRYQg8MEyJewU3X4Uc0eo7qu4TM5EIuZ2ekaL14r86RB6RM5TORA==
+gatsby-plugin-react-helmet@3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.2.2.tgz#8817da61cd57b8fd9cf1cc6fb55c1e9564aa6a3c"
+  integrity sha512-mPd7gefGIxqAuxFJgDuttR9+DnRLKLrCh61ND1iLSeOp9GoYS/qH8Rhka6fkpmBXOtUVyujzaUthhB/ll/a4RA==
   dependencies:
     "@babel/runtime" "^7.8.7"
 
