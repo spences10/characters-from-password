@@ -24,33 +24,6 @@ const AppStyles = styled.main`
     }
   }
 
-  h1 {
-    font-size: ${({ theme }) => theme.fontSize['4xl']};
-    font-family: ${({ theme }) => theme.font.serif};
-    margin-top: ${({ theme }) => theme.spacing[8]};
-    line-height: ${({ theme }) => theme.lineHeight.none};
-    ${down('sm')} {
-      margin-top: ${({ theme }) => theme.spacing[3]};
-    }
-    ${up('md')} {
-    }
-    ${up('lg')} {
-    }
-    ${up('xl')} {
-    }
-  }
-  h2 {
-    font-size: ${({ theme }) => theme.fontSize['3xl']};
-    font-family: ${({ theme }) => theme.font.serif};
-    margin-top: ${({ theme }) => theme.spacing[8]};
-    line-height: ${({ theme }) => theme.lineHeight.none};
-  }
-  h3 {
-    font-size: ${({ theme }) => theme.fontSize['2xl']};
-    font-family: ${({ theme }) => theme.font.serif};
-    margin-top: ${({ theme }) => theme.spacing[8]};
-    line-height: ${({ theme }) => theme.lineHeight.none};
-  }
   hr {
     margin: 60px 0;
     opacity: 0.5;
