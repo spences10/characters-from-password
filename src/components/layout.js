@@ -23,12 +23,6 @@ const AppStyles = styled.main`
       margin-left: ${({ theme }) => theme.spacing['4']};
     }
   }
-
-  hr {
-    margin: 60px 0;
-    opacity: 0.5;
-    color: ${({ theme }) => theme.colours.grey[300]};
-  }
   input {
     text-align: center;
     border-radius: ${({ theme }) => theme.borderRadius.full};
@@ -55,31 +49,6 @@ const AppStyles = styled.main`
       margin-top: ${({ theme }) => theme.spacing[16]};
       margin-left: -${({ theme }) => theme.spacing[64]};
       margin-right: -${({ theme }) => theme.spacing[64]};
-    }
-  }
-  p {
-    font-size: ${({ theme }) => theme.fontSize.base};
-    margin-top: ${({ theme }) => theme.spacing[3]};
-    strong {
-      font-weight: bold;
-    }
-    em {
-      font-style: italic;
-    }
-    img {
-      width: 100%;
-    }
-    word-break: break-word;
-  }
-  ul {
-    margin-top: 30px;
-    margin-top: ${({ theme }) => theme.spacing[3]};
-    li {
-      list-style-type: disc;
-      margin-left: ${({ theme }) => theme.spacing['8']};
-      p {
-        margin-top: 10px;
-      }
     }
   }
   ${down('sm')} {
