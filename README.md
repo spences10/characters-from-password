@@ -12,7 +12,7 @@ when prompted to give characters 18, 7 and 12 from my password.
 I put this together for just that, paste or type in your password then
 pick out your character you need.
 
-Demo: https://cfromp.scottspence.me
+Demo: https://cfromp.xyz
 
 For Have I Been Pwnd check, use the pwndpasswords API
 https://api.pwnedpasswords.com/range/5BAA6
@@ -38,12 +38,14 @@ password dumps.
 
 # Further reading
 
-https://haveibeenpwned.com/API/v2#PwnedPasswords
-https://haveibeenpwned.com/Passwords
-https://www.troyhunt.com/ive-just-launched-pwned-passwords-version-2/
+- https://haveibeenpwned.com/API/v2#PwnedPasswords
+
+- https://haveibeenpwned.com/Passwords
+
+- https://www.troyhunt.com/ive-just-launched-pwned-passwords-version-2/
 
 ## Related
 
-https://passwordsecurity.info/
+- https://passwordsecurity.info/
 
 [correct battery horse staple]: https://xkcd.com/936/
