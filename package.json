@@ -1,38 +1,40 @@
 {
   "name": "password-character-picker",
-  "version": "1.0.0",
+  "version": "1.0.33",
   "private": true,
   "scripts": {
     "dev": "gatsby develop -p 6587 -o",
     "build": "gatsby build"
   },
   "dependencies": {
-    "@mdx-js/mdx": "1.6.16",
-    "@mdx-js/react": "1.6.16",
-    "axios": "0.20.0",
-    "babel-plugin-styled-components": "1.11.1",
-    "gatsby": "2.24.57",
+    "@mdx-js/mdx": "1.5.9",
+    "@mdx-js/react": "1.5.9",
+    "axios": "0.19.2",
+    "babel-plugin-styled-components": "1.10.7",
+    "gatsby": "2.20.36",
+    "gatsby-plugin-fathom": "1.2.0",
     "gatsby-plugin-google-fonts": "1.0.1",
-    "gatsby-plugin-manifest": "2.4.28",
-    "gatsby-plugin-mdx": "1.2.39",
-    "gatsby-plugin-offline": "3.2.27",
-    "gatsby-plugin-react-helmet": "3.3.10",
-    "gatsby-plugin-robots-txt": "1.5.1",
-    "gatsby-plugin-sitemap": "2.4.12",
-    "gatsby-plugin-styled-components": "3.3.10",
+    "gatsby-plugin-manifest": "2.3.7",
+    "gatsby-plugin-mdx": "1.1.11",
+    "gatsby-plugin-offline": "3.1.5",
+    "gatsby-plugin-react-helmet": "3.2.5",
+    "gatsby-plugin-robots-txt": "1.5.0",
+    "gatsby-plugin-sitemap": "2.3.6",
+    "gatsby-plugin-styled-components": "3.2.4",
+    "gatsby-plugin-zeit-now": "0.3.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-helmet": "^6.1.0",
-    "react-seo-component": "2.0.2",
+    "react-helmet": "6.0.0",
+    "react-seo-component": "2.0.0",
     "sha1": "1.1.1",
-    "styled-breakpoints": "8.1.1",
-    "styled-components": "5.2.0",
-    "styled-reset": "4.2.3"
+    "styled-breakpoints": "8.1.0",
+    "styled-components": "5.0.1",
+    "styled-reset": "4.1.4"
   },
   "devDependencies": {
-    "husky": "4.3.0",
-    "prettier": "2.1.1",
-    "pretty-quick": "3.0.2"
+    "husky": "4.2.5",
+    "prettier": "2.0.5",
+    "pretty-quick": "2.0.1"
   },
   "husky": {
     "hooks": {
