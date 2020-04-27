@@ -1,10 +1,8 @@
 import React from 'react'
 import SEO from 'react-seo-component'
-import { HIBPHashList } from '../components/hibp-hash-list'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
-import { GlobalStyle } from '../theme/global-style'
 
-export default () => {
+export const PageSEO = () => {
   const {
     description,
     title,
@@ -16,7 +14,6 @@ export default () => {
   } = useSiteMetadata()
   return (
     <>
-      <GlobalStyle />
       <SEO
         title={`Characters from Password`}
         titleTemplate={title}
@@ -27,7 +24,6 @@ export default () => {
         siteLocale={siteLocale}
         twitterUsername={twitterUsername}
       />
-      <HIBPHashList />
     </>
   )
 }
