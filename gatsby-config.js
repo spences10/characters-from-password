@@ -53,6 +53,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-fathom`,
+      options: {
+        siteId: process.env.GATSBY_FATHOM_TRACKING_ID_CFROMP,
+      },
+    },
+    {
       resolve: `gatsby-plugin-zeit-now`,
       options: {
         globalHeaders: {
