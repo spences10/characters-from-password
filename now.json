@@ -2,8 +2,7 @@
   "version": 2,
   "build": {
     "env": {
-      "GATSBY_FATHOM_TRACKING_ID_CFROMP": "@gatsby_fathom_tracking_id_cfromp",
-      "GATSBY_FATHOM_TRACKING_URL_CFROMP": "@gatsby_fathom_tracking_url_cfromp"
+      "GATSBY_FATHOM_TRACKING_ID_CFROMP": "@gatsby_fathom_tracking_id_cfromp"
     }
   },
   "trailingSlash": false
