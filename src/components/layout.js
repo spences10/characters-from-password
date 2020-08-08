@@ -23,39 +23,6 @@ const AppStyles = styled.main`
       margin-left: ${({ theme }) => theme.spacing['4']};
     }
   }
-
-  h1 {
-    font-size: ${({ theme }) => theme.fontSize['4xl']};
-    font-family: ${({ theme }) => theme.font.serif};
-    margin-top: ${({ theme }) => theme.spacing[8]};
-    line-height: ${({ theme }) => theme.lineHeight.none};
-    ${down('sm')} {
-      margin-top: ${({ theme }) => theme.spacing[3]};
-    }
-    ${up('md')} {
-    }
-    ${up('lg')} {
-    }
-    ${up('xl')} {
-    }
-  }
-  h2 {
-    font-size: ${({ theme }) => theme.fontSize['3xl']};
-    font-family: ${({ theme }) => theme.font.serif};
-    margin-top: ${({ theme }) => theme.spacing[8]};
-    line-height: ${({ theme }) => theme.lineHeight.none};
-  }
-  h3 {
-    font-size: ${({ theme }) => theme.fontSize['2xl']};
-    font-family: ${({ theme }) => theme.font.serif};
-    margin-top: ${({ theme }) => theme.spacing[8]};
-    line-height: ${({ theme }) => theme.lineHeight.none};
-  }
-  hr {
-    margin: 60px 0;
-    opacity: 0.5;
-    color: ${({ theme }) => theme.colours.grey[300]};
-  }
   input {
     text-align: center;
     border-radius: ${({ theme }) => theme.borderRadius.full};
@@ -82,31 +49,6 @@ const AppStyles = styled.main`
       margin-top: ${({ theme }) => theme.spacing[16]};
       margin-left: -${({ theme }) => theme.spacing[64]};
       margin-right: -${({ theme }) => theme.spacing[64]};
-    }
-  }
-  p {
-    font-size: ${({ theme }) => theme.fontSize.base};
-    margin-top: ${({ theme }) => theme.spacing[3]};
-    strong {
-      font-weight: bold;
-    }
-    em {
-      font-style: italic;
-    }
-    img {
-      width: 100%;
-    }
-    word-break: break-word;
-  }
-  ul {
-    margin-top: 30px;
-    margin-top: ${({ theme }) => theme.spacing[3]};
-    li {
-      list-style-type: disc;
-      margin-left: ${({ theme }) => theme.spacing['8']};
-      p {
-        margin-top: 10px;
-      }
     }
   }
   ${down('sm')} {
