@@ -4,15 +4,13 @@ const AnalyticsContext = createContext({})
 
 export const AnalyticsProvider = ({ children }) => {
   useEffect(() => {
-    if (typeof window.fathom === 'undefined') {
-      window.fathom = (x, y, z) => {
-        console.log(`I'm a fake event`, x, y, z)
-      }
+    if (window.location.hostname === `localhost`) {
+      console.log(`I'm on localhost`)
     }
   }, [])
 
   const logClicks = goalId => {
-    window.fathom('trackGoal', goalId, 0)
+    window.fathom.trackGoal(goalId, 0)
   }
 
   return (
