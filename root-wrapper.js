@@ -17,9 +17,9 @@ export const wrapPageElement = ({ element }) => (
   <>
     <Helmet>
       <script
-        src={`${process.env.NEXT_PUBLIC_FATHOM_TRACKING_URL_CFROMP}/script.js`}
+        src='https://upqswv6dxq.cfromp.xyz/script.js'
         spa='auto'
-        site={process.env.NEXT_PUBLIC_FATHOM_TRACKING_ID_CFROMP}
+        site='ZHMVEOUT'
         defer
       ></script>
       <meta
