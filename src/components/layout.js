@@ -84,31 +84,6 @@ const AppStyles = styled.main`
       margin-right: -${({ theme }) => theme.spacing[64]};
     }
   }
-  p {
-    font-size: ${({ theme }) => theme.fontSize.base};
-    margin-top: ${({ theme }) => theme.spacing[3]};
-    strong {
-      font-weight: bold;
-    }
-    em {
-      font-style: italic;
-    }
-    img {
-      width: 100%;
-    }
-    word-break: break-word;
-  }
-  ul {
-    margin-top: 30px;
-    margin-top: ${({ theme }) => theme.spacing[3]};
-    li {
-      list-style-type: disc;
-      margin-left: ${({ theme }) => theme.spacing['8']};
-      p {
-        margin-top: 10px;
-      }
-    }
-  }
   ${down('sm')} {
     /* background-color: seagreen; */
   }
