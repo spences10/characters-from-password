@@ -1,22 +1,12 @@
 <script>
   import hash from 'sha1'
-
+  import { breaches, fetchHIBPHashes } from '../stores/hibp-store'
   let password = ''
-  const getHIBPData = async sha1 => {
-    const res = await fetch(
-      `https://api.pwnedpasswords.com/range/${sha1}`
-    )
-    if (res.ok) {
-      console.log('=====================')
-      console.log(await res.text())
-      console.log('=====================')
-    }
-  }
 
   function passwordChange(e) {
     let typed = e.target.value
-    let sha1 = hash(typed).toUpperCase().substring(0, 5)
-    getHIBPData(sha1)
+    let sha1 = hash(typed).toUpperCase()
+    fetchHIBPHashes(sha1)
   }
 </script>
 
@@ -27,3 +17,5 @@
 </p>
 
 <input type="text" on:input={passwordChange} bind:value={password} />
+
+{$breaches}
