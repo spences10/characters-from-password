@@ -4,12 +4,14 @@ specifiers:
   '@sveltejs/kit': next
   prettier: ^2.4.1
   prettier-plugin-svelte: ^2.4.0
+  sha1: ^1.1.1
   svelte: ^3.42.6
 
 devDependencies:
   '@sveltejs/kit': 1.0.0-next.184_svelte@3.43.2
   prettier: 2.4.1
   prettier-plugin-svelte: 2.4.0_prettier@2.4.1+svelte@3.43.2
+  sha1: 1.1.1
   svelte: 3.43.2
 
 packages:
@@ -65,9 +67,17 @@ packages:
       - supports-color
     dev: true
 
+  /charenc/0.0.2:
+    resolution: {integrity: sha1-wKHS86cJLgN3S/qD8UwPxXkKhmc=}
+    dev: true
+
   /cheap-watch/1.0.4:
     resolution: {integrity: sha512-QR/9FrtRL5fjfUJBhAKCdi0lSRQ3rVRRum3GF9wDKp2TJbEIMGhUEr2yU8lORzm9Isdjx7/k9S0DFDx+z5VGtw==}
     engines: {node: '>=8'}
+    dev: true
+
+  /crypt/0.0.2:
+    resolution: {integrity: sha1-iNf/fsDfuG9xPch7u0LQRNPmxBs=}
     dev: true
 
   /debug/4.3.2:
@@ -359,6 +369,13 @@ packages:
     engines: {node: '>= 6'}
     dependencies:
       mri: 1.2.0
+    dev: true
+
+  /sha1/1.1.1:
+    resolution: {integrity: sha1-rdqnqTFo85PxnrKxUJFhjicA+Eg=}
+    dependencies:
+      charenc: 0.0.2
+      crypt: 0.0.2
     dev: true
 
   /source-map-js/0.6.2:
