@@ -1,0 +1,42 @@
+<script>
+  import GitHub from '$lib/icons/git-hub.svelte'
+  import Twitter from '$lib/icons/twitter.svelte'
+  import YouTube from '$lib/icons/you-tube.svelte'
+</script>
+
+<footer
+  class="p-10 footer bg-primary text-primary-content footer-center"
+>
+  <div>
+    <img
+      src="https://res.cloudinary.com/defkmsrpw/image/upload/q_auto,f_auto/v1622648685/ezgif.com-gif-maker.gif"
+      alt="Scott avatar"
+      class="rounded-full h-20"
+    />
+    <p class="font-bold">
+      Made with ❤️ by
+      <a
+        class="link transition hover:text-secondary"
+        href="https://scottspence.com"
+      >
+        Scott Spence
+      </a>
+    </p>
+    <p>
+      Copyright © {`${new Date().getFullYear()}`} - All right reserved
+    </p>
+  </div>
+  <div>
+    <div class="grid grid-flow-col gap-4">
+      <a href="https://twitter.com/spences10">
+        <Twitter />
+      </a>
+      <a href="https://github.com/spences10">
+        <GitHub />
+      </a>
+      <a href="https://ss10/yt">
+        <YouTube />
+      </a>
+    </div>
+  </div>
+</footer>

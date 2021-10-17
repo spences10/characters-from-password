@@ -3,7 +3,6 @@
   import GetFunPassword from '$lib/get-fun-password.svelte'
   import NumberOfBreaches from '$lib/number-of-breaches.svelte'
   import hash from 'sha1'
-  import About from '../copy/about.md'
   import MaskedPasswords from '../copy/masked-passwords.md'
   import Preamble from '../copy/preamble.md'
   import { fetchHIBPHashes } from '../stores/hibp-store'
@@ -56,7 +55,3 @@
 </div>
 
 <div class="divider" />
-
-<div class="all-prose">
-  <About />
-</div>
