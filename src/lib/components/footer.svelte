@@ -30,21 +30,13 @@
   </div>
   <div>
     <div class="grid grid-flow-col gap-4">
-      <a
-        class="sr-only"
-        aria-label="Twitter"
-        href="https://twitter.com/spences10"
-      >
+      <a aria-label="Twitter" href="https://twitter.com/spences10">
         <Twitter />
       </a>
-      <a
-        class="sr-only"
-        aria-label="GitHub"
-        href="https://github.com/spences10"
-      >
+      <a aria-label="GitHub" href="https://github.com/spences10">
         <GitHub />
       </a>
-      <a class="sr-only" aria-label="YouTube" href="https://ss10/yt">
+      <a aria-label="YouTube" href="https://ss10/yt">
         <YouTube />
       </a>
     </div>
