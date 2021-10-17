@@ -9,7 +9,7 @@ export const fetchHIBPHashes = async sha1 => {
   const res = await fetch(url)
   const resText = await res.text()
 
-  // work through hash data
+  // work through hash data to get number of breaches
   const splitText = resText.split('\r\n')
 
   if (!splitText) return breaches.set(0)
