@@ -1,11 +1,16 @@
 <script>
+  import SelectedCharacter from './selected-character.svelte'
+
   export let password = ''
   let selectedCharacter = ''
 
-  $: characterFromPassword = password.charAt(selectedCharacter - 1)
   $: items = [...password]
+  $: char = password.charAt(selectedCharacter - 1)
 
-  const handleChange = e => (selectedCharacter = e.target.value)
+  const handleChange = e => {
+    selectedCharacter = e.target.value
+    char = selectedCharacter
+  }
 </script>
 
 <select on:change={e => handleChange(e)}>
@@ -16,4 +21,4 @@
   {/each}
 </select>
 
-{characterFromPassword}
+<SelectedCharacter {char} />
