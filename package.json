@@ -1,6 +1,13 @@
 {
   "name": "characters-from-password",
-  "version": "0.0.1",
+  "author": {
+    "name": "Scott Spence",
+    "email": "yo@scottspence.dev",
+    "url": "https://scottspence.com"
+  },
+  "license": "MIT",
+  "type": "module",
+  "version": "2.0.0",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
@@ -26,5 +33,18 @@
     "tailwindcss": "^2.2.16",
     "theme-change": "^2.0.2"
   },
-  "type": "module"
+  "description": "Pick specific characters from your password",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spences10/characters-from-password.git"
+  },
+  "keywords": [
+    "password",
+    "character",
+    "picker"
+  ],
+  "bugs": {
+    "url": "https://github.com/spences10/characters-from-password/issues"
+  },
+  "homepage": "https://github.com/spences10/characters-from-password#readme"
 }
