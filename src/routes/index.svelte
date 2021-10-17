@@ -27,7 +27,7 @@
 <div class="mb-20 form-control">
   <input
     class="mx-1 lg:-mx-40 text-center text-4xl input input-primary input-bordered input-lg shadow-lg"
-    type="text"
+    type="password"
     placeholder="Enter a password here"
     on:input={passwordChange}
     bind:value={password}
