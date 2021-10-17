@@ -9,11 +9,11 @@
 
 {#if $breaches > 0}
   <div class="stat place-items-center place-content-center">
-    <div class="stat-title">This password appears in</div>
-    <div class="text-error stat-value">
+    <div class="stat-title text-2xl">This password appears in</div>
+    <div class="text-error stat-value text-4xl">
       {formattedNumber($breaches)}
     </div>
-    <div class="stat-desc">breaches</div>
+    <div class="stat-desc text-2xl">breaches</div>
   </div>
 {:else}
   <div class="stat place-items-center place-content-center">

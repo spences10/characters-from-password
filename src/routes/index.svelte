@@ -22,14 +22,12 @@
 </div>
 
 <div class="mb-20 all-prose">
-  <p class="all-prose">
-    Enter a password to pick specific characters from it.
-  </p>
+  <p>Enter a password to pick specific characters from it.</p>
 </div>
 
 <div class="mb-20 form-control">
   <input
-    class="-mx-40 text-center text-4xl input input-primary input-bordered input-lg"
+    class="mx-1 lg:-mx-40 text-center text-4xl input input-primary input-bordered input-lg shadow-lg"
     type="text"
     placeholder="Enter a password here"
     on:input={passwordChange}
@@ -39,13 +37,13 @@
 
 <CharacterPicker {password} />
 
-<div class="divider" />
+<div class="h-36">
+  {#if password.length > 0}
+    <NumberOfBreaches />
+  {/if}
+</div>
 
-{#if password.length > 0}
-  <NumberOfBreaches />
-{/if}
-
-<div class="all-prose">
+<div class="all-prose mb-20">
   <Preamble />
 </div>
 

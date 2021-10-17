@@ -4,10 +4,10 @@
   $: asciiNumber = char.charCodeAt(0)
 </script>
 
-<div class="all-prose">
-  <span>"</span>
-  {char}
-  <span>"</span>
+<div class="all-prose h-36 text-center">
+  {#if char}
+    <span class="text-4xl">"{char}"</span>
+  {/if}
   {#if asciiNumber > 47 && asciiNumber < 58}
     <p>This is a number</p>
   {/if}
