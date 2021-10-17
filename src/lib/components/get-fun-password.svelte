@@ -1,5 +1,6 @@
 <script>
-  import { getFunPassword } from './password-gen'
+  import { getFunPassword } from '$lib/password-gen'
+
   $: funPassword = ''
   const handlePassword = () => (funPassword = getFunPassword())
 </script>

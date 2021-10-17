@@ -1,7 +1,7 @@
 <script>
-  import CharacterPicker from '$lib/character-picker.svelte'
-  import GetFunPassword from '$lib/get-fun-password.svelte'
-  import NumberOfBreaches from '$lib/number-of-breaches.svelte'
+  import CharacterPicker from '$lib/components/character-picker.svelte'
+  import GetFunPassword from '$lib/components/get-fun-password.svelte'
+  import NumberOfBreaches from '$lib/components/number-of-breaches.svelte'
   import hash from 'sha1'
   import MaskedPasswords from '../copy/masked-passwords.md'
   import Preamble from '../copy/preamble.md'

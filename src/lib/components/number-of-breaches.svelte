@@ -1,5 +1,5 @@
 <script>
-  import { breaches } from '../stores/hibp-store'
+  import { breaches } from '../../stores/hibp-store'
 
   const formattedNumber = breaches => {
     const number = new Intl.NumberFormat()
