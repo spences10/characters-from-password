@@ -16,6 +16,7 @@ specifiers:
   svelte: ^3.42.6
   svelte-preprocess: ^4.9.8
   tailwindcss: ^2.2.16
+  theme-change: ^2.0.2
 
 devDependencies:
   '@sveltejs/adapter-vercel': 1.0.0-next.31
@@ -33,6 +34,7 @@ devDependencies:
   svelte: 3.43.2
   svelte-preprocess: 4.9.8_6791a88092a7dfc8f03ced7bd61bb4e4
   tailwindcss: 2.2.17_96f83969316717847b3edf58a3f353f3
+  theme-change: 2.0.2
 
 packages:
 
@@ -1917,6 +1919,10 @@ packages:
       tmp: 0.2.1
     transitivePeerDependencies:
       - ts-node
+    dev: true
+
+  /theme-change/2.0.2:
+    resolution: {integrity: sha512-YvQqavf8nlGB3J7PdO0zLLhSLlgYhrqZL6By3FuzFIlWBsPTSPG/V98cHJllK3mmU97Jecei8XYiHalhy2umUw==}
     dev: true
 
   /timsort/0.3.0:

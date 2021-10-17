@@ -23,7 +23,8 @@
     "sha1": "^1.1.1",
     "svelte": "^3.42.6",
     "svelte-preprocess": "^4.9.8",
-    "tailwindcss": "^2.2.16"
+    "tailwindcss": "^2.2.16",
+    "theme-change": "^2.0.2"
   },
   "type": "module"
 }
