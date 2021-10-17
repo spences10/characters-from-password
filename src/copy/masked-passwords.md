@@ -1,4 +1,4 @@
-## Masked passwords.
+## Masked Passwords
 
 Some password-authenticated sites, ask you to enter a random selection
 of specific characters from your password whole word/phrase.
