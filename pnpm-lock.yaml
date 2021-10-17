@@ -3,8 +3,10 @@ lockfileVersion: 5.3
 specifiers:
   '@sveltejs/adapter-vercel': ^1.0.0-next.31
   '@sveltejs/kit': next
+  '@tailwindcss/typography': ^0.4.1
   autoprefixer: ^10.3.7
   cssnano: ^5.0.8
+  daisyui: ^1.14.5
   postcss: ^8.3.9
   postcss-load-config: ^3.1.0
   prettier: ^2.4.1
@@ -17,8 +19,10 @@ specifiers:
 devDependencies:
   '@sveltejs/adapter-vercel': 1.0.0-next.31
   '@sveltejs/kit': 1.0.0-next.184_svelte@3.43.2
+  '@tailwindcss/typography': 0.4.1_tailwindcss@2.2.17
   autoprefixer: 10.3.7_postcss@8.3.9
   cssnano: 5.0.8_postcss@8.3.9
+  daisyui: 1.14.5
   postcss: 8.3.9
   postcss-load-config: 3.1.0
   prettier: 2.4.1
@@ -156,6 +160,21 @@ packages:
       vite: 2.6.7
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@tailwindcss/typography/0.4.1_tailwindcss@2.2.17:
+    resolution:
+      {
+        integrity: sha512-ovPPLUhs7zAIJfr0y1dbGlyCuPhpuv/jpBoFgqAc658DWGGrOBWBMpAWLw2KlzbNeVk4YBJMzue1ekvIbdw6XA==,
+      }
+    peerDependencies:
+      tailwindcss: '>=2.0.0'
+    dependencies:
+      lodash.castarray: 4.4.0
+      lodash.isplainobject: 4.0.6
+      lodash.merge: 4.6.2
+      lodash.uniq: 4.5.0
+      tailwindcss: 2.2.17_96f83969316717847b3edf58a3f353f3
     dev: true
 
   /@trysound/sax/0.2.0:
@@ -684,6 +703,13 @@ packages:
     engines: { node: '>=8.0.0' }
     dependencies:
       css-tree: 1.1.3
+    dev: true
+
+  /daisyui/1.14.5:
+    resolution:
+      {
+        integrity: sha512-/1GVhvqaD5Gk+VwRV7X5cVPJGe2uUOZeTGb4UtvmiTmis9EtOqsGpZJ7cBPzZLBOvq57tRUtAk8YNmEC3YSIMA==,
+      }
     dev: true
 
   /debug/4.3.2:
@@ -1370,8 +1396,23 @@ packages:
     resolution: { integrity: sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA= }
     dev: true
 
+  /lodash.castarray/4.4.0:
+    resolution: { integrity: sha1-wCUTUV4wna3dTCTGDP3c9ZdtkRU= }
+    dev: true
+
+  /lodash.isplainobject/4.0.6:
+    resolution: { integrity: sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs= }
+    dev: true
+
   /lodash.memoize/4.1.2:
     resolution: { integrity: sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4= }
+    dev: true
+
+  /lodash.merge/4.6.2:
+    resolution:
+      {
+        integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==,
+      }
     dev: true
 
   /lodash.topath/4.5.2:
