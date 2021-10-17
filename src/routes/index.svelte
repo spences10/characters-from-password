@@ -1,5 +1,6 @@
 <script>
   import CharacterPicker from '$lib/character-picker.svelte'
+  import GetFunPassword from '$lib/get-fun-password.svelte'
   import NumberOfBreaches from '$lib/number-of-breaches.svelte'
   import hash from 'sha1'
   import { fetchHIBPHashes } from '../stores/hibp-store'
@@ -25,3 +26,5 @@
 {#if password.length > 0}
   <NumberOfBreaches />
 {/if}
+
+<GetFunPassword />
