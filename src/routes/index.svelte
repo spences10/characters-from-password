@@ -1,6 +1,8 @@
 <script>
   import CharacterPicker from '$lib/components/character-picker.svelte'
+  import Head from '$lib/components/head.svelte'
   import NumberOfBreaches from '$lib/components/number-of-breaches.svelte'
+  import { description, siteName, website as url } from '$lib/info'
   import hash from 'sha1'
   import { fetchHIBPHashes } from '../stores/hibp-store'
 
@@ -12,6 +14,13 @@
     fetchHIBPHashes(sha1)
   }
 </script>
+
+<Head
+  title={`Welcome! · ${siteName}`}
+  {description}
+  image={'./favicon.png'}
+  {url}
+/>
 
 <div class="all-prose">
   <h1>Password Character Picker</h1>
