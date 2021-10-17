@@ -1,51 +1,38 @@
 {
-  "name": "password-character-picker",
-  "version": "1.0.33",
-  "private": true,
-  "scripts": {
-    "dev": "gatsby develop -p 6587 -o",
-    "build": "gatsby build"
+  "name": "characters-from-password",
+  "author": {
+    "name": "Scott Spence",
+    "email": "yo@scottspence.dev",
+    "url": "https://scottspence.com"
   },
-  "dependencies": {
-    "@mdx-js/mdx": "1.6.21",
-    "@mdx-js/react": "1.6.21",
-    "axios": "0.21.2",
-    "babel-plugin-styled-components": "1.11.1",
-    "gatsby": "2.27.4",
-    "gatsby-plugin-google-fonts": "1.0.1",
-    "gatsby-plugin-manifest": "2.7.0",
-    "gatsby-plugin-mdx": "1.5.0",
-    "gatsby-plugin-offline": "3.5.0",
-    "gatsby-plugin-react-helmet": "3.5.0",
-    "gatsby-plugin-robots-txt": "1.5.3",
-    "gatsby-plugin-sitemap": "2.7.0",
-    "gatsby-plugin-styled-components": "3.5.0",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-helmet": "6.1.0",
-    "react-seo-component": "2.0.2",
-    "sha1": "1.1.1",
-    "styled-breakpoints": "8.1.1",
-    "styled-components": "5.2.0",
-    "styled-reset": "4.2.3"
+  "license": "MIT",
+  "type": "module",
+  "version": "2.0.0",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview",
+    "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. .",
+    "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
   "devDependencies": {
-    "husky": "4.3.0",
-    "prettier": "2.1.2",
-    "pretty-quick": "3.0.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
-  },
-  "prettier": {
-    "printWidth": 70,
-    "singleQuote": true,
-    "jsxSingleQuote": true,
-    "semi": false,
-    "arrowParens": "avoid",
-    "proseWrap": "always"
+    "@sveltejs/adapter-vercel": "^1.0.0-next.31",
+    "@sveltejs/kit": "next",
+    "@tailwindcss/typography": "^0.4.1",
+    "autoprefixer": "^10.3.7",
+    "cssnano": "^5.0.8",
+    "daisyui": "^1.14.5",
+    "fathom-client": "^3.2.0",
+    "mdsvex": "^0.9.8",
+    "postcss": "^8.3.9",
+    "postcss-load-config": "^3.1.0",
+    "prettier": "^2.4.1",
+    "prettier-plugin-svelte": "^2.4.0",
+    "sha1": "^1.1.1",
+    "svelte": "^3.42.6",
+    "svelte-preprocess": "^4.9.8",
+    "tailwindcss": "^2.2.16",
+    "theme-change": "^2.0.2"
   },
   "description": "Pick specific characters from your password",
   "repository": {
@@ -57,8 +44,6 @@
     "character",
     "picker"
   ],
-  "author": "Scott Spence <yo@scottspence.dev>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/spences10/characters-from-password/issues"
   },

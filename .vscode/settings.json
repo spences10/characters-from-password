@@ -1,3 +1,12 @@
 {
-  "cSpell.words": ["Pwned", "hibp"]
+  "git.enableSmartCommit": true,
+  "git.postCommitCommand": "sync",
+  "cSpell.words": [
+    "daisyui",
+    "hibp",
+    "Pwned",
+    "sveltejs",
+    "vercel",
+    "VITE"
+  ]
 }

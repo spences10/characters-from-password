@@ -1,13 +1,9 @@
 # Get character from password
 
-[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![styled components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
+A simple site to let you pick specific characters from a password.
 
-I use strong passwords, "[correct battery horse staple]" ftw!
-
-But I also get quite annoyed counting out my password onto my fingers
-when prompted to give characters 18, 7 and 12 from my password.
+This is for when using masked passwords and you're prompted to give
+characters 18, 7 and 12 from a password.
 
 I put this together for just that, paste or type in your password then
 pick out your character you need.
@@ -47,5 +43,3 @@ password dumps.
 ## Related
 
 - https://passwordsecurity.info/
-
-[correct battery horse staple]: https://xkcd.com/936/
