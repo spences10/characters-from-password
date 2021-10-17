@@ -7,7 +7,7 @@
 <Head
   title={`Masked Passwords · ${siteName}`}
   {description}
-  image={'./favicon.png'}
+  image={'/favicon.png'}
   {url}
 />
 

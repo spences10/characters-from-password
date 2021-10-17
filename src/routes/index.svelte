@@ -18,7 +18,7 @@
 <Head
   title={`Welcome! · ${siteName}`}
   {description}
-  image={'./favicon.png'}
+  image={'/favicon.png'}
   {url}
 />
 
