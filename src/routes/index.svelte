@@ -5,6 +5,7 @@
   import hash from 'sha1'
   import About from '../copy/about.md'
   import MaskedPasswords from '../copy/masked-passwords.md'
+  import Preamble from '../copy/preamble.md'
   import { fetchHIBPHashes } from '../stores/hibp-store'
 
   let password = ''
@@ -20,18 +21,33 @@
   <h1>Password Character Picker</h1>
 </div>
 
-<div class="all-prose">
+<div class="mb-20 all-prose">
   <p class="all-prose">
     Enter a password to pick specific characters from it.
   </p>
 </div>
 
-<input type="text" on:input={passwordChange} bind:value={password} />
+<div class="mb-20 form-control">
+  <input
+    class="-mx-40 text-center text-4xl input input-primary input-bordered input-lg"
+    type="text"
+    placeholder="Enter a password here"
+    on:input={passwordChange}
+    bind:value={password}
+  />
+</div>
+
 <CharacterPicker {password} />
+
+<div class="divider" />
 
 {#if password.length > 0}
   <NumberOfBreaches />
 {/if}
+
+<div class="all-prose">
+  <Preamble />
+</div>
 
 <GetFunPassword />
 
