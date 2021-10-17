@@ -18,6 +18,8 @@
       <a
         class="link transition hover:text-secondary"
         href="https://scottspence.com"
+        target="_blank"
+        rel="noopener"
       >
         Scott Spence
       </a>
@@ -28,13 +30,13 @@
   </div>
   <div>
     <div class="grid grid-flow-col gap-4">
-      <a href="https://twitter.com/spences10">
+      <a class="sr-only" href="https://twitter.com/spences10">
         <Twitter />
       </a>
-      <a href="https://github.com/spences10">
+      <a class="sr-only" href="https://github.com/spences10">
         <GitHub />
       </a>
-      <a href="https://ss10/yt">
+      <a class="sr-only" href="https://ss10/yt">
         <YouTube />
       </a>
     </div>
