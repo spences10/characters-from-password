@@ -1,46 +1,45 @@
-# create-svelte
+# Get character from password
 
-Everything you need to build a Svelte project, powered by
-[`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
+A simple site to let you pick specific characters from a password.
 
-## Creating a project
+This is for when using masked passwords and you're prompted to give
+characters 18, 7 and 12 from a password.
 
-If you're seeing this, you've probably already done this step.
-Congrats!
+I put this together for just that, paste or type in your password then
+pick out your character you need.
 
-```bash
-# create a new project in the current directory
-npm init svelte@next
+Demo: https://cfromp.xyz
 
-# create a new project in my-app
-npm init svelte@next my-app
-```
+For Have I Been Pwnd check, use the pwndpasswords API
+https://api.pwnedpasswords.com/range/5BAA6
 
-> Note: the `@next` is temporary
+To use `pwndpasswords`, SHA-1 the password then pass the first five
+characters to the API then check the remainder of the SHA-1 against
+the results of the API
 
-## Developing
+So, the SHA-1 of the password `password` is
+`5BAA61E4C9B93F3F0682250B6CF8331B7EE68FD8` take the first five chars
+`5BAA6` and pass to the API https://api.pwnedpasswords.com/range/5BAA6
 
-Once you've created a project and installed dependencies with
-`npm install` (or `pnpm install` or `yarn`), start a development
-server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-Before creating a production version of your app, install an
-[adapter](https://kit.svelte.dev/docs#adapters) for your target
-environment. Then:
+You will be presented with a range of SHA-1'd passwords that contain
+that fist five chars. Then you need to check the remainder
+`1E4C9B93F3F0682250B6CF8331B7EE68FD8` against the results.
 
 ```bash
-npm run build
+1E4C9B93F3F0682250B6CF8331B7EE68FD8:3533661
 ```
 
-> You can preview the built app with `npm run preview`, regardless of
-> whether you installed an adapter. This should _not_ be used to serve
-> your app in production.
+The number after the colon is the amount of times it has been found in
+password dumps.
+
+# Further reading
+
+- https://haveibeenpwned.com/API/v2#PwnedPasswords
+
+- https://haveibeenpwned.com/Passwords
+
+- https://www.troyhunt.com/ive-just-launched-pwned-passwords-version-2/
+
+## Related
+
+- https://passwordsecurity.info/
