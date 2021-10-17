@@ -1,6 +1,7 @@
 <script>
+  import NumberOfBreaches from '$lib/number-of-breaches.svelte'
   import hash from 'sha1'
-  import { breaches, fetchHIBPHashes } from '../stores/hibp-store'
+  import { fetchHIBPHashes } from '../stores/hibp-store'
   let password = ''
 
   function passwordChange(e) {
@@ -18,4 +19,6 @@
 
 <input type="text" on:input={passwordChange} bind:value={password} />
 
-{$breaches}
+{#if password.length > 0}
+  <NumberOfBreaches />
+{/if}
