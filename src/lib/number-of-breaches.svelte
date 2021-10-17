@@ -8,11 +8,17 @@
 </script>
 
 {#if $breaches > 0}
-  <p>
-    {`This password appears in ${formattedNumber(
-      $breaches
-    )} breaches.`}
-  </p>
+  <div class="stat place-items-center place-content-center">
+    <div class="stat-title">This password appears in</div>
+    <div class="stat-value text-error">
+      {formattedNumber($breaches)}
+    </div>
+    <div class="stat-desc">Breaches</div>
+  </div>
 {:else}
-  <p>{`This password doesn't appear in any breaches.`}</p>
+  <div class="stat place-items-center place-content-center">
+    <div class="stat-title">
+      This password doesn't appear in any breaches.
+    </div>
+  </div>
 {/if}

@@ -3,6 +3,8 @@
   import GetFunPassword from '$lib/get-fun-password.svelte'
   import NumberOfBreaches from '$lib/number-of-breaches.svelte'
   import hash from 'sha1'
+  import About from '../copy/about.md'
+  import MaskedPasswords from '../copy/masked-passwords.md'
   import { fetchHIBPHashes } from '../stores/hibp-store'
 
   let password = ''
@@ -14,11 +16,15 @@
   }
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>
-  Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the
-  documentation
-</p>
+<div class="all-prose">
+  <h1>Password Character Picker</h1>
+</div>
+
+<div class="all-prose">
+  <p class="all-prose">
+    Enter a password to pick specific characters from it.
+  </p>
+</div>
 
 <input type="text" on:input={passwordChange} bind:value={password} />
 <CharacterPicker {password} />
@@ -28,3 +34,15 @@
 {/if}
 
 <GetFunPassword />
+
+<div class="divider" />
+
+<div class="all-prose">
+  <MaskedPasswords />
+</div>
+
+<div class="divider" />
+
+<div class="all-prose">
+  <About />
+</div>
