@@ -14,7 +14,7 @@
       class="rounded-full h-20"
     />
     <p class="font-bold">
-      Made with ❤️ by
+      Made with <span role="img" aria-label="red heart">❤️</span> by
       <a
         class="link transition hover:text-secondary"
         href="https://scottspence.com"
