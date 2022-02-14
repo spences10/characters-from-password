@@ -16,7 +16,9 @@
 </script>
 
 <Nav />
-<main class="container max-w-xl mx-auto px-4">
+<main
+  class="container max-w-xl mx-auto px-4 transition-all duration-[2000] ease-in-out"
+>
   <slot />
 </main>
 <Footer />

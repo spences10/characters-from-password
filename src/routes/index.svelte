@@ -4,6 +4,8 @@
   import NumberOfBreaches from '$lib/components/number-of-breaches.svelte'
   import { description, siteName, website as url } from '$lib/info'
   import hash from 'sha1'
+  import { cubicOut } from 'svelte/easing'
+  import { tweened } from 'svelte/motion'
   import { fetchHIBPHashes } from '../stores/hibp-store'
 
   let password = ''
@@ -12,6 +14,18 @@
     let typed = e.target.value
     let sha1 = hash(typed).toUpperCase()
     fetchHIBPHashes(sha1)
+  }
+
+  const height = tweened(0, {
+    duration: 300,
+    easing: cubicOut,
+  })
+  $: {
+    if (password.length > 0) {
+      height.set(1)
+    } else {
+      height.set(0)
+    }
   }
 </script>
 
@@ -42,7 +56,10 @@
 
 <CharacterPicker {password} />
 
-<div class="h-36">
+<div
+  class="h-36"
+  style="transform: scaleY({$height}); transform-origin: 10% 10%;"
+>
   {#if password.length > 0}
     <NumberOfBreaches />
   {/if}
