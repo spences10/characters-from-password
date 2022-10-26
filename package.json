@@ -21,7 +21,7 @@
     "@tailwindcss/typography": "^0.5.1",
     "autoprefixer": "^10.4.2",
     "cssnano": "^5.0.17",
-    "daisyui": "^1.25.4",
+    "daisyui": "^2.0.0",
     "fathom-client": "^3.4.1",
     "mdsvex": "^0.10.5",
     "postcss": "^8.4.6",
