@@ -1,4 +1,6 @@
 <script>
+	import { browser } from '$app/environment'
+	import { page } from '$app/stores'
 	import Footer from '$lib/components/footer.svelte'
 	import Nav from '$lib/components/nav.svelte'
 	import * as Fathom from 'fathom-client'
@@ -18,6 +20,8 @@
 			excludedDomains: ['localhost'],
 		})
 	})
+
+	$: $page.url.pathname, browser && Fathom.trackPageview()
 </script>
 
 <Nav />
