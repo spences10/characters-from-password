@@ -13,7 +13,7 @@
 		PUBLIC_FATHOM_URL,
 	} from '$env/static/public'
 
-	onMount(async () => {
+	onMount(() => {
 		themeChange(false)
 		Fathom.load(PUBLIC_FATHOM_ID, {
 			url: PUBLIC_FATHOM_URL,
