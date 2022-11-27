@@ -1,51 +1,44 @@
 {
-  "name": "characters-from-password",
-  "author": {
-    "name": "Scott Spence",
-    "email": "yo@scottspence.dev",
-    "url": "https://scottspence.com"
-  },
-  "license": "MIT",
-  "type": "module",
-  "version": "2.0.0",
-  "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "preview": "svelte-kit preview",
-    "lint": "prettier --ignore-path .prettierignore --check --plugin-search-dir=. .",
-    "format": "prettier --ignore-path .prettierignore --write --plugin-search-dir=. ."
-  },
-  "devDependencies": {
-    "@sveltejs/adapter-vercel": "^1.0.0-next.31",
-    "@sveltejs/kit": "next",
-    "@tailwindcss/typography": "^0.5.1",
-    "autoprefixer": "^10.4.2",
-    "cssnano": "^5.0.17",
-    "daisyui": "^1.25.4",
-    "fathom-client": "^3.4.1",
-    "mdsvex": "^0.10.5",
-    "postcss": "^8.4.6",
-    "postcss-load-config": "^3.1.3",
-    "prettier": "^2.5.1",
-    "prettier-plugin-svelte": "^2.6.0",
-    "sha1": "^1.1.1",
-    "svelte": "^3.46.4",
-    "svelte-preprocess": "^4.10.3",
-    "tailwindcss": "^3.0.22",
-    "theme-change": "^2.0.2"
-  },
-  "description": "Pick specific characters from your password",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/spences10/characters-from-password.git"
-  },
-  "keywords": [
-    "password",
-    "character",
-    "picker"
-  ],
-  "bugs": {
-    "url": "https://github.com/spences10/characters-from-password/issues"
-  },
-  "homepage": "https://github.com/spences10/characters-from-password#readme"
+	"name": "delete-this",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
+		"test": "playwright test",
+		"test:unit": "vitest",
+		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"format": "prettier --plugin-search-dir . --write ."
+	},
+	"devDependencies": {
+		"@playwright/test": "1.25.0",
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/kit": "next",
+		"@tailwindcss/typography": "^0.5.3",
+		"autoprefixer": "^10.4.7",
+		"daisyui": "^2.18.1",
+		"eslint": "^8.16.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"fathom-client": "^3.5.0",
+		"mdsvex": "^0.10.6",
+		"postcss": "^8.4.14",
+		"postcss-load-config": "^4.0.1",
+		"prettier": "^2.6.2",
+		"prettier-plugin-svelte": "^2.7.0",
+		"sha1": "^1.1.1",
+		"svead": "^0.0.3",
+		"svelte": "^3.44.0",
+		"svelte-check": "^2.7.1",
+		"svelte-preprocess": "^4.10.7",
+		"tailwindcss": "^3.1.5",
+		"theme-change": "^2.2.0",
+		"typescript": "^4.7.4",
+		"vite": "^3.1.0",
+		"vitest": "^0.23.4"
+	},
+	"type": "module"
 }

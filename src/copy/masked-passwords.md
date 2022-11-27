@@ -61,4 +61,4 @@ SIM for a target without their knowledge.
 <!-- Links -->
 
 [source]:
-  https://security.stackexchange.com/questions/7467/how-secure-is-asking-for-specific-characters-of-passwords-instead-of-the-entire
+	https://security.stackexchange.com/questions/7467/how-secure-is-asking-for-specific-characters-of-passwords-instead-of-the-entire

@@ -1,26 +1,16 @@
-<script context="module">
-  export const load = async ({
-    error,
-    status,
-    url: { pathname },
-  }) => {
-    return { props: { error, status, pathname } }
-  }
-</script>
-
 <script>
-  export let error, status, pathname
+	import { page } from '$app/stores'
 </script>
 
 <svelte:head>
-  <title>{status}</title>
+	<title>{$page.status}</title>
 </svelte:head>
 
 <main class="all-prose h-[73vh]">
-  <h1>{status}</h1>
-  <p>{error.message}</p>
-  <p>It looks like <code>{pathname}</code> doesn't exist</p>
-  <p>
-    Maybe check out the <a href="/">homepage</a>?
-  </p>
+	<h1>{$page.status}</h1>
+	<p>{$page.error?.message}</p>
+	<p>It looks like <code>$page.url</code> doesn't exist</p>
+	<p>
+		Maybe check out the <a href="/">homepage</a>?
+	</p>
 </main>

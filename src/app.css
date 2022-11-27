@@ -1,9 +1,8 @@
-/* Write your global styles here, in PostCSS syntax */
 @tailwind base;
 @tailwind components;
 
 .all-prose {
-  @apply prose prose-lg lg:prose-xl;
+	@apply prose prose-lg lg:prose-xl;
 }
 
 @tailwind utilities;
