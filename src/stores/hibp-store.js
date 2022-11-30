@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store'
 
-export const breaches = writable(0)
+export const breaches = writable('')
 export const fetchHIBPHashes = async (/** @type {string} */ sha1) => {
 	const url = `https://api.pwnedpasswords.com/range/${sha1.substring(
 		0,
@@ -12,7 +12,7 @@ export const fetchHIBPHashes = async (/** @type {string} */ sha1) => {
 	// work through hash data to get number of breaches
 	const splitText = resText.split('\r\n')
 
-	if (!splitText) return breaches.set(0)
+	if (!splitText) return breaches.set('')
 	const match = splitText.filter(
 		(hash) =>
 			hash.substring(0, hash.indexOf(':')) ===
@@ -20,8 +20,9 @@ export const fetchHIBPHashes = async (/** @type {string} */ sha1) => {
 	)
 
 	const breachesMatch = match[0]
-	if (!breachesMatch) return breaches.set(0)
+	if (!breachesMatch) return breaches.set('')
 
+	/** @type {string} */
 	const numberOfBreaches = breachesMatch.substring(
 		breachesMatch.indexOf(`:`) + 1,
 		breachesMatch.length
