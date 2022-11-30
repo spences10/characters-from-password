@@ -11,10 +11,10 @@
 	let password = ''
 
 	/**
-	 * @param {{ target: { value: any; }; }} e
+	 * @param {{ target: { value: any; }; }} event
 	 */
-	function passwordChange(e) {
-		let typed = e.target.value
+	function passwordChange(event) {
+		let typed = event.target.value
 		// @ts-ignore
 		let sha1 = hash(typed).toUpperCase()
 		fetchHIBPHashes(sha1)
