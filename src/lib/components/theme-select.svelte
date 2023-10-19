@@ -1,37 +1,44 @@
-<div>
+<script lang="ts">
+	import { themes } from '$lib/themes'
+	import { onMount } from 'svelte'
+
+	let current_theme = ''
+
+	onMount(() => {
+		if (typeof window !== 'undefined') {
+			const theme = window.localStorage.getItem('theme')
+			if (theme && themes.includes(theme)) {
+				document.documentElement.setAttribute('data-theme', theme)
+				current_theme = theme
+			}
+		}
+	})
+
+	function set_theme(event: Event) {
+		const select = event.target as HTMLSelectElement
+		const theme = select.value
+		if (themes.includes(theme)) {
+			const one_year = 60 * 60 * 24 * 365
+			window.localStorage.setItem('theme', theme)
+			document.cookie = `theme=${theme}; max-age=${one_year}; path=/; SameSite=Lax`
+			document.documentElement.setAttribute('data-theme', theme)
+			current_theme = theme
+		}
+	}
+</script>
+
+<div class="mb-8">
 	<select
+		bind:value={current_theme}
 		data-choose-theme
-		class="pr-9 select select-bordered select-primary bg-base-100 select-xs text-base-content"
+		class="select select-bordered select-primary w-full max-w-3xl text-xl capitalize"
+		on:change={set_theme}
 	>
-		<option disabled selected>Theme</option>
-		<option value="acid">Acid</option>
-		<option value="aqua">Aqua</option>
-		<option value="autumn">Autumn</option>
-		<option value="black">Black</option>
-		<option value="bumblebee">Bumblebee</option>
-		<option value="business">Business</option>
-		<option value="cmyk">CMYK</option>
-		<option value="coffee">Coffee</option>
-		<option value="corporate">Corporate</option>
-		<option value="cupcake">Cupcake</option>
-		<option value="cyberpunk">Cyberpunk</option>
-		<option value="dark">Dark</option>
-		<option value="dracula">Dracula</option>
-		<option value="emerald">Emerald</option>
-		<option value="fantasy">Fantasy</option>
-		<option value="forest">Forest</option>
-		<option value="garden">Garden</option>
-		<option value="halloween">Halloween</option>
-		<option value="lemonade">Lemonade</option>
-		<option value="light">Light</option>
-		<option value="lofi">Lofi</option>
-		<option value="luxury">Luxury</option>
-		<option value="night">Night</option>
-		<option value="pastel">Pastel</option>
-		<option value="retro">Retro</option>
-		<option value="synthwave">Synthwave</option>
-		<option value="valentine">Valentine</option>
-		<option value="winter">Winter</option>
-		<option value="wireframe">Wireframe</option>
+		<option value="" disabled={current_theme !== ''}>
+			Choose a theme
+		</option>
+		{#each themes as theme}
+			<option value={theme} class="capitalize">{theme}</option>
+		{/each}
 	</select>
 </div>

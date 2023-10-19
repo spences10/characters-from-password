@@ -9,6 +9,10 @@ const config = {
 		extend: {},
 	},
 
+	daisyui: {
+		themes: true,
+	},
+
 	plugins: [typography, daisyui],
 }
 

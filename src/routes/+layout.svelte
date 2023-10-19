@@ -8,11 +8,9 @@
 	import { Footer, Nav } from '$lib/components'
 	import * as Fathom from 'fathom-client'
 	import { onMount } from 'svelte'
-	import { themeChange } from 'theme-change'
 	import '../app.postcss'
 
 	onMount(() => {
-		themeChange(false)
 		Fathom.load(PUBLIC_FATHOM_ID, {
 			url: PUBLIC_FATHOM_URL,
 			excludedDomains: ['localhost'],
