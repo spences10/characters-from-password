@@ -1,8 +1,8 @@
-<script>
-	import { getFunPassword } from '$lib/password-gen'
+<script lang="ts">
+	import { get_fun_password } from '$lib/password-gen'
 
 	$: funPassword = ''
-	const handlePassword = () => (funPassword = getFunPassword())
+	const handlePassword = () => (funPassword = get_fun_password())
 </script>
 
 <button class="btn w-full" on:click={handlePassword}

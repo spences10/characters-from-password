@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { browser } from '$app/environment'
 	import { page } from '$app/stores'
 	import Footer from '$lib/components/footer.svelte'
@@ -6,7 +6,7 @@
 	import * as Fathom from 'fathom-client'
 	import { onMount } from 'svelte'
 	import { themeChange } from 'theme-change'
-	import '../app.css'
+	import '../app.postcss'
 
 	import {
 		PUBLIC_FATHOM_ID,

@@ -12,5 +12,5 @@ then pick out the character you need.
 
 <!-- Links -->
 
-[correct battery horse staple]: https://xkcd.com/936/
+[correct battery horse staple]: https://xkcd.com/936
 [masked passwords]: ./masked-passwords

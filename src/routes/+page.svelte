@@ -1,23 +1,19 @@
-<script>
+<script lang="ts">
 	import CharacterPicker from '$lib/components/character-picker.svelte'
 	import NumberOfBreaches from '$lib/components/number-of-breaches.svelte'
 	import { description, siteName, website as url } from '$lib/info'
-	import { Head } from 'svead'
 	import hash from 'sha1'
+	import { Head } from 'svead'
 	import { cubicOut } from 'svelte/easing'
 	import { tweened } from 'svelte/motion'
-	import { fetchHIBPHashes } from '../stores/hibp-store'
+	import { fetch_hibp_hashes } from '../stores/hibp-store'
 
 	let password = ''
 
-	/**
-	 * @param {{ target: { value: any; }; }} event
-	 */
-	function passwordChange(event) {
-		let typed = event.target.value
-		// @ts-ignore
-		let sha1 = hash(typed).toUpperCase()
-		fetchHIBPHashes(sha1)
+	function password_change(event: Event): void {
+		const typed = (event.target as HTMLInputElement).value
+		const sha1 = hash(typed).toUpperCase()
+		fetch_hibp_hashes(sha1)
 	}
 
 	const height = tweened(0, {
@@ -53,7 +49,7 @@
 		class="mx-1 lg:-mx-40 text-center text-4xl input input-primary input-bordered input-lg shadow-lg"
 		type="password"
 		placeholder="Enter a password here"
-		on:input={passwordChange}
+		on:input={password_change}
 		bind:value={password}
 	/>
 </div>
