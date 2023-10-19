@@ -1,7 +1,5 @@
 <script lang="ts">
-	import GitHub from '$lib/icons/git-hub.svelte'
-	import Twitter from '$lib/icons/twitter.svelte'
-	import YouTube from '$lib/icons/you-tube.svelte'
+	import { GitHub, Twitter, YouTube } from '$lib/icons'
 </script>
 
 <footer

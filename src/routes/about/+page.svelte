@@ -1,5 +1,5 @@
 <script lang="ts">
-	import GetFunPassword from '$lib/components/get-fun-password.svelte'
+	import { GetFunPassword } from '$lib/components'
 	import { description, siteName, website as url } from '$lib/info'
 	import { Head } from 'svead'
 

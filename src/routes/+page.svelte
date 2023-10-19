@@ -1,6 +1,5 @@
 <script lang="ts">
-	import CharacterPicker from '$lib/components/character-picker.svelte'
-	import NumberOfBreaches from '$lib/components/number-of-breaches.svelte'
+	import { CharacterPicker, NumberOfBreaches } from '$lib/components'
 	import { description, siteName, website as url } from '$lib/info'
 	import hash from 'sha1'
 	import { Head } from 'svead'
