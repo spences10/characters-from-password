@@ -14,7 +14,7 @@
 		}
 	})
 
-	function set_theme(event: Event) {
+	const set_theme = (event: Event) => {
 		const select = event.target as HTMLSelectElement
 		const theme = select.value
 		if (themes.includes(theme)) {
@@ -27,18 +27,16 @@
 	}
 </script>
 
-<div class="mb-8">
-	<select
-		bind:value={current_theme}
-		data-choose-theme
-		class="select select-bordered select-primary w-full max-w-3xl text-xl capitalize"
-		on:change={set_theme}
-	>
-		<option value="" disabled={current_theme !== ''}>
-			Choose a theme
-		</option>
-		{#each themes as theme}
-			<option value={theme} class="capitalize">{theme}</option>
-		{/each}
-	</select>
-</div>
+<select
+	bind:value={current_theme}
+	data-choose-theme
+	class="select select-bordered select-primary bg-neutral select-sm capitalize"
+	on:change={set_theme}
+>
+	<option value="" disabled={current_theme !== ''}>
+		Choose a theme
+	</option>
+	{#each themes as theme}
+		<option value={theme} class="capitalize text-primary-content">{theme}</option>
+	{/each}
+</select>

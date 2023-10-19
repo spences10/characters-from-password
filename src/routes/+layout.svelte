@@ -23,7 +23,7 @@
 <Nav />
 
 <main
-	class="container max-w-xl mx-auto px-4 transition-all duration-[2000] ease-in-out"
+	class="container max-w-xl mx-auto px-4 transition-all duration-[2000] ease-in-out all-prose"
 >
 	<slot />
 </main>

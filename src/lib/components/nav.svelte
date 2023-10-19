@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ThemeSwitch from './theme-select.svelte'
+	import { ThemeSelect } from './index'
 </script>
 
 <div class="navbar shadow-lg bg-neutral text-neutral-content mb-16">
@@ -35,5 +35,5 @@
 			</a>
 		</div>
 	</div>
-	<div class="navbar-end"><ThemeSwitch /></div>
+	<div class="navbar-end"><ThemeSelect /></div>
 </div>
