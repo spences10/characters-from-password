@@ -1,19 +1,17 @@
-<script>
+<script lang="ts">
 	import { breaches } from '../../stores/hibp-store'
 
-	const formattedNumber = (
-		/** @type {number | bigint} */ breaches
-	) => {
+	const formatted_number = (breaches: string | number | bigint) => {
 		const number = new Intl.NumberFormat()
-		return number.format(breaches)
+		return number.format(Number(breaches))
 	}
 </script>
 
-{#if $breaches > 0}
+{#if Number($breaches) > 0}
 	<div class="stat place-items-center place-content-center">
 		<div class="stat-title text-2xl">This password appears in</div>
 		<div class="text-error stat-value text-4xl">
-			{formattedNumber($breaches)}
+			{formatted_number($breaches)}
 		</div>
 		<div class="stat-desc text-2xl">breaches</div>
 	</div>

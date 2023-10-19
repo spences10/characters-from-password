@@ -1,5 +1,5 @@
-<script>
-	import ThemeSwitch from './theme-switch.svelte'
+<script lang="ts">
+	import ThemeSwitch from './theme-select.svelte'
 </script>
 
 <div class="navbar shadow-lg bg-neutral text-neutral-content mb-16">
@@ -7,7 +7,7 @@
 	<div class="dropdown dropdown-right lg:hidden">
 		<div class="m-1 btn">Links</div>
 		<ul
-			class="bg-neutral rounded-box shadow text-neutral-content p-2 w-52 menu dropdown-content "
+			class="bg-neutral rounded-box shadow text-neutral-content p-2 w-52 menu dropdown-content"
 		>
 			<a href="/" class="btn btn-ghost btn-sm rounded-btn">Home</a>
 			<a href="/about" class="btn btn-ghost btn-sm rounded-btn">

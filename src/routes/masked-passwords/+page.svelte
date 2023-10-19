@@ -1,7 +1,9 @@
-<script>
-	import MaskedPasswords from '$copy/masked-passwords.md'
+<script lang="ts">
 	import { description, siteName, website as url } from '$lib/info'
 	import { Head } from 'svead'
+
+	export let data
+	let { Copy } = data
 </script>
 
 <Head
@@ -12,7 +14,7 @@
 />
 
 <div class="all-prose">
-	<MaskedPasswords />
+	<svelte:component this={Copy} />
 </div>
 
 <div class="divider" />

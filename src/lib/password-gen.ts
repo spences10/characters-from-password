@@ -1,8 +1,8 @@
-export function rando(arr) {
+export function rando(arr: string | any[]) {
 	return arr[Math.floor(Math.random() * arr.length)]
 }
 
-export function getFunPassword() {
+export function get_fun_password() {
 	const adjectives = [
 		'adorable',
 		'beautiful',
@@ -109,6 +109,6 @@ export function getFunPassword() {
 	]
 
 	return `${rando(verbs)} ${rando(adjectives)} ${rando(
-		adjectives
+		adjectives,
 	)} ${rando(nouns)}`
 }

@@ -1,8 +1,10 @@
-<script>
-	import About from '$copy/about.md'
+<script lang="ts">
 	import GetFunPassword from '$lib/components/get-fun-password.svelte'
 	import { description, siteName, website as url } from '$lib/info'
 	import { Head } from 'svead'
+
+	export let data
+	let { Copy } = data
 </script>
 
 <Head
@@ -13,7 +15,7 @@
 />
 
 <div class="all-prose mb-20">
-	<About />
+	<svelte:component this={Copy} />
 </div>
 
 <div class="divider" />

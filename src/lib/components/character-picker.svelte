@@ -1,15 +1,16 @@
-<script>
+<script lang="ts">
 	import SelectedCharacter from './selected-character.svelte'
 
-	export let password = ''
-	let selectedCharacter = ''
+	export let password: string = ''
+	let selected_character: number = 0
 	$: items = [...password]
-	$: char = password.charAt(selectedCharacter - 1)
-	$: disabled = items.length ? `` : `disabled="disabled"`
+	$: char = password.charAt(selected_character - 1)
+	$: disabled = items.length ? false : true
 
-	const handleChange = (e) => {
-		selectedCharacter = e.target.value
-		char = selectedCharacter
+	const handle_change = (e: Event) => {
+		const target = e.target as HTMLSelectElement
+		selected_character = parseInt(target.value)
+		char = password.charAt(selected_character - 1)
 	}
 </script>
 
@@ -19,10 +20,10 @@
 	<select
 		class="select select-bordered select-primary shadow-lg"
 		{disabled}
-		on:change={(e) => handleChange(e)}
+		on:change={handle_change}
 	>
 		{#each items as item, index}
-			<option key={index} letter={item}>
+			<option value={index}>
 				{index + 1}
 			</option>
 		{/each}
