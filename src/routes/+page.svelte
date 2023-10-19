@@ -35,13 +35,9 @@
 	{url}
 />
 
-<div class="all-prose">
-	<h1>Password Character Picker</h1>
-</div>
+<h1>Password Character Picker</h1>
 
-<div class="mb-20 all-prose">
-	<p>Enter a password to pick specific characters from it.</p>
-</div>
+<p>Enter a password to pick specific characters from it.</p>
 
 <div class="mb-20 form-control">
 	<input

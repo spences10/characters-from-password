@@ -2,7 +2,7 @@
 	import { ThemeSelect } from './index'
 </script>
 
-<div class="navbar shadow-lg bg-neutral text-neutral-content mb-16">
+<nav class="navbar shadow-lg bg-neutral text-neutral-content mb-16">
 	<div class="px-2 mx-2 navbar-start" />
 	<div class="dropdown dropdown-right lg:hidden">
 		<div class="m-1 btn">Links</div>
@@ -36,4 +36,4 @@
 		</div>
 	</div>
 	<div class="navbar-end"><ThemeSelect /></div>
-</div>
+</nav>
