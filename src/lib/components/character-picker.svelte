@@ -15,7 +15,7 @@
 </script>
 
 <div class="all-prose text-center">
-	<span class="pr-2">Select Password Character:</span>
+	<span class="pr-2">Pick Character:</span>
 
 	<select
 		class="select select-bordered select-primary shadow-lg"
