@@ -8,5 +8,9 @@
 
 <div class="text-center">
 	<span class="text-4xl">"{char}"</span>
-	<p>This is a {character_type ? character_type : `empty`}</p>
+	<p>
+		{character_type
+			? `This is a ${character_type}`
+			: `Nothing entered`}
+	</p>
 </div>
