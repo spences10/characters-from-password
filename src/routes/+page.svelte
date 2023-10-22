@@ -51,8 +51,11 @@
 
 <CharacterPicker {password} />
 
+<!-- use slide custom action!
+https://scottspence.com/posts/using-the-svelte-use-action-for-animations
+-->
 <div
-	class="h-36"
+	class=""
 	style="transform: scaleY({$height}); transform-origin: 10% 10%;"
 >
 	{#if password.length > 0}
