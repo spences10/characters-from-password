@@ -8,5 +8,5 @@
 
 <div class="text-center">
 	<span class="text-4xl">"{char}"</span>
-	<p>This is {character_type ? character_type : `empty`}</p>
+	<p>This is a {character_type ? character_type : `empty`}</p>
 </div>

@@ -1,5 +1,7 @@
+type CharacterType = 'number' | 'special' | 'uppercase' | 'lowercase'
+
 type CharacterTypeMap = {
-	[key: string]: boolean
+	[key in CharacterType]: boolean
 }
 
 export const get_character_type = (char: string): string => {
@@ -15,5 +17,16 @@ export const get_character_type = (char: string): string => {
 		lowercase: ascii_number > 96 && ascii_number < 123,
 	}
 
-	return Object.keys(type_map).find((key) => type_map[key]) || ''
+	const type_key =
+		Object.keys(type_map).find(
+			(key) => type_map[key as CharacterType],
+		) || ''
+	const descriptive_type_map: { [key in CharacterType]: string } = {
+		number: 'number character',
+		special: 'special character',
+		uppercase: 'uppercase character',
+		lowercase: 'lowercase character',
+	}
+
+	return descriptive_type_map[type_key as CharacterType] || ''
 }
