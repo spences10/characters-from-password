@@ -20,12 +20,13 @@
 	$: $page.url.pathname, browser && Fathom.trackPageview()
 </script>
 
-<Nav />
+<div class="flex flex-col min-h-screen overflow-x-hidden">
+	<Nav />
+	<main
+		class="container max-w-xl mx-auto px-4 ease-in-out flex-grow prose prose-xl"
+	>
+		<slot />
+	</main>
 
-<main
-	class="container max-w-xl mx-auto px-4 transition-all duration-[2000] ease-in-out all-prose"
->
-	<slot />
-</main>
-
-<Footer />
+	<Footer />
+</div>
