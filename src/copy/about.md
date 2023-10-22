@@ -1,4 +1,4 @@
-## Passwords are important
+# Passwords are important
 
 Passwords are also flawed! I like to use strong passwords, "[correct
 battery horse staple]" ftw! (not really don't use this as a pasword
