@@ -9,7 +9,7 @@
 
 	let password = ''
 
-	function password_change(event: Event): void {
+	const password_change = (event: Event): void => {
 		const typed = (event.target as HTMLInputElement).value
 		const sha1 = hash(typed).toUpperCase()
 		fetch_hibp_hashes(sha1)
@@ -35,9 +35,9 @@
 	{url}
 />
 
-<h1>Password Character Picker</h1>
+<h1>Character Picker: Making Password Characters Easy-Peasy!</h1>
 
-<p>Enter a password to pick specific characters from it.</p>
+<p>Paste your password and pick the characters you need, no fuss!</p>
 
 <div class="mb-20 form-control">
 	<input
@@ -51,8 +51,11 @@
 
 <CharacterPicker {password} />
 
+<!-- use slide custom action!
+https://scottspence.com/posts/using-the-svelte-use-action-for-animations
+-->
 <div
-	class="h-36"
+	class=""
 	style="transform: scaleY({$height}); transform-origin: 10% 10%;"
 >
 	{#if password.length > 0}

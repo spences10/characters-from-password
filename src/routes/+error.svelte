@@ -6,7 +6,7 @@
 	<title>{$page.status}</title>
 </svelte:head>
 
-<main class="all-prose h-[73vh]">
+<main class="h-[73vh]">
 	<h1>{$page.status}</h1>
 	<p>{$page.error?.message}</p>
 	<p>It looks like <code>$page.url</code> doesn't exist</p>

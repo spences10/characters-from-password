@@ -1,39 +1,39 @@
 <script lang="ts">
 	import { ThemeSelect } from './index'
+
+	const links = [
+		{ name: 'Home', href: '/' },
+		{ name: 'About', href: '/about' },
+		{ name: 'Masked Passwords', href: '/masked-passwords' },
+		{ name: 'How Does It Work?', href: '/how-does-it-work' },
+	]
 </script>
 
-<nav class="navbar shadow-lg bg-neutral text-neutral-content mb-16">
-	<div class="px-2 mx-2 navbar-start" />
-	<div class="dropdown dropdown-right lg:hidden">
-		<div class="m-1 btn">Links</div>
-		<ul
-			class="bg-neutral rounded-box shadow text-neutral-content p-2 w-52 menu dropdown-content"
-		>
-			<a href="/" class="btn btn-ghost btn-sm rounded-btn">Home</a>
-			<a href="/about" class="btn btn-ghost btn-sm rounded-btn">
-				About
-			</a>
-			<a
-				href="/masked-passwords"
-				class="btn btn-ghost btn-sm rounded-btn"
-			>
-				Masked Passwords
-			</a>
+<nav
+	class="navbar shadow-lg bg-neutral text-neutral-content mb-16 justify-between"
+>
+	<ul class="hidden md:flex md:flex-row">
+		{#each links as { href, name }}
+			<a {href} class="btn btn-ghost btn-sm rounded-btn">{name}</a>
+		{/each}
+	</ul>
+	<div class="md:hidden md:flex-none md:bg-red-500">
+		<ul class="menu menu-horizontal px-1">
+			<li>
+				<details>
+					<summary>Links</summary>
+					<ul class="p-2 bg-base-100 flex flex-col">
+						{#each links as { href, name }}
+							<li>
+								<a {href} class="">
+									{name}
+								</a>
+							</li>
+						{/each}
+					</ul>
+				</details>
+			</li>
 		</ul>
-	</div>
-	<div class="hidden px-2 mx-2 navbar-center lg:flex">
-		<div class="flex items-stretch">
-			<a href="/" class="btn btn-ghost btn-sm rounded-btn">Home</a>
-			<a href="/about" class="btn btn-ghost btn-sm rounded-btn">
-				About
-			</a>
-			<a
-				href="/masked-passwords"
-				class="btn btn-ghost btn-sm rounded-btn"
-			>
-				Masked Passwords
-			</a>
-		</div>
 	</div>
 	<div class="navbar-end"><ThemeSelect /></div>
 </nav>

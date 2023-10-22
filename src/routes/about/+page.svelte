@@ -14,7 +14,7 @@
 	{url}
 />
 
-<div class="all-prose mb-20">
+<div class="mb-20">
 	<svelte:component this={Copy} />
 </div>
 

@@ -13,7 +13,7 @@
 	{url}
 />
 
-<div class="all-prose">
+<div class="">
 	<svelte:component this={Copy} />
 </div>
 
