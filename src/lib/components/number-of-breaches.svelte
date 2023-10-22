@@ -7,18 +7,10 @@
 	}
 </script>
 
-{#if Number($breaches) > 0}
-	<div class="stat place-items-center place-content-center">
-		<div class="stat-title text-2xl">This password appears in</div>
-		<div class="text-error stat-value text-4xl">
-			{formatted_number($breaches)}
-		</div>
-		<div class="stat-desc text-2xl">breaches</div>
-	</div>
-{:else}
-	<div class="stat place-items-center place-content-center">
-		<div class="stat-title">
-			This password doesn't appear in any breaches.
-		</div>
-	</div>
-{/if}
+<section class="not-prose stat place-items-center place-content-center mb-20">
+	<h2 class="stat-title text-3xl font-bold">This password appears in</h2>
+	<p class="text-error stat-value text-4xl">
+		{formatted_number($breaches)}
+	</p>
+	<p class="stat-desc text-2xl">breaches</p>
+</section>

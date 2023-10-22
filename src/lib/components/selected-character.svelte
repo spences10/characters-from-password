@@ -7,8 +7,6 @@
 </script>
 
 <div class="text-center">
-	{#if char}
-		<span class="text-4xl">"{char}"</span>
-		<p>This is {character_type}</p>
-	{/if}
+	<span class="text-4xl">"{char}"</span>
+	<p>This is {character_type ? character_type : `empty`}</p>
 </div>

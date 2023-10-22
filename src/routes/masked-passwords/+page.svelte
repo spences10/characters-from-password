@@ -13,7 +13,7 @@
 	{url}
 />
 
-<div class="">
+<div class="mb-20">
 	<svelte:component this={Copy} />
 </div>
 

@@ -37,6 +37,6 @@
 		Choose a theme
 	</option>
 	{#each themes as theme}
-		<option value={theme} class="capitalize text-primary-content">{theme}</option>
+		<option value={theme} class="capitalize text-neutral-content">{theme}</option>
 	{/each}
 </select>

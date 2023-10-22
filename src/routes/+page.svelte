@@ -1,5 +1,9 @@
 <script lang="ts">
-	import { CharacterPicker, NumberOfBreaches } from '$lib/components'
+	import {
+		CharacterPicker,
+		Hero,
+		NumberOfBreaches,
+	} from '$lib/components'
 	import { description, siteName, website as url } from '$lib/info'
 	import hash from 'sha1'
 	import { Head } from 'svead'
@@ -35,11 +39,9 @@
 	{url}
 />
 
-<h1>Character Picker: Making Password Characters Easy-Peasy!</h1>
+<Hero />
 
-<p>Paste your password and pick the characters you need, no fuss!</p>
-
-<div class="mb-20 form-control">
+<div class="form-control">
 	<input
 		class="mx-1 lg:-mx-40 text-center text-4xl input input-primary input-bordered input-lg shadow-lg"
 		type="password"
@@ -49,18 +51,12 @@
 	/>
 </div>
 
+<p class="text-2xl tracking-wide mb-10">
+	If this password is in a publicly known breach it'll show up below.
+</p>
+
 <CharacterPicker {password} />
 
-<!-- use slide custom action!
-https://scottspence.com/posts/using-the-svelte-use-action-for-animations
--->
-<div
-	class=""
-	style="transform: scaleY({$height}); transform-origin: 10% 10%;"
->
-	{#if password.length > 0}
-		<NumberOfBreaches />
-	{/if}
-</div>
+<NumberOfBreaches />
 
 <div class="divider" />
