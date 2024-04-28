@@ -1,6 +1,6 @@
 <script lang="ts">
+	import { description, site_name, website as url } from '$lib';
 	import { GetFunPassword } from '$lib/components';
-	import { description, siteName, website as url } from '$lib/info';
 	import { Head } from 'svead';
 
 	let { data } = $props();
@@ -8,7 +8,7 @@
 </script>
 
 <Head
-	title={`About · ${siteName}`}
+	title={`About · ${site_name}`}
 	{description}
 	image={'/favicon.png'}
 	{url}

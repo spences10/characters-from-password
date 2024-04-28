@@ -1,6 +1,6 @@
-export const siteName = `Characters from Password`;
+export const site_name = `Characters from Password`;
 
-export const authorName = `Scott Spence`;
+export const author_name = `Scott Spence`;
 
 export const website = `https://cfromp.xyz`;
 

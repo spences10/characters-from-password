@@ -21,6 +21,7 @@ export const get_character_type = (char: string): string => {
 		Object.keys(type_map).find(
 			(key) => type_map[key as CharacterType]
 		) || '';
+
 	const descriptive_type_map: { [key in CharacterType]: string } = {
 		number: 'number character',
 		special: 'special character',

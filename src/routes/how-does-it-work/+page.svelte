@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { description, siteName, website as url } from '$lib/info';
+	import { description, site_name, website as url } from '$lib';
 	import { Head } from 'svead';
 
 	let { data } = $props();
@@ -7,7 +7,7 @@
 </script>
 
 <Head
-	title={`How Doe It Work? · ${siteName}`}
+	title={`How Doe It Work? · ${site_name}`}
 	{description}
 	image={'/favicon.png'}
 	{url}
