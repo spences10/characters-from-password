@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { breaches } from '../../stores/hibp-store';
+	let {
+		breaches_count,
+	}: { breaches_count: string | number | bigint } = $props();
 
 	const formatted_number = (breaches: string | number | bigint) => {
 		const number = new Intl.NumberFormat();
@@ -14,7 +16,7 @@
 		This password appears in
 	</h2>
 	<p class="stat-value text-4xl text-error">
-		{formatted_number($breaches)}
+		{formatted_number(breaches_count)}
 	</p>
 	<p class="stat-desc text-2xl">breaches</p>
 </section>

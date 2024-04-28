@@ -1,25 +1,30 @@
 <script lang="ts">
 	import {
+		create_breaches,
+		description,
+		site_name,
+		website as url,
+	} from '$lib';
+	import {
 		CharacterPicker,
 		Hero,
 		NumberOfBreaches,
 	} from '$lib/components';
-	import { description, siteName, website as url } from '$lib/info';
 	import hash from 'sha1';
 	import { Head } from 'svead';
-	import { fetch_hibp_hashes } from '../stores/hibp-store';
 
 	let password = $state('');
+	const breaches = create_breaches();
 
 	const password_change = (event: Event): void => {
 		const typed = (event.target as HTMLInputElement).value;
 		const sha1 = hash(typed).toUpperCase();
-		fetch_hibp_hashes(sha1);
+		breaches.fetch_hibp_hashes(sha1);
 	};
 </script>
 
 <Head
-	title={`Welcome! · ${siteName}`}
+	title={`Welcome! · ${site_name}`}
 	{description}
 	image={'/favicon.png'}
 	{url}
@@ -43,6 +48,6 @@
 
 <CharacterPicker {password} />
 
-<NumberOfBreaches />
+<NumberOfBreaches breaches_count={breaches.breaches} />
 
 <div class="divider"></div>
