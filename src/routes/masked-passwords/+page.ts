@@ -1,13 +1,13 @@
-import { error } from '@sveltejs/kit'
+import { error } from '@sveltejs/kit';
 
 export const load = async () => {
-	const slug = 'masked-passwords'
+	const slug = 'masked-passwords';
 	try {
-		const Copy = await import(`../../copy/${slug}.md`)
+		const Copy = await import(`../../copy/${slug}.md`);
 		return {
 			Copy: Copy.default,
-		}
+		};
 	} catch (e) {
 		error(404, 'Uh oh!');
 	}
-}
+};

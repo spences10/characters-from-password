@@ -1,16 +1,16 @@
 <script lang="ts">
-	import { ThemeSelect } from './index'
+	import { ThemeSelect } from './';
 
 	const links = [
 		{ name: 'Home', href: '/' },
 		{ name: 'About', href: '/about' },
 		{ name: 'Masked Passwords', href: '/masked-passwords' },
 		{ name: 'How Does It Work?', href: '/how-does-it-work' },
-	]
+	];
 </script>
 
 <nav
-	class="navbar shadow-lg bg-neutral text-neutral-content mb-16 justify-between"
+	class="navbar mb-16 justify-between bg-neutral text-neutral-content shadow-lg"
 >
 	<ul class="hidden md:flex md:flex-row">
 		{#each links as { href, name }}
@@ -22,7 +22,7 @@
 			<li>
 				<details>
 					<summary>Links</summary>
-					<ul class="p-2 bg-base-100 flex flex-col">
+					<ul class="flex flex-col bg-base-100 p-2">
 						{#each links as { href, name }}
 							<li>
 								<a {href} class="">
@@ -35,5 +35,7 @@
 			</li>
 		</ul>
 	</div>
-	<div class="navbar-end"><ThemeSelect /></div>
+	<div class="navbar-end">
+		<ThemeSelect />
+	</div>
 </nav>

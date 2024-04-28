@@ -1,15 +1,15 @@
 <script lang="ts">
-	import { GitHub, Twitter, YouTube } from '$lib/icons'
+	import { GitHub, Twitter, YouTube } from '$lib/icons';
 </script>
 
 <footer
-	class="p-10 footer bg-primary text-primary-content footer-center"
+	class="footer footer-center bg-primary p-10 text-primary-content"
 >
 	<div>
 		<img
 			src="https://res.cloudinary.com/defkmsrpw/image/upload/q_auto,f_auto/v1622648685/ezgif.com-gif-maker.gif"
 			alt="Scott avatar"
-			class="rounded-full h-20"
+			class="h-20 rounded-full"
 		/>
 		<p class="font-bold">
 			Made with <span role="img" aria-label="red heart">❤️</span> by

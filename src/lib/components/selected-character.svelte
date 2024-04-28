@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { get_character_type } from './util'
+	import { get_character_type } from './util';
 
-	export let char = ''
+	let { char = '' } = $props();
 
-	$: character_type = char ? get_character_type(char) : ''
+	let character_type = $derived(char ? get_character_type(char) : '');
 </script>
 
 <div class="text-center">

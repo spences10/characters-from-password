@@ -1,5 +1,5 @@
 export function rando(arr: string | any[]) {
-	return arr[Math.floor(Math.random() * arr.length)]
+	return arr[Math.floor(Math.random() * arr.length)];
 }
 
 export function get_fun_password() {
@@ -40,7 +40,7 @@ export function get_fun_password() {
 		'thoughtless',
 		'uptight',
 		'worried',
-	]
+	];
 
 	const verbs = [
 		'correct',
@@ -73,7 +73,7 @@ export function get_fun_password() {
 		'mean',
 		'keep',
 		'let',
-	]
+	];
 
 	const nouns = [
 		'women',
@@ -106,9 +106,9 @@ export function get_fun_password() {
 		'phenomena',
 		'criteria',
 		'data',
-	]
+	];
 
 	return `${rando(verbs)} ${rando(adjectives)} ${rando(
-		adjectives,
-	)} ${rando(nouns)}`
+		adjectives
+	)} ${rando(nouns)}`;
 }

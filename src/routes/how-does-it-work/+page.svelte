@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { description, siteName, website as url } from '$lib/info'
-	import { Head } from 'svead'
+	import { description, siteName, website as url } from '$lib/info';
+	import { Head } from 'svead';
 
-	export let data
-	let { Copy } = data
+	let { data } = $props();
+	let { Copy } = data;
 </script>
 
 <Head
@@ -17,4 +17,4 @@
 	<svelte:component this={Copy} />
 </div>
 
-<div class="divider" />
+<div class="divider"></div>

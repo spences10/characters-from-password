@@ -1,15 +1,15 @@
 <script lang="ts">
-	import { get_fun_password } from '$lib/password-gen'
+	import { get_fun_password } from '$lib/password-gen';
 
-	$: funPassword = ''
-	const handlePassword = () => (funPassword = get_fun_password())
+	let fun_password = $state('');
+	const handle_password = () => (fun_password = get_fun_password());
 </script>
 
-<button class="btn w-full" on:click={handlePassword}
-	>Get Fun Password</button
->
+<button class="btn btn-primary w-full" onclick={handle_password}>
+	Get Fun Password
+</button>
 <p
-	class="text-4xl font-mono mx-1 lg:-mx-40 text-center h-auto lg:h-20 py-7"
+	class="mx-1 h-auto py-7 text-center font-mono text-4xl lg:-mx-40 lg:h-20"
 >
-	{funPassword}
+	{fun_password}
 </p>

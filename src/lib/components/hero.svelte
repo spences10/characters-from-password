@@ -1,5 +1,5 @@
 <h1
-	class="bg-clip-text bg-gradient-to-b from-primary to-secondary text-transparent not-prose mx-1 lg:-mx-64 text-center font-extrabold tracking-wide text-5xl"
+	class="not-prose mx-1 bg-gradient-to-b from-primary to-secondary bg-clip-text text-center text-5xl font-extrabold tracking-wide text-transparent lg:-mx-64"
 >
 	Password Character Picker
 </h1>
