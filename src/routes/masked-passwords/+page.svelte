@@ -14,7 +14,7 @@
 />
 
 <div class="mb-20">
-	<svelte:component this={Copy} />
+	<Copy />
 </div>
 
 <div class="divider"></div>
