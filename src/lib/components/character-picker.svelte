@@ -15,7 +15,7 @@
 	<span class="pr-2">Pick Character:</span>
 
 	<select
-		class="select select-bordered select-primary shadow-lg"
+		class="select select-primary w-auto shadow-lg"
 		disabled={password.length === 0}
 		onchange={handle_change}
 	>
