@@ -7,7 +7,7 @@
 	} from '$env/static/public';
 	import { Footer, Nav } from '$lib/components';
 	import * as Fathom from 'fathom-client';
-	import '../app.pcss';
+	import '../app.css';
 
 	let { children } = $props();
 
@@ -27,7 +27,7 @@
 	<main
 		class="container prose prose-xl mx-auto max-w-xl flex-grow px-4 ease-in-out"
 	>
-		{@render children?.()}
+		{@render children()}
 	</main>
 
 	<Footer />
