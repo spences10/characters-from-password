@@ -1,10 +1,9 @@
 <script lang="ts">
 	import { themes } from '$lib/themes';
-	import { onMount } from 'svelte';
 
 	let current_theme = $state('');
 
-	onMount(() => {
+	$effect(() => {
 		if (typeof window !== 'undefined') {
 			const theme = window.localStorage.getItem('theme');
 			if (theme && themes.includes(theme)) {
@@ -30,14 +29,14 @@
 <select
 	bind:value={current_theme}
 	data-choose-theme
-	class="select select-bordered select-primary select-sm bg-neutral capitalize"
+	class="select select-xs select-primary bg-base-100 text-base-content w-auto capitalize"
 	onchange={set_theme}
 >
 	<option value="" disabled={current_theme !== ''}>
 		Choose a theme
 	</option>
 	{#each themes as theme}
-		<option value={theme} class="capitalize text-neutral-content">
+		<option value={theme}>
 			{theme}
 		</option>
 	{/each}
