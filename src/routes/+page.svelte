@@ -32,15 +32,19 @@
 
 <Hero />
 
-<div class="form-control">
+<fieldset class="fieldset">
+	<legend class="fieldset-legend sr-only">
+		Enter a password here
+	</legend>
 	<input
-		class="input input-lg input-bordered input-primary mx-1 text-center text-4xl shadow-lg lg:-mx-40"
+		class="input input-xl input-primary rounded-box mx-1 w-auto text-center shadow-lg lg:-mx-40"
 		type="password"
 		placeholder="Enter a password here"
 		oninput={password_change}
 		bind:value={password}
 	/>
-</div>
+	<p class="fieldset-label sr-only">Paste in a password here</p>
+</fieldset>
 
 <p class="mb-10 text-2xl tracking-wide">
 	If this password is in a publicly known breach it'll show up below.
