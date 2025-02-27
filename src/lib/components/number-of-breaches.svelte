@@ -9,14 +9,16 @@
 	};
 </script>
 
-<section
-	class="not-prose stat mb-20 place-content-center place-items-center"
->
+<div class="flex justify-center">
+	<section
+		class="not-prose stats mb-20 place-content-center place-items-center"
+	>
 	<h2 class="stat-title text-3xl font-bold">
 		This password appears in
 	</h2>
 	<p class="stat-value text-4xl text-error">
 		{formatted_number(breaches_count)}
 	</p>
-	<p class="stat-desc text-2xl">breaches</p>
-</section>
+		<p class="stat-desc text-2xl">breaches</p>
+	</section>
+</div>
