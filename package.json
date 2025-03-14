@@ -34,7 +34,7 @@
 		"@testing-library/jest-dom": "^6.6.3",
 		"@testing-library/svelte": "^5.2.7",
 		"@types/sha1": "^1.1.5",
-		"daisyui": "5.0.0",
+		"daisyui": "5.0.4",
 		"eslint": "^9.21.0",
 		"eslint-config-prettier": "^10.0.2",
 		"eslint-plugin-svelte": "^3.0.3",
