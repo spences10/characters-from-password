@@ -4,13 +4,15 @@
 		description,
 		site_name,
 		website as url,
-	} from '$lib';
+	} from '#lib';
 	import {
 		CharacterPicker,
 		Hero,
 		NumberOfBreaches,
-	} from '$lib/components';
+	} from '#lib/components/index.js';
 	import hash from 'sha1';
+	import { Input } from '#lib/components/ui/input/index.js';
+	import { Separator } from '#lib/components/ui/separator/index.js';
 	import { Head } from 'svead';
 
 	let password = $state('');
@@ -24,27 +26,27 @@
 </script>
 
 <Head
-	title={`Welcome! · ${site_name}`}
-	{description}
-	image={'/favicon.png'}
-	{url}
+	seo_config={{
+		title: `Welcome! · ${site_name}`,
+		description,
+		url,
+		site_name,
+		open_graph_image: '/favicon.png',
+	}}
 />
 
 <Hero />
 
-<fieldset class="fieldset">
-	<legend class="fieldset-legend sr-only">
-		Enter a password here
-	</legend>
-	<input
-		class="input input-xl input-primary rounded-box mx-1 w-auto text-center shadow-lg lg:-mx-40"
+<label class="not-prose block">
+	<span class="sr-only">Enter a password here</span>
+	<Input
+		class="h-14 text-center text-2xl shadow-lg md:text-2xl"
 		type="password"
 		placeholder="Enter a password here"
 		oninput={password_change}
 		bind:value={password}
 	/>
-	<p class="fieldset-label sr-only">Paste in a password here</p>
-</fieldset>
+</label>
 
 <p class="mb-10 text-2xl tracking-wide">
 	If this password is in a publicly known breach it'll show up below.
@@ -54,4 +56,4 @@
 
 <NumberOfBreaches breaches_count={breaches.breaches} />
 
-<div class="divider"></div>
+<Separator class="my-8" />

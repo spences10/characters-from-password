@@ -109,6 +109,6 @@ export function get_fun_password() {
 	];
 
 	return `${rando(verbs)} ${rando(adjectives)} ${rando(
-		adjectives
+		adjectives,
 	)} ${rando(nouns)}`;
 }

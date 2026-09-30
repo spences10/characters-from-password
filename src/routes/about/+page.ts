@@ -7,7 +7,7 @@ export const load = async () => {
 		return {
 			Copy: Copy.default,
 		};
-	} catch (e) {
+	} catch {
 		error(404, 'Uh oh!');
 	}
 };

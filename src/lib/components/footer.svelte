@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { Bluesky, GitHub, YouTube } from '$lib/icons';
+	import { Bluesky, GitHub, YouTube } from '#lib/icons/index.js';
 </script>
 
 <footer
-	class="footer footer-center bg-primary text-primary-content md:footer-horizontal p-10"
+	class="flex flex-col items-center justify-center gap-8 bg-primary p-10 text-center text-primary-foreground md:flex-row md:justify-around"
 >
-	<div>
+	<div class="flex flex-col items-center gap-2">
 		<img
 			src="https://res.cloudinary.com/defkmsrpw/image/upload/q_auto,f_auto/v1622648685/ezgif.com-gif-maker.gif"
 			alt="Scott avatar"
@@ -14,7 +14,7 @@
 		<p class="font-bold">
 			Made with <span role="img" aria-label="red heart">❤️</span> by
 			<a
-				class="link hover:text-secondary transition"
+				class="underline underline-offset-4 transition hover:opacity-80"
 				href="https://scottspence.com"
 				target="_blank"
 				rel="noopener noreferrer"

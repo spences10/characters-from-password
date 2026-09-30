@@ -1,31 +1,35 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
-	import { page } from '$app/stores';
+	import { Footer, Nav } from '#lib/components/index.js';
 	import {
 		PUBLIC_FATHOM_ID,
 		PUBLIC_FATHOM_URL,
-	} from '$env/static/public';
-	import { Footer, Nav } from '$lib/components';
+	} from '$app/env/public';
+	import { afterNavigate } from '$app/navigation';
 	import * as Fathom from 'fathom-client';
+	import { ModeWatcher } from 'mode-watcher';
+	import { onMount } from 'svelte';
 	import '../app.css';
 
 	let { children } = $props();
 
-	$effect(() => {
+	onMount(() => {
+		if (!PUBLIC_FATHOM_ID) return;
 		Fathom.load(PUBLIC_FATHOM_ID, {
 			url: PUBLIC_FATHOM_URL,
 		});
 	});
 
-	$effect(() => {
-		$page.url.pathname, browser && Fathom.trackPageview();
+	afterNavigate(() => {
+		if (PUBLIC_FATHOM_ID) Fathom.trackPageview();
 	});
 </script>
+
+<ModeWatcher />
 
 <div class="flex min-h-screen flex-col overflow-x-hidden">
 	<Nav />
 	<main
-		class="container prose prose-xl mx-auto max-w-xl flex-grow px-4 ease-in-out"
+		class="container mx-auto prose prose-xl max-w-xl grow px-4 ease-in-out dark:prose-invert"
 	>
 		{@render children()}
 	</main>
