@@ -12,6 +12,7 @@ catalog:
 allowBuilds:
   '@tailwindcss/oxide': true
   esbuild: true
+  workerd: true
 overrides:
   vite@*: 'catalog:'
   vitest@*: 'catalog:'
