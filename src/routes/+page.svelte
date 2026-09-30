@@ -11,6 +11,8 @@
 		NumberOfBreaches,
 	} from '#lib/components/index.js';
 	import hash from 'sha1';
+	import { Input } from '#lib/components/ui/input/index.js';
+	import { Separator } from '#lib/components/ui/separator/index.js';
 	import { Head } from 'svead';
 
 	let password = $state('');
@@ -35,19 +37,16 @@
 
 <Hero />
 
-<fieldset class="fieldset">
-	<legend class="sr-only fieldset-legend">
-		Enter a password here
-	</legend>
-	<input
-		class="input mx-1 input-xl w-auto rounded-box text-center shadow-lg input-primary lg:-mx-40"
+<label class="not-prose block">
+	<span class="sr-only">Enter a password here</span>
+	<Input
+		class="h-14 text-center text-2xl shadow-lg md:text-2xl"
 		type="password"
 		placeholder="Enter a password here"
 		oninput={password_change}
 		bind:value={password}
 	/>
-	<p class="sr-only fieldset-label">Paste in a password here</p>
-</fieldset>
+</label>
 
 <p class="mb-10 text-2xl tracking-wide">
 	If this password is in a publicly known breach it'll show up below.
@@ -57,4 +56,4 @@
 
 <NumberOfBreaches breaches_count={breaches.breaches} />
 
-<div class="divider"></div>
+<Separator class="my-8" />

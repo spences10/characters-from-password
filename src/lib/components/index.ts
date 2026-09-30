@@ -5,4 +5,4 @@ export { default as Hero } from './hero.svelte';
 export { default as Nav } from './nav.svelte';
 export { default as NumberOfBreaches } from './number-of-breaches.svelte';
 export { default as SelectedCharacter } from './selected-character.svelte';
-export { default as ThemeSelect } from './theme-select.svelte';
+export { default as ModeToggle } from './mode-toggle.svelte';

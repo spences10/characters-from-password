@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { description, site_name, website as url } from '#lib';
 	import { GetFunPassword } from '#lib/components/index.js';
+	import { Separator } from '#lib/components/ui/separator/index.js';
 	import { Head } from 'svead';
 
 	let { data } = $props();
@@ -21,8 +22,8 @@
 	<Copy />
 </div>
 
-<div class="divider"></div>
+<Separator class="my-8" />
 
 <GetFunPassword />
 
-<div class="divider"></div>
+<Separator class="my-8" />

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { description, site_name, website as url } from '#lib';
+	import { Separator } from '#lib/components/ui/separator/index.js';
 	import { Head } from 'svead';
 
 	let { data } = $props();
@@ -20,4 +21,4 @@
 	<Copy />
 </div>
 
-<div class="divider"></div>
+<Separator class="my-8" />

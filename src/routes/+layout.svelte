@@ -6,6 +6,7 @@
 	} from '$app/env/public';
 	import { afterNavigate } from '$app/navigation';
 	import * as Fathom from 'fathom-client';
+	import { ModeWatcher } from 'mode-watcher';
 	import { onMount } from 'svelte';
 	import '../app.css';
 
@@ -23,10 +24,12 @@
 	});
 </script>
 
+<ModeWatcher />
+
 <div class="flex min-h-screen flex-col overflow-x-hidden">
 	<Nav />
 	<main
-		class="container mx-auto prose prose-xl max-w-xl grow px-4 ease-in-out"
+		class="container mx-auto prose prose-xl max-w-xl grow px-4 ease-in-out dark:prose-invert"
 	>
 		{@render children()}
 	</main>

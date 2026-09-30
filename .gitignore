@@ -25,3 +25,6 @@ vite.config.ts.timestamp-*
 
 # coverage
 coverage
+
+# Vitest browser attachments
+.vitest

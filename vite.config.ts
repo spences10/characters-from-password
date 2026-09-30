@@ -40,7 +40,8 @@ export default defineConfig({
 		ignorePatterns: [...ignore_patterns, 'pnpm-lock.yaml'],
 	},
 	lint: {
-		ignorePatterns: ignore_patterns,
+		// shadcn-svelte generated; tsgolint can't resolve `<script module>` exports
+		ignorePatterns: [...ignore_patterns, 'src/lib/components/ui/**'],
 		options: {
 			typeAware: true,
 			typeCheck: true,

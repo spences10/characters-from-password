@@ -1,33 +1,37 @@
 <script lang="ts">
+	import * as Select from '#lib/components/ui/select/index.js';
 	import SelectedCharacter from './selected-character.svelte';
 
 	let { password = '' } = $props();
-	let selected_character_index: number = $state(0);
-	let char = $derived(password.charAt(selected_character_index));
-
-	const handle_change = (e: Event) => {
-		const target = e.target as HTMLSelectElement;
-		selected_character_index = parseInt(target.value);
-	};
+	let selected = $state('0');
+	const char = $derived(password.charAt(Number(selected)));
+	const positions = $derived(
+		Array.from({ length: password.length }, (_, i) => String(i)),
+	);
 </script>
 
-<div class="text-center">
-	<span class="pr-2">Pick Character:</span>
+<div class="flex items-center justify-center gap-2">
+	<span id="pick-character-label">Pick Character:</span>
 
-	<select
-		class="select w-auto shadow-lg select-primary"
+	<Select.Root
+		type="single"
+		bind:value={selected}
 		disabled={password.length === 0}
-		onchange={handle_change}
 	>
-		{#each [...password] as item, index}
-			<option
-				value={index}
-				selected={index === selected_character_index}
-			>
-				{index + 1}
-			</option>
-		{/each}
-	</select>
+		<Select.Trigger
+			aria-labelledby="pick-character-label"
+			class="w-20"
+		>
+			{Number(selected) + 1}
+		</Select.Trigger>
+		<Select.Content>
+			{#each positions as position (position)}
+				<Select.Item value={position}>
+					{Number(position) + 1}
+				</Select.Item>
+			{/each}
+		</Select.Content>
+	</Select.Root>
 </div>
 
 <SelectedCharacter {char} />
