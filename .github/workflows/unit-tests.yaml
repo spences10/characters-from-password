@@ -1,0 +1,80 @@
+---
+name: CI/CD
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+env:
+  CI: true
+
+jobs:
+  test:
+    name: Unit Tests & Coverage
+    runs-on: ubuntu-24.04
+    container:
+      image: mcr.microsoft.com/playwright:v1.63.0-noble
+      options: --user 1001
+    timeout-minutes: 10
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v6
+        with:
+          path: ${{ env.STORE_PATH }}
+          key:
+            ${{ runner.os }}-pnpm-store-${{
+            hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Verify Playwright versions match
+        run: |
+          playwright_version=$(node -p "require('./node_modules/playwright/package.json').version")
+          test_version=$(node -p "require('./node_modules/@playwright/test/package.json').version")
+          container_version=$(grep -o 'playwright:v[0-9.]*' .github/workflows/unit-tests.yaml | sed 's/playwright:v//')
+
+          echo "Installed playwright: $playwright_version"
+          echo "Installed @playwright/test: $test_version"
+          echo "Container: $container_version"
+
+          if [ "$playwright_version" != "$container_version" ] || [ "$test_version" != "$container_version" ]; then
+            echo "Update the installed Playwright packages and CI images together."
+            exit 1
+          fi
+
+      - name: Lint and format
+        run: pnpm lint
+
+      - name: Type check
+        run: pnpm check
+
+      - name: Build application
+        run: pnpm build
+
+      - name: Coverage
+        run: pnpm coverage

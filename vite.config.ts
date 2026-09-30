@@ -82,6 +82,7 @@ export default defineConfig({
 			include: ['src/**/*.{js,ts,svelte}'],
 			exclude: [
 				...coverageConfigDefaults.exclude,
+				'src/lib/components/ui/**',
 				'**/+page.svelte',
 				'**/+layout.svelte',
 				'**/+error.svelte',
