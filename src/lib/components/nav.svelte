@@ -10,11 +10,11 @@
 </script>
 
 <nav
-	class="navbar bg-neutral text-neutral-content mb-16 justify-between shadow-lg"
+	class="navbar mb-16 justify-between bg-neutral text-neutral-content shadow-lg"
 >
 	<ul class="hidden md:flex md:flex-row">
 		{#each links as { href, name }}
-			<a {href} class="btn btn-ghost btn-sm rounded-btn">{name}</a>
+			<a {href} class="rounded-btn btn btn-ghost btn-sm">{name}</a>
 		{/each}
 	</ul>
 	<div class="md:hidden">
@@ -22,7 +22,7 @@
 			<li>
 				<details>
 					<summary>Links</summary>
-					<ul class="menu bg-base-100 rounded-box z-10 p-2">
+					<ul class="menu z-10 rounded-box bg-base-100 p-2">
 						{#each links as { href, name }}
 							<li>
 								<a {href} class="">

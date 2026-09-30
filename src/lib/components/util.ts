@@ -19,7 +19,7 @@ export const get_character_type = (char: string): string => {
 
 	const type_key =
 		Object.keys(type_map).find(
-			(key) => type_map[key as CharacterType]
+			(key) => type_map[key as CharacterType],
 		) || '';
 
 	const descriptive_type_map: { [key in CharacterType]: string } = {

@@ -13,7 +13,7 @@ export function create_breaches() {
 		const match = split_text.filter(
 			(hash) =>
 				hash.substring(0, hash.indexOf(':')) ===
-				sha1.slice(5, sha1.length)
+				sha1.slice(5, sha1.length),
 		);
 
 		const breaches_match = match[0];
@@ -21,7 +21,7 @@ export function create_breaches() {
 
 		const number_of_breaches = breaches_match.substring(
 			breaches_match.indexOf(':') + 1,
-			breaches_match.length
+			breaches_match.length,
 		);
 
 		breaches = number_of_breaches;

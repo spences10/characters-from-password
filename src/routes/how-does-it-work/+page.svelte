@@ -1,16 +1,19 @@
 <script lang="ts">
-	import { description, site_name, website as url } from '$lib';
+	import { description, site_name, website as url } from '#lib';
 	import { Head } from 'svead';
 
 	let { data } = $props();
-	let { Copy } = data;
+	const Copy = $derived(data.Copy);
 </script>
 
 <Head
-	title={`How Doe It Work? · ${site_name}`}
-	{description}
-	image={'/favicon.png'}
-	{url}
+	seo_config={{
+		title: `How Doe It Work? · ${site_name}`,
+		description,
+		url,
+		site_name,
+		open_graph_image: '/favicon.png',
+	}}
 />
 
 <div class="mb-20">

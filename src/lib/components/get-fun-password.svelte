@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { get_fun_password } from '$lib/password-gen';
+	import { get_fun_password } from '#lib/password-gen.js';
 
 	let fun_password = $state('');
 	const handle_password = () => (fun_password = get_fun_password?.());
 </script>
 
-<button class="btn btn-primary w-full" onclick={handle_password}>
+<button class="btn w-full btn-primary" onclick={handle_password}>
 	Get Fun Password
 </button>
 <p

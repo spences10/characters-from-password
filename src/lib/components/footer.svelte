@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { Bluesky, GitHub, YouTube } from '$lib/icons';
+	import { Bluesky, GitHub, YouTube } from '#lib/icons/index.js';
 </script>
 
 <footer
-	class="footer footer-center bg-primary text-primary-content md:footer-horizontal p-10"
+	class="footer-center footer bg-primary p-10 text-primary-content md:footer-horizontal"
 >
 	<div>
 		<img
@@ -14,7 +14,7 @@
 		<p class="font-bold">
 			Made with <span role="img" aria-label="red heart">❤️</span> by
 			<a
-				class="link hover:text-secondary transition"
+				class="link transition hover:text-secondary"
 				href="https://scottspence.com"
 				target="_blank"
 				rel="noopener noreferrer"

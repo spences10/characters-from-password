@@ -4,8 +4,7 @@
 		width?: number;
 	}
 
-	const { ...props }: Props = $props();
-	const { height = 25, width = 25 } = props;
+	const { height = 25, width = 25 }: Props = $props();
 </script>
 
 <svg

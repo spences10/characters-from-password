@@ -1,17 +1,20 @@
 <script lang="ts">
-	import { description, site_name, website as url } from '$lib';
-	import { GetFunPassword } from '$lib/components';
+	import { description, site_name, website as url } from '#lib';
+	import { GetFunPassword } from '#lib/components/index.js';
 	import { Head } from 'svead';
 
 	let { data } = $props();
-	let { Copy } = data;
+	const Copy = $derived(data.Copy);
 </script>
 
 <Head
-	title={`About · ${site_name}`}
-	{description}
-	image={'/favicon.png'}
-	{url}
+	seo_config={{
+		title: `About · ${site_name}`,
+		description,
+		url,
+		site_name,
+		open_graph_image: '/favicon.png',
+	}}
 />
 
 <div class="mb-20">

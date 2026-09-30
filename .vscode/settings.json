@@ -1,18 +1,17 @@
 {
-	"git.enableSmartCommit": true,
-	"git.postCommitCommand": "sync",
+	"editor.defaultFormatter": "oxc.oxc-vscode",
+	"editor.formatOnSave": true,
+	"oxc.fmt.configPath": "./vite.config.ts",
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
 	"cSpell.words": [
-		"daisyui",
 		"hibp",
 		"mdsvex",
 		"Pageview",
-		"pcss",
 		"Pwned",
 		"rando",
 		"svead",
-		"sveltejs",
-		"vercel",
-		"VITE"
-	],
-	"css.validate": false
+		"sveltejs"
+	]
 }

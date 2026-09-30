@@ -4,12 +4,12 @@
 		description,
 		site_name,
 		website as url,
-	} from '$lib';
+	} from '#lib';
 	import {
 		CharacterPicker,
 		Hero,
 		NumberOfBreaches,
-	} from '$lib/components';
+	} from '#lib/components/index.js';
 	import hash from 'sha1';
 	import { Head } from 'svead';
 
@@ -24,26 +24,29 @@
 </script>
 
 <Head
-	title={`Welcome! · ${site_name}`}
-	{description}
-	image={'/favicon.png'}
-	{url}
+	seo_config={{
+		title: `Welcome! · ${site_name}`,
+		description,
+		url,
+		site_name,
+		open_graph_image: '/favicon.png',
+	}}
 />
 
 <Hero />
 
 <fieldset class="fieldset">
-	<legend class="fieldset-legend sr-only">
+	<legend class="sr-only fieldset-legend">
 		Enter a password here
 	</legend>
 	<input
-		class="input input-xl input-primary rounded-box mx-1 w-auto text-center shadow-lg lg:-mx-40"
+		class="input mx-1 input-xl w-auto rounded-box text-center shadow-lg input-primary lg:-mx-40"
 		type="password"
 		placeholder="Enter a password here"
 		oninput={password_change}
 		bind:value={password}
 	/>
-	<p class="fieldset-label sr-only">Paste in a password here</p>
+	<p class="sr-only fieldset-label">Paste in a password here</p>
 </fieldset>
 
 <p class="mb-10 text-2xl tracking-wide">
