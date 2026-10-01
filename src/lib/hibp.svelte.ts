@@ -1,36 +1,58 @@
+export type BreachStatus =
+	| 'idle'
+	| 'checking'
+	| 'found'
+	| 'clear'
+	| 'error';
+
 export function create_breaches() {
-	let breaches = $state('');
+	let status = $state<BreachStatus>('idle');
+	let count = $state(0);
+	let latest = 0;
 
-	async function fetch_hibp_hashes(sha1: string) {
-		const url = `https://api.pwnedpasswords.com/range/${sha1.substring(0, 5)}`;
-		const res = await fetch(url);
-		const response_text = await res.text();
+	async function check(sha1: string) {
+		const request = ++latest;
+		status = 'checking';
 
-		// work through hash data to get number of breaches
-		const split_text = response_text.split('\r\n');
+		try {
+			const url = `https://api.pwnedpasswords.com/range/${sha1.substring(0, 5)}`;
+			const res = await fetch(url);
+			if (!res.ok) throw new Error(`HIBP responded ${res.status}`);
+			const body = await res.text();
+			if (request !== latest) return;
 
-		if (!split_text) return (breaches = '');
-		const match = split_text.filter(
-			(hash) =>
-				hash.substring(0, hash.indexOf(':')) ===
-				sha1.slice(5, sha1.length),
-		);
+			const suffix = sha1.slice(5);
+			const match = body
+				.split('\r\n')
+				.find(
+					(line) => line.substring(0, line.indexOf(':')) === suffix,
+				);
 
-		const breaches_match = match[0];
-		if (!breaches_match) return (breaches = '');
+			count = match
+				? Number(match.substring(match.indexOf(':') + 1))
+				: 0;
+			status = count > 0 ? 'found' : 'clear';
+		} catch {
+			if (request !== latest) return;
+			count = 0;
+			status = 'error';
+		}
+	}
 
-		const number_of_breaches = breaches_match.substring(
-			breaches_match.indexOf(':') + 1,
-			breaches_match.length,
-		);
-
-		breaches = number_of_breaches;
+	function reset() {
+		latest++;
+		count = 0;
+		status = 'idle';
 	}
 
 	return {
-		get breaches() {
-			return breaches;
+		get status() {
+			return status;
 		},
-		fetch_hibp_hashes,
+		get count() {
+			return count;
+		},
+		check,
+		reset,
 	};
 }

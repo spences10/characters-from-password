@@ -24,15 +24,46 @@
 	});
 </script>
 
-<ModeWatcher />
+<ModeWatcher defaultMode="dark" />
 
-<div class="flex min-h-screen flex-col overflow-x-hidden">
+<a class="skip" href="#content">Skip to content</a>
+
+<div class="shell">
 	<Nav />
-	<main
-		class="container mx-auto prose prose-xl max-w-xl grow px-4 ease-in-out dark:prose-invert"
-	>
+	<main id="content">
 		{@render children()}
 	</main>
-
 	<Footer />
 </div>
+
+<style>
+	.shell {
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+		min-block-size: 100dvh;
+		overflow-x: clip;
+	}
+
+	main {
+		inline-size: 100%;
+		max-inline-size: 68rem;
+		margin-inline: auto;
+		padding: clamp(1.25rem, 4vw, 3rem) clamp(1rem, 4vw, 2.5rem)
+			clamp(4rem, 10vw, 7rem);
+	}
+
+	.skip {
+		position: absolute;
+		inset-inline-start: 1rem;
+		inset-block-start: -4rem;
+		z-index: 10;
+		padding: 0.6rem 1rem;
+		border-radius: 0.4rem;
+		background: var(--brass);
+		color: var(--primary-foreground);
+	}
+
+	.skip:focus {
+		inset-block-start: 1rem;
+	}
+</style>

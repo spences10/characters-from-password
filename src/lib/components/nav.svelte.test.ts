@@ -9,10 +9,10 @@ describe('Nav', () => {
 		await render(Nav);
 
 		for (const name of [
-			'Home',
+			'Characters from Password',
 			'About',
-			'Masked Passwords',
-			'How Does It Work?',
+			'Masked passwords',
+			'How it works',
 		]) {
 			await expect
 				.element(page.getByRole('link', { name }))

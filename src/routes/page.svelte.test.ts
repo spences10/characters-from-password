@@ -8,7 +8,12 @@ describe('/+page.svelte', () => {
 		await render(Page);
 
 		await expect
-			.element(page.getByRole('heading', { level: 1 }))
+			.element(
+				page.getByRole('heading', {
+					level: 1,
+					name: 'Characters from Password',
+				}),
+			)
 			.toBeInTheDocument();
 		await expect
 			.element(page.getByPlaceholder('Enter a password here'))

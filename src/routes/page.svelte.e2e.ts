@@ -6,6 +6,7 @@ test('picks characters and shows breach count', async ({ page }) => {
 		'https://api.pwnedpasswords.com/range/*',
 		(route) =>
 			route.fulfill({
+				headers: { 'access-control-allow-origin': '*' },
 				body: '214943DAAD1D64C102FAEC29DE4AFE9DA3D:2413945\r\nFFFFF:1',
 			}),
 	);
@@ -15,7 +16,7 @@ test('picks characters and shows breach count', async ({ page }) => {
 	await expect(
 		page.getByRole('heading', {
 			level: 1,
-			name: 'Password Character Picker',
+			name: 'Characters from Password',
 		}),
 	).toBeVisible();
 
@@ -23,24 +24,26 @@ test('picks characters and shows breach count', async ({ page }) => {
 		.getByPlaceholder('Enter a password here')
 		.fill('password1');
 	await expect(page.getByText('2,413,945')).toBeVisible();
-	await expect(page.getByText('"p"')).toBeVisible();
 
-	await page.getByRole('button', { name: 'Pick Character:' }).click();
-	await page.getByRole('option', { name: '9' }).click();
-	await expect(page.getByText('"1"')).toBeVisible();
+	await page
+		.getByRole('button', { name: 'Position 9', exact: true })
+		.click();
+	await page
+		.getByRole('button', { name: 'Position 1', exact: true })
+		.click();
 	await expect(
-		page.getByText('This is a number character'),
+		page.getByRole('heading', {
+			name: 'Enter the 1st and 9th characters',
+		}),
 	).toBeVisible();
+	await expect(page.getByText('number character')).toBeVisible();
+	await expect(page.getByText('lowercase character')).toBeVisible();
 });
 
 test('nav links reach each page', async ({ page }) => {
 	await page.goto('/');
 	const nav = page.getByRole('navigation');
-	for (const name of [
-		'About',
-		'Masked Passwords',
-		'How Does It Work?',
-	]) {
+	for (const name of ['About', 'Masked passwords', 'How it works']) {
 		await nav.getByRole('link', { name }).click();
 		await expect(nav.getByRole('link', { name })).toHaveAttribute(
 			'aria-current',

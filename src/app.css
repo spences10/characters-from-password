@@ -1,54 +1,124 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@import '@fontsource/gloock/latin.css';
+@import '@fontsource-variable/hanken-grotesk/wght.css';
+@import '@fontsource-variable/red-hat-mono/wght.css';
 
 @plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * Vault palette. Dark is the default look of the lock (enamel green
+ * safe door, brass fittings); light swaps to a pale mint enamel.
+ */
 :root {
-	--radius: 0.625rem;
-	--background: oklch(1 0 0);
-	--foreground: oklch(0.145 0 0);
-	--card: oklch(1 0 0);
-	--card-foreground: oklch(0.145 0 0);
-	--popover: oklch(1 0 0);
-	--popover-foreground: oklch(0.145 0 0);
-	--primary: oklch(0.205 0 0);
-	--primary-foreground: oklch(0.985 0 0);
-	--secondary: oklch(0.97 0 0);
-	--secondary-foreground: oklch(0.205 0 0);
-	--muted: oklch(0.97 0 0);
-	--muted-foreground: oklch(0.556 0 0);
-	--accent: oklch(0.97 0 0);
-	--accent-foreground: oklch(0.205 0 0);
-	--destructive: oklch(0.577 0.245 27.325);
-	--border: oklch(0.922 0 0);
-	--input: oklch(0.922 0 0);
-	--ring: oklch(0.708 0 0);
+	--enamel: #dbe5de;
+	--enamel-deep: #c6d3ca;
+	--enamel-raised: #e9f0eb;
+	--ink: #14342a;
+	--ink-soft: #456a5c;
+	--brass: #a07a22;
+	--brass-hi: #e6c977;
+	--brass-lo: #6b4d12;
+	--steel-hi: #f1f3ee;
+	--steel: #cfd5cd;
+	--steel-lo: #8c958d;
+	--steel-ink: #18201c;
+	--alarm: #b3301f;
+	--alarm-ink: #fbeee6;
+	--slot: #234c3e;
+	--drum-shade: 55%;
+
+	--spring: linear(
+		0,
+		0.0336,
+		0.1166,
+		0.2272,
+		0.349,
+		0.4708,
+		0.5847,
+		0.6864,
+		0.7735,
+		0.8454,
+		0.9029,
+		0.9471,
+		0.9797,
+		1.0026,
+		1.0176,
+		1.0264,
+		1.0306,
+		1.0315,
+		1.0301,
+		1.0273,
+		1.0237,
+		1.0198,
+		1.016,
+		1.0125,
+		1.0093,
+		1.0067,
+		1.0045,
+		1.0028,
+		1.0015,
+		1.0005,
+		0.9998,
+		0.9994,
+		0.9991,
+		0.999,
+		0.999,
+		0.9991,
+		1
+	);
+	--ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+	--radius: 0.375rem;
+	--background: var(--enamel);
+	--foreground: var(--ink);
+	--card: var(--enamel-raised);
+	--card-foreground: var(--ink);
+	--popover: var(--enamel-raised);
+	--popover-foreground: var(--ink);
+	--primary: var(--brass);
+	--primary-foreground: #fffaf0;
+	--secondary: var(--enamel-deep);
+	--secondary-foreground: var(--ink);
+	--muted: var(--enamel-deep);
+	--muted-foreground: var(--ink-soft);
+	--accent: var(--enamel-deep);
+	--accent-foreground: var(--ink);
+	--destructive: var(--alarm);
+	--border: color-mix(in oklab, var(--ink) 18%, transparent);
+	--input: color-mix(in oklab, var(--ink) 24%, transparent);
+	--ring: var(--brass);
 }
 
 .dark {
-	--background: oklch(0.145 0 0);
-	--foreground: oklch(0.985 0 0);
-	--card: oklch(0.205 0 0);
-	--card-foreground: oklch(0.985 0 0);
-	--popover: oklch(0.205 0 0);
-	--popover-foreground: oklch(0.985 0 0);
-	--primary: oklch(0.922 0 0);
-	--primary-foreground: oklch(0.205 0 0);
-	--secondary: oklch(0.269 0 0);
-	--secondary-foreground: oklch(0.985 0 0);
-	--muted: oklch(0.269 0 0);
-	--muted-foreground: oklch(0.708 0 0);
-	--accent: oklch(0.269 0 0);
-	--accent-foreground: oklch(0.985 0 0);
-	--destructive: oklch(0.704 0.191 22.216);
-	--border: oklch(1 0 0 / 10%);
-	--input: oklch(1 0 0 / 15%);
-	--ring: oklch(0.556 0 0);
+	--enamel: #163a2f;
+	--enamel-deep: #0e271f;
+	--enamel-raised: #1d4739;
+	--ink: #ebe5d2;
+	--ink-soft: #a3b8ac;
+	--brass: #c8a04a;
+	--brass-hi: #efd894;
+	--brass-lo: #7a5a1e;
+	--steel-hi: #eef0ea;
+	--steel: #c9cfc7;
+	--steel-lo: #7d877f;
+	--alarm: #c4392c;
+	--slot: #08180f;
+	--drum-shade: 80%;
+
+	--primary-foreground: #241a07;
+	--border: color-mix(in oklab, var(--brass) 26%, transparent);
+	--input: color-mix(in oklab, var(--brass) 34%, transparent);
 }
 
 @theme inline {
+	--font-sans:
+		'Hanken Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
+	--font-display: 'Gloock', ui-serif, Georgia, serif;
+	--font-mono: 'Red Hat Mono Variable', ui-monospace, monospace;
+
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
 	--color-card: var(--card);
@@ -67,6 +137,11 @@
 	--color-border: var(--border);
 	--color-input: var(--input);
 	--color-ring: var(--ring);
+	--color-brass: var(--brass);
+	--color-enamel: var(--enamel);
+	--color-enamel-deep: var(--enamel-deep);
+	--color-enamel-raised: var(--enamel-raised);
+	--color-ink-soft: var(--ink-soft);
 	--radius-sm: calc(var(--radius) * 0.6);
 	--radius-md: calc(var(--radius) * 0.8);
 	--radius-lg: var(--radius);
@@ -75,9 +150,67 @@
 
 @layer base {
 	* {
-		@apply border-border outline-ring/50;
+		@apply border-border outline-ring/60;
+	}
+	html {
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
 	}
 	body {
-		@apply bg-background text-foreground;
+		@apply bg-background font-sans text-foreground;
+		font-size: 1.0625rem;
+		line-height: 1.6;
+	}
+	h1,
+	h2,
+	h3 {
+		font-family: var(--font-display);
+		font-weight: 400;
+		line-height: 1.05;
+		text-wrap: balance;
+	}
+	p {
+		text-wrap: pretty;
+	}
+	:focus-visible {
+		outline: 2px solid var(--brass);
+		outline-offset: 3px;
+	}
+	::selection {
+		background: color-mix(in oklab, var(--brass) 45%, transparent);
+	}
+}
+
+/* Long-form copy pages (about, how it works, masked passwords) */
+.prose {
+	--tw-prose-body: var(--ink);
+	--tw-prose-headings: var(--ink);
+	--tw-prose-links: var(--ink);
+	--tw-prose-bold: var(--ink);
+	--tw-prose-bullets: var(--brass);
+	--tw-prose-counters: var(--brass);
+	--tw-prose-quotes: var(--ink-soft);
+	--tw-prose-quote-borders: var(--brass);
+	--tw-prose-code: var(--ink);
+	--tw-prose-hr: var(--border);
+	max-width: 62ch;
+	font-size: 1.125rem;
+	line-height: 1.7;
+
+	& :where(h1, h2, h3) {
+		font-family: var(--font-display);
+		font-weight: 400;
+		letter-spacing: -0.01em;
+	}
+	& :where(h1) {
+		font-size: clamp(2.5rem, 6vw, 4rem);
+	}
+	& :where(a) {
+		text-decoration-color: var(--brass);
+		text-decoration-thickness: 2px;
+		text-underline-offset: 4px;
+	}
+	& :where(a:hover) {
+		color: var(--brass);
 	}
 }

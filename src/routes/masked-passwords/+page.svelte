@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { description, site_name, website as url } from '#lib';
-	import { Separator } from '#lib/components/ui/separator/index.js';
 	import { Head } from 'svead';
 
 	let { data } = $props();
@@ -17,8 +16,6 @@
 	}}
 />
 
-<div class="mb-20">
+<article class="prose">
 	<Copy />
-</div>
-
-<Separator class="my-8" />
+</article>

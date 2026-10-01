@@ -1,62 +1,52 @@
-# Masked Passwords
+# Masked passwords
 
-Some password-authenticated sites, ask you to enter a random selection
-of specific characters from your password whole word/phrase.
+Some sites, banks especially, don't ask for your whole password.
+Instead they ask for a random selection of its characters, something
+like "enter the 1st, 4th and 8th characters", with a separate box for
+each one. It's a common sight on UK online banking.
 
-For example, it might say 'Enter the 1st, 4th and 8th letter' and
-provide three separate input boxes.
+The idea is to protect you from keyloggers. If malware records your
+keystrokes, it only ever captures a few characters, never the whole
+password.
 
-This method of password entry is popular in bank sites in here in the
-UK.
+That protection has a few flaws, though:
 
-It's meant to protect from keyloggers - and keyloggers only.
+- Each login attempt needs fewer characters (often just 4, sometimes
+  numbers only), so it's easier to brute force. Masked passwords only
+  hold up when they're paired with an account lockout policy.
 
-The reasoning is that if keylogger is installed on client's device, it
-will never get access to the full password.
+- With a few characters known at certain positions, say from a
+  keylogger or screen grabber, an attacker can simply wait until the
+  site asks for positions they already know.
 
-This logic has a few flaws however:
+- Capturing a handful of logins reveals the whole password. With a 12
+  character password and 4 positions asked each time, it could take
+  around 8 logins, so a keylogger or screen grabber gets there
+  eventually.
 
-- An attacker needs to enter fewer characters (e.g. only 4 characters,
-  often numbers only) for a single try. Therefore it's easier to brute
-  force this authentication step. That is why masked passwords need to
-  be paired with account lockout policy.
+- The bigger threat to online banking is malware that runs in the
+  browser itself, such as ZeuS or SpyEye. It gets round masked
+  passwords with social engineering, for example by:
 
-- With just a few known characters at certain positions (e.g. gathered
-  by a keylogger/screengrabber) an attacker can simply try logging in
-  when the server chose positions that are known.
+  - asking for the whole password
+  - showing a fake "change your password" form after a fake login
+  - faking an entry error and asking again for different positions,
+    collecting the full password in two or three tries
 
-- Getting to know the whole password only needs capturing a few
-  successful authentications (e.g. when password length is 12 and
-  there are always 4 positions chosen, it could take 8 tries), so a
-  keylogger/screengrabber will get it, eventually.
+Masked passwords are **awkward for people to use and tricky for sites
+to implement well.** At a minimum, a site needs an account lockout
+policy, a record of which positions it has asked for, and partial
+hashes of the password.
 
-- The biggest threat for Internet banking authentication is malware
-  (man-in-the-browser attacks) like ZeUS or SpyEye and this kind of
-  software usually conducts social engineering attacks that totally
-  overcome masked passwords scheme. For example, this software (ZeUS
-  or SpyEye) can:
+So while masked passwords do offer some protection from basic
+keylogging, they fail against more common threats like malware that
+uses social engineering ([source]).
 
-  - ask for a whole password
-  - display a fake password change form after fake authentication
-  - simulate password entry errors and redisplay the form with other
-    positions to fill to get full password in 2-3 tries
-
-Masked passwords are being **difficult to handle for users and tricky
-to implement correctly.** At the very least developers need to add
-account lockout policy, positions choice storage and partial hashes.
-
-Contrary to popular belief, masked password, especially in e-banking
-sites, though they offer protection from basic keylogging, completely
-fail to other, more prevalent threats like malware utilizing social
-engineering.
-
-[Source].
-
-Two step authentication (2FA) is yet another layer of security, being
-something you know (your password) and something you have (2FA
-device). This is still not completely secure such as SMS where in some
-instances criminals have gone into a phone shop and requested a new
-SIM for a target without their knowledge.
+Two-factor authentication (2FA) adds another layer: something you know
+(your password) plus something you have (your phone or a security
+key). It isn't bulletproof either. SMS codes can be intercepted
+through SIM swapping, where a criminal convinces a phone shop to issue
+a new SIM for someone else's number.
 
 <!-- Links -->
 

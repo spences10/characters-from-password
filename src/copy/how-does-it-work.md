@@ -1,31 +1,29 @@
-# How Does It Work?
+# How it works
 
-When you type in a password into this site, a few things happen behind
-the scenes to ensure you have useful information while keeping your
-password secure. Here's a step-by-step rundown of the process:
+Your password never leaves your browser. Picking characters happens
+entirely on this page, and the breach check is built so that the
+password itself is never sent anywhere.
 
-1. **Scrambling Your Password:** As soon as you start typing, your
-   password gets scrambled into a unique code using a process called
-   hashing. This process is one-way and irreversible. So, your
-   original password stays on your device and never leaves it.
+1. **Your password is hashed.** As you type, the page turns your
+   password into a SHA-1 hash: a 40 character fingerprint that can't
+   be turned back into the password.
 
-1. **Asking the Have I Been Pwned Database:** With the scrambled code
-   in hand, this site will ask a special database called "Have I Been
-   Pwned" if they've seen this code before in any data breaches. But
-   instead of sending the whole code, only first few characters of it
-   are sent. This is a clever way to keep your password secure while
-   checking if it's safe.
+1. **Only the start of the hash is sent.** The first five characters
+   of that hash go to the [Have I Been Pwned Passwords API][hibp].
+   That's all it receives.
 
-1. **Getting the Answer:** The Have I Been Pwned database then sends
-   back a list of scrambled codes that match the first few characters
-   this site sent. This site will then check this list to see if the
-   rest of your scrambled code is on it.
+1. **The API replies with every match.** It sends back the hashes of
+   every breached password that starts with those five characters,
+   usually several hundred of them, each with a count of how often it
+   has appeared in breaches.
 
-1. **Showing You the Result:** If there's a match, it means your
-   password has appeared in data breaches and might not be safe. This
-   site will show you how many times that password has been seen in
-   data breaches before. If there's no match, your password hasn't
-   appeared in any known data breaches, which is a good sign!
+1. **The comparison happens here.** Your browser looks for your full
+   hash in that list. If it's there, you'll see how many times the
+   password has turned up in known breaches. If it isn't, it hasn't
+   appeared in any breach Have I Been Pwned knows about.
 
-Remember, this site will never see, store, or share your original
-password. It stays with you.
+This approach is called k-anonymity: the API can't tell which of the
+hundreds of matching passwords you were checking. This site never
+receives your password either, so it can't see, store or share it.
+
+[hibp]: https://haveibeenpwned.com/API/v3#PwnedPasswords

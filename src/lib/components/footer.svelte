@@ -1,57 +1,88 @@
 <script lang="ts">
 	import { Bluesky, GitHub, YouTube } from '#lib/icons/index.js';
+
+	const socials = [
+		{
+			label: 'Bluesky',
+			href: 'https://bsky.app/profile/scottspence.dev',
+			icon: Bluesky,
+		},
+		{
+			label: 'GitHub',
+			href: 'https://github.com/spences10',
+			icon: GitHub,
+		},
+		{ label: 'YouTube', href: 'https://ss10/yt', icon: YouTube },
+	];
 </script>
 
-<footer
-	class="flex flex-col items-center justify-center gap-8 bg-primary p-10 text-center text-primary-foreground md:flex-row md:justify-around"
->
-	<div class="flex flex-col items-center gap-2">
-		<img
-			src="https://res.cloudinary.com/defkmsrpw/image/upload/q_auto,f_auto/v1622648685/ezgif.com-gif-maker.gif"
-			alt="Scott avatar"
-			class="h-20 rounded-full"
-		/>
-		<p class="font-bold">
-			Made with <span role="img" aria-label="red heart">❤️</span> by
-			<a
-				class="underline underline-offset-4 transition hover:opacity-80"
-				href="https://scottspence.com"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				Scott Spence
-			</a>
-		</p>
-		<p>
-			Copyright © {`${new Date().getFullYear()}`} - All right reserved
-		</p>
-	</div>
-	<div>
-		<div class="grid grid-flow-col gap-4">
-			<a
-				aria-label="Bluesky"
-				href="https://bsky.app/profile/scottspence.dev"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<Bluesky />
-			</a>
-			<a
-				aria-label="GitHub"
-				href="https://github.com/spences10"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<GitHub />
-			</a>
-			<a
-				aria-label="YouTube"
-				href="https://ss10/yt"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<YouTube />
-			</a>
-		</div>
-	</div>
+<footer>
+	<p>
+		Made by <a
+			href="https://scottspence.com"
+			target="_blank"
+			rel="noopener noreferrer">Scott Spence</a
+		>. © {new Date().getFullYear()}
+	</p>
+	<ul>
+		{#each socials as { label, href, icon: Icon } (href)}
+			<li>
+				<a
+					aria-label={label}
+					{href}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<Icon height={20} width={20} />
+				</a>
+			</li>
+		{/each}
+	</ul>
 </footer>
+
+<style>
+	footer {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		inline-size: 100%;
+		max-inline-size: 68rem;
+		margin-inline: auto;
+		padding: 2rem clamp(1rem, 4vw, 2.5rem) 2.5rem;
+		border-block-start: 1px solid var(--border);
+		color: var(--ink-soft);
+		font-size: 0.95rem;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	a {
+		color: inherit;
+	}
+
+	p a {
+		text-decoration-color: var(--brass);
+		text-underline-offset: 4px;
+	}
+
+	ul {
+		display: flex;
+		gap: 1.1rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	ul a {
+		display: grid;
+		color: var(--ink-soft);
+	}
+
+	ul a:hover {
+		color: var(--brass);
+	}
+</style>
