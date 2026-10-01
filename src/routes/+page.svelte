@@ -34,7 +34,7 @@
 		description,
 		url,
 		site_name,
-		open_graph_image: '/favicon.png',
+		open_graph_image: `${url}/og-image.png`,
 	}}
 />
 
