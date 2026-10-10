@@ -1,10 +1,10 @@
 minimumReleaseAge: 2880
 
 catalog:
-  '@playwright/test': 1.63.0
+  '@playwright/test': 1.64.0
   '@vitest/browser-playwright': 5.0.1
   '@vitest/coverage-v8': 5.0.1
-  playwright: 1.63.0
+  playwright: 1.64.0
   vite-plus: 1.0.0
   vitest: 5.0.1
   vite: npm:@voidzero-dev/vite-plus-core@1.0.0
