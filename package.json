@@ -52,7 +52,7 @@
 		"mode-watcher": "^1.1.0",
 		"playwright": "catalog:",
 		"sha1": "^1.1.1",
-		"svead": "^0.0.16",
+		"svead": "^0.1.0",
 		"svelte": "^5.57.1",
 		"svelte-check": "^4.7.6",
 		"tailwind-merge": "^3.7.0",
