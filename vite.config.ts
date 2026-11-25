@@ -17,11 +17,9 @@ const ignore_patterns = [
 
 export default defineConfig({
 	plugins: [
+		mdsvex({ extensions: ['.svelte.md', '.md', '.svx'] }),
 		sveltekit({
-			preprocess: [
-				vitePreprocess(),
-				mdsvex({ extensions: ['.svelte.md', '.md', '.svx'] }),
-			],
+			preprocess: vitePreprocess(),
 			extensions: ['.svelte', '.md'],
 			adapter: adapter(),
 		}),
