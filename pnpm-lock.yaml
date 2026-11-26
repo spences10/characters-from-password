@@ -263,7 +263,7 @@ importers:
         version: 3.7.2
       mdsvex:
         specifier: ^1.0.0
-        version: 1.0.0(@voidzero-dev/vite-plus-core@8.3.8000(@types/node@22.13.5)(esbuild@0.28.2)(jiti@2.7.0)(typescript@6.0.3))(svelte@5.59.1(@typescript-eslint/types@8.55.0))
+        version: 1.0.1(@voidzero-dev/vite-plus-core@8.3.8000(@types/node@22.13.5)(esbuild@0.28.2)(jiti@2.7.0)(typescript@6.0.3))(svelte@5.59.1(@typescript-eslint/types@8.55.0))
       mode-watcher:
         specifier: ^1.1.0
         version: 1.1.0(svelte@5.59.1(@typescript-eslint/types@8.55.0))
@@ -2285,8 +2285,8 @@ packages:
   mdn-data@2.12.2:
     resolution: {integrity: sha512-IEn+pegP1aManZuckezWCO+XZQDplx1366JoVhTpMpBB1sPey/SbveZQUosKiKiGYjg1wH4pMlNgXbCiYgihQA==}
 
-  mdsvex@1.0.0:
-    resolution: {integrity: sha512-3jVxydKFMOtWCApH8qXTTAZQ4XhTRaZJZy+uL/G0Xx5MyqmNspEoKM64H4GBdp38xfVd5Cc+Det3hHd1Cg/xtg==}
+  mdsvex@1.0.1:
+    resolution: {integrity: sha512-A+27ORoQLmJ2YtxM7hrlMW4LFfPEwzbf/yq30C8EKE3sEE86TKD9FvFM9pRjWMRs49jEDEwoKFWtT9JBxRoM3w==}
     peerDependencies:
       '@twinkleplop/twoslash': ^0.3.1
       '@twinkleplop/twoslash-svelte': ^0.3.1
@@ -4409,7 +4409,7 @@ snapshots:
   mdn-data@2.12.2:
     optional: true
 
-  mdsvex@1.0.0(@voidzero-dev/vite-plus-core@8.3.8000(@types/node@22.13.5)(esbuild@0.28.2)(jiti@2.7.0)(typescript@6.0.3))(svelte@5.59.1(@typescript-eslint/types@8.55.0)):
+  mdsvex@1.0.1(@voidzero-dev/vite-plus-core@8.3.8000(@types/node@22.13.5)(esbuild@0.28.2)(jiti@2.7.0)(typescript@6.0.3))(svelte@5.59.1(@typescript-eslint/types@8.55.0)):
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@mdsvex/parse': 1.0.0
