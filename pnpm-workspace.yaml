@@ -5,9 +5,9 @@ catalog:
   '@vitest/browser-playwright': 5.1.0
   '@vitest/coverage-v8': 5.1.0
   playwright: 1.65.1
-  vite-plus: 1.7.0
+  vite-plus: 1.8.0
   vitest: 5.1.0
-  vite: npm:@voidzero-dev/vite-plus-core@8.3.8000
+  vite: npm:@voidzero-dev/vite-plus-core@8.3.8001
 
 allowBuilds:
   '@tailwindcss/oxide': true
